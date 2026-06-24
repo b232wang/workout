@@ -1,0 +1,24 @@
+{
+  "entries": [
+    {
+      "id": "2026-06-22-workout-1",
+      "date": "2026-06-22",
+      "category": "workout",
+      "data": {
+        "type": "推",
+        "round": 1,
+        "exercises": [
+          { "name": "上斜哑铃卧推", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "坐姿器械推胸", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "绳索夹胸", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "哑铃肩推", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "绳索侧平举", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "绳索面拉", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "过顶绳索臂屈伸", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "绳索下压", "sets": [{ "weight": null, "reps": null }] }
+        ]
+      },
+      "note": "基本都练了,重量没记住"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "splits": [
+    {
+      "key": "推",
+      "label": "推 Push(胸 / 肩 / 三头)",
+      "exercises": [
+        { "name": "上斜哑铃卧推", "setsReps": "4 × 8-12", "target": "上胸", "cue": "椅背 30°,肘略低于肩,下放到充分拉伸", "alternates": ["上斜史密斯卧推", "平板哑铃卧推"], "superset": null },
+        { "name": "坐姿器械推胸", "setsReps": "3 × 8-12", "target": "中下胸", "cue": "把手对齐胸线,顶端不锁死", "alternates": ["史密斯平板卧推", "双杠臂屈伸(身体前倾)"], "superset": null },
+        { "name": "绳索夹胸", "setsReps": "3 × 12-15", "target": "胸(拉伸位)", "cue": "底部充分拉开,顶峰挤压一秒", "alternates": ["蝴蝶机夹胸", "上斜哑铃飞鸟"], "superset": null },
+        { "name": "哑铃肩推", "setsReps": "3 × 8-12", "target": "肩前束 / 整体", "cue": "不耸肩,推到接近锁定", "alternates": ["史密斯肩推", "坐姿器械推举"], "superset": "A" },
+        { "name": "绳索侧平举", "setsReps": "4 × 12-20", "target": "肩中束(肩宽)", "cue": "小重量多次,别借力,底部多停留拉长", "alternates": ["哑铃侧平举", "器械侧平举"], "superset": "A" },
+        { "name": "绳索面拉", "setsReps": "3 × 15-20", "target": "肩后束", "cue": "拉向额头,外旋,挤后束", "alternates": ["反向蝴蝶机", "俯身哑铃飞鸟"], "superset": "B" },
+        { "name": "过顶绳索臂屈伸", "setsReps": "3 × 10-15", "target": "三头长头(拉伸位)", "cue": "手臂举过头,在拉长位发力", "alternates": ["仰卧哑铃过顶臂屈伸", "双杠臂屈伸"], "superset": "B" },
+        { "name": "绳索下压", "setsReps": "3 × 12-15", "target": "三头", "cue": "大臂夹紧,只动小臂,底部伸直", "alternates": ["器械臂屈伸", "窄握史密斯卧推"], "superset": null }
+      ]
+    },
+    {
+      "key": "拉",
+      "label": "拉 Pull(背 / 后束 / 二头)",
+      "exercises": [
+        { "name": "宽握高位下拉", "setsReps": "4 × 8-12", "target": "背阔(宽度)", "cue": "顶部充分伸展,拉到锁骨,沉肩带肘", "alternates": ["引体向上", "单臂绳索下拉"], "superset": null },
+        { "name": "坐姿绳索划船", "setsReps": "3 × 8-12", "target": "中背(厚度)", "cue": "挺胸,肘贴身后拉,挤肩胛", "alternates": ["胸支撑器械划船", "哑铃单臂划船"], "superset": null },
+        { "name": "直臂下压", "setsReps": "3 × 12-15", "target": "背阔(孤立)", "cue": "手臂伸直下压,顶部拉伸背阔", "alternates": ["器械下拉", "俯身哑铃划船"], "superset": null },
+        { "name": "反向蝴蝶机", "setsReps": "3 × 15-20", "target": "肩后束", "cue": "外旋,挤后束,别耸肩", "alternates": ["绳索面拉", "俯身哑铃飞鸟"], "superset": "C" },
+        { "name": "上斜哑铃弯举", "setsReps": "3 × 10-12", "target": "二头(拉长位)", "cue": "椅背后躺,手臂后展,二头被拉长", "alternates": ["坐姿哑铃弯举", "绳索弯举"], "superset": "C" },
+        { "name": "锤式弯举", "setsReps": "3 × 10-12", "target": "肱肌 / 前臂", "cue": "中立握,不晃身", "alternates": ["绳索锤式", "哑铃交替弯举"], "superset": null }
+      ]
+    },
+    {
+      "key": "腿",
+      "label": "腿 Legs(股四 / 腘绳 / 臀 / 小腿)",
+      "exercises": [
+        { "name": "哈克深蹲", "setsReps": "4 × 8-12", "target": "股四头", "cue": "全程控制,下蹲到大腿水平以下", "alternates": ["倒蹬腿举", "史密斯深蹲"], "superset": null },
+        { "name": "罗马尼亚硬拉", "setsReps": "3 × 8-12", "target": "腘绳 / 臀(拉伸位)", "cue": "屈髋后送,背挺直,感受腘绳拉长", "alternates": ["坐姿腿弯举", "杠铃 RDL"], "superset": null },
+        { "name": "坐姿腿弯举", "setsReps": "3 × 10-15", "target": "腘绳(屈髋拉长)", "cue": "屈髋坐姿,脚跟向臀部勾", "alternates": ["俯卧腿弯举", "北欧挺"], "superset": null },
+        { "name": "腿屈伸", "setsReps": "3 × 12-15", "target": "股四头(孤立)", "cue": "顶峰挤压,慢放", "alternates": ["西斯深蹲", "单腿腿举"], "superset": "D" },
+        { "name": "臀推", "setsReps": "3 × 10-15", "target": "臀", "cue": "顶峰夹臀,下巴微收", "alternates": ["器械臀推", "高箱 step-up"], "superset": "D" },
+        { "name": "站姿提踵", "setsReps": "4 × 12-20", "target": "小腿", "cue": "底部充分下沉拉伸,顶端踮到最高停一秒", "alternates": ["器械提踵", "单腿哑铃提踵"], "superset": null }
+      ]
+    }
+  ]
+}
