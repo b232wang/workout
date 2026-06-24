@@ -41,7 +41,7 @@
 1. **记录任何事** → 追加一条 entry 到 `timeline.json`(date 用当天,选或新定 category,填 data)。同一天同类可多条。
 2. **报健身数据**(如「卧推 60 做了 10/10/8」)→ 当天有 workout entry 就往其 `exercises` 加,否则新建 workout entry。重量 kg、哑铃单只,各组 `{weight,reps}`。
 3. **报饮食**(如「吃了 2 包饼干」)→ 查 `foods.json` 算 kcal 记 diet entry;库里没有就问用户份量/卡路里,先存进库再记。
-4. **「今天练 X」** → 读 `plan.json` 对应 split + `动作库.md` 要领;从 timeline 找该动作上次成绩提醒。
+4. **「今天练什么 / 该练什么」** → 训练循环**自动顺延**:看 `timeline.json` 里**最近一次 workout 的 type**,练循环下一个(推→拉→腿→推…);从没练过就从推开始。然后读 `plan.json` 对应 split + `动作库.md` 要领,从 timeline 找各动作上次成绩提醒。**休息日不用记任何东西——循环只认「上次练的下一个」,不认日历。**
 5. **「换动作 / 不喜欢」** → 改 `plan.json` 对应动作的 `alternates`。
 6. **回看 / 趋势**(「卧推进步」「今天吃了多少卡」「这周练几次」)→ 从 `timeline.json` 过滤聚合后回答。
 7. **估算卡路里**:摄入 = 当天 diet entries 的 kcal 之和;支出 = 健身 / 散步粗略估算(说明是估算)。

@@ -22,11 +22,23 @@ header .sub{color:var(--sub);font-size:13px;margin-top:3px}
 .muted{color:var(--sub)}.small{font-size:12.5px}
 .empty{color:var(--sub);text-align:center;padding:26px 8px;font-size:14px}
 .date-h{font-size:12.5px;color:var(--sub);font-weight:600;margin:16px 2px 8px}
+.datenav{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.datenav button{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 13px;font-size:17px;line-height:1;color:var(--ink);cursor:pointer}
+.datenav input[type=date]{flex:1;padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:14px;text-align:center}
+.datenav .todaybtn{font-size:13px;padding:8px 11px}
+.suggest{border-left:3px solid var(--accent)}
+.suggest .big{font-size:20px;font-weight:700}
+.rest .big{color:var(--sub)}
+details summary{cursor:pointer;color:var(--accent);font-size:13px;margin-top:8px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸ "}
+details[open] summary::before{content:"▾ "}
 .entry .chead{margin-bottom:8px}
 .badge{display:inline-block;color:#fff;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px}
 .entry .ctitle{font-size:14px;margin:2px 0 8px}
 .ex-list .ex,.ex{display:flex;justify-content:space-between;gap:10px;padding:4px 0;font-size:14px;border-bottom:1px dashed var(--line)}
 .ex:last-child{border-bottom:none}
+.ss{font-size:11px;background:var(--accent);color:#fff;padding:1px 6px;border-radius:6px}
 .note{margin-top:9px;font-size:13px;color:var(--sub);background:rgba(148,163,184,.1);padding:7px 10px;border-radius:9px}
 .shot{max-width:100%;border-radius:10px;margin:4px 0}
 .raw{font-size:12px;white-space:pre-wrap;color:var(--sub);overflow-x:auto}
@@ -34,13 +46,11 @@ select{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:10
 .planex{padding:10px 0;border-bottom:1px solid var(--line)}.planex:last-child{border-bottom:none}
 .pe-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .pe-head b{font-size:14.5px}
-.ss{font-size:11px;background:var(--accent);color:#fff;padding:1px 7px;border-radius:6px}
 .pe-head .muted{margin-left:auto;font-size:13px}
 .last{font-size:13px;color:var(--accent);margin-top:3px}
 .alt{font-size:12.5px;color:var(--sub);margin-top:3px}
 .calgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
 .cell{aspect-ratio:1;border-radius:5px;background:var(--line)}
-.cell.on{outline:1px solid rgba(0,0,0,.04)}
 nav.tabs{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);display:flex;padding:7px 0 calc(7px + env(safe-area-inset-bottom));z-index:20}
 nav.tabs button{background:none;border:none;font-size:11px;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;flex:1}
 nav.tabs button .ico{font-size:21px;line-height:1}
@@ -54,13 +64,13 @@ section{display:none}section.active{display:block}
   <div class="sub" id="subline">加载中…</div>
 </header>
 <main>
-  <section id="overview" class="active"></section>
+  <section id="today" class="active"></section>
   <section id="fitness"></section>
   <section id="calendar"></section>
   <section id="calories"></section>
 </main>
 <nav class="tabs">
-  <button data-tab="overview" class="active"><span class="ico">📋</span>总览</button>
+  <button data-tab="today" class="active"><span class="ico">📆</span>今天</button>
   <button data-tab="fitness"><span class="ico">🏋️</span>健身</button>
   <button data-tab="calendar"><span class="ico">📅</span>日历</button>
   <button data-tab="calories"><span class="ico">🔥</span>卡路里</button>
@@ -77,9 +87,11 @@ const CATEGORIES={
 function cat(k){return CATEGORIES[k]||{label:k,emoji:'•',color:'var(--note)'}}
 
 let TL={entries:[]},PLAN={splits:[]},FOODS={foods:[]};
-
 function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
-function daysAgo(date){const d=new Date(date+'T00:00:00');const t=new Date();t.setHours(0,0,0,0);const n=Math.round((t-d)/86400000);return n===0?'今天':n===1?'昨天':n+'天前'}
+let selDate=iso(new Date());
+
+function addDays(date,n){const d=new Date(date+'T00:00:00');d.setDate(d.getDate()+n);return iso(d)}
+function daysAgo(date){const d=new Date(date+'T00:00:00');const t=new Date();t.setHours(0,0,0,0);const n=Math.round((t-d)/86400000);return n===0?'今天':n===1?'昨天':n>0?n+'天前':(-n)+'天后'}
 function byDateDesc(a,b){return a.date<b.date?1:a.date>b.date?-1:0}
 function fmtSets(sets){
   if(!sets||!sets.length)return '';
@@ -89,6 +101,12 @@ function fmtSets(sets){
   if(sameW&&w!=null)return w+'kg × '+reps;
   return sets.map(s=>(s.weight==null?'?':s.weight)+'kg×'+(s.reps==null?'?':s.reps)).join(', ');
 }
+
+// ── 训练循环:只认"上次练的下一个",不认日历 ──
+function splitKeys(){return PLAN.splits.map(s=>s.key)}
+function workoutTypeOn(date){const e=TL.entries.find(x=>x.date===date&&x.category==='workout');return e?e.data.type:null}
+function lastWorkoutBefore(date){const ws=TL.entries.filter(x=>x.category==='workout'&&x.date<date).sort(byDateDesc);return ws.length?ws[0].data.type:null}
+function suggestFor(date){const keys=splitKeys();if(!keys.length)return null;const last=lastWorkoutBefore(date);if(last==null)return keys[0];const i=keys.indexOf(last);return keys[(i+1)%keys.length]}
 
 async function load(){
   try{
@@ -100,12 +118,11 @@ async function load(){
     TL=tl;PLAN=plan;FOODS=foods;
   }catch(e){
     document.getElementById('subline').textContent='数据加载失败';
-    document.getElementById('overview').innerHTML='<div class="wrap"><div class="card empty">数据加载失败:'+e.message+'<br><br>本地预览要用 http 服务器打开(<code>file://</code> 读不到 JSON)。部署到 GitHub Pages 后正常。</div></div>';
+    document.getElementById('today').innerHTML='<div class="wrap"><div class="card empty">数据加载失败:'+e.message+'<br><br>本地预览要用 http 服务器打开(<code>file://</code> 读不到 JSON)。</div></div>';
     return;
   }
-  const n=TL.entries.length;
-  document.getElementById('subline').textContent=n+' 条记录 · '+new Set(TL.entries.map(e=>e.date)).size+' 天';
-  renderOverview();renderFitness();renderCalendar();renderCalories();
+  document.getElementById('subline').textContent=TL.entries.length+' 条记录 · '+new Set(TL.entries.map(e=>e.date)).size+' 天';
+  renderDay();renderFitness();renderCalendar();renderCalories();
 }
 
 function renderCard(e){
@@ -130,16 +147,38 @@ function renderCard(e){
   return '<div class="card entry" style="border-left:3px solid '+c.color+'"><div class="chead"><span class="badge" style="background:'+c.color+'">'+c.emoji+' '+c.label+'</span></div>'+body+(e.note?'<div class="note">'+e.note+'</div>':'')+'</div>';
 }
 
-function renderOverview(){
-  const el=document.getElementById('overview');
-  if(!TL.entries.length){el.innerHTML='<div class="wrap"><div class="card empty">还没有记录。在 session 里告诉我你做了什么,我来记。</div></div>';return}
-  const g={};TL.entries.forEach(e=>{(g[e.date]=g[e.date]||[]).push(e)});
+// ── 当天视图:默认今天,可翻天 ──
+function renderDay(){
+  const el=document.getElementById('today');
+  const d=selDate, todayStr=iso(new Date());
+  const dayEntries=TL.entries.filter(e=>e.date===d);
+  const done=workoutTypeOn(d);
   let html='<div class="wrap">';
-  Object.keys(g).sort().reverse().forEach(date=>{
-    html+='<div class="date-h">'+date+' · '+daysAgo(date)+'</div>';
-    g[date].forEach(e=>html+=renderCard(e));
-  });
+  html+='<div class="datenav"><button id="prevd" aria-label="前一天">‹</button><input type="date" id="datepick" value="'+d+'"><button id="nextd" aria-label="后一天">›</button><button id="todayb" class="todaybtn">今天</button></div>';
+  // 训练建议
+  if(done){
+    const sp=PLAN.splits.find(s=>s.key===done);
+    html+='<div class="card suggest"><div class="muted small">这天的训练</div><div class="big">已练:'+(sp?sp.label:done)+'</div></div>';
+  }else if(d>=todayStr){
+    const sug=suggestFor(d), sp=PLAN.splits.find(s=>s.key===sug);
+    html+='<div class="card suggest"><div class="muted small">'+(d===todayStr?'今天建议':'建议')+'(循环顺延)</div><div class="big">练 '+(sp?sp.label:sug)+'</div>';
+    if(sp)html+='<details><summary>看动作</summary>'+sp.exercises.map(x=>'<div class="ex"><span>'+x.name+(x.superset?' <span class="ss">超'+x.superset+'</span>':'')+'</span><span class="muted">'+x.setsReps+'</span></div>').join('')+'</details>';
+    html+='</div>';
+  }else{
+    html+='<div class="card suggest rest"><div class="muted small">'+d+' · '+daysAgo(d)+'</div><div class="big">休息日</div><div class="muted small">这天没有训练记录</div></div>';
+  }
+  // 当天记录
+  if(dayEntries.length){
+    html+='<div class="date-h">这天的记录('+dayEntries.length+')</div>';
+    dayEntries.forEach(e=>html+=renderCard(e));
+  }else{
+    html+='<div class="card empty">这天没有任何记录</div>';
+  }
   el.innerHTML=html+'</div>';
+  document.getElementById('prevd').onclick=()=>{selDate=addDays(selDate,-1);renderDay()};
+  document.getElementById('nextd').onclick=()=>{selDate=addDays(selDate,1);renderDay()};
+  document.getElementById('todayb').onclick=()=>{selDate=iso(new Date());renderDay()};
+  document.getElementById('datepick').onchange=ev=>{if(ev.target.value){selDate=ev.target.value;renderDay()}};
 }
 
 function allWorkoutNames(){const s=new Set();TL.entries.filter(e=>e.category==='workout').forEach(e=>(e.data.exercises||[]).forEach(x=>s.add(x.name)));return [...s]}
@@ -198,9 +237,8 @@ function renderCalendar(){
   for(let i=weeks*7-1;i>=0;i--){
     const d=new Date(t);d.setDate(t.getDate()-i);const ds=iso(d),cats=m[ds];
     const color=cats&&cats.size?cat([...cats][0]).color:'';
-    html+='<div class="cell'+(color?' on':'')+'"'+(color?' style="background:'+color+'"':'')+' title="'+ds+(cats?' · '+[...cats].map(k=>cat(k).label).join(','):'')+'"></div>';
+    html+='<div class="cell"'+(color?' style="background:'+color+'"':'')+' title="'+ds+(cats?' · '+[...cats].map(k=>cat(k).label).join(','):'')+'"></div>';
   }
-  // streak
   let s=0;for(let i=0;;i++){const d=new Date(t);d.setDate(t.getDate()-i);if(m[iso(d)])s++;else break}
   html+='</div><div class="muted small" style="margin-top:10px">连续打卡 '+s+' 天 · 共记录 '+Object.keys(m).length+' 天</div></div></div>';
   el.innerHTML=html;
