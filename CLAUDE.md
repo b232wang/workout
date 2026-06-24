@@ -23,7 +23,7 @@
 
 ### 已知 category
 
-- **workout**(健身):`data = { type:"推/拉/腿", round, exercises:[{ name, sets:[{weight,reps}], note? }] }`
+- **workout**(健身):`data = { type:"推/拉/腿", round, exercises:[{ name, nameEn, sets:[{weight,reps}], note? }], comment? }` — 每个动作配中文名 `name` + 英文名 `nameEn`(网页双语显示);`comment` 是一句中文评语,显示在网页该次训练卡片底部
 - **diet**(饮食):`data = { items:[{ food, qty, unit, kcal }], totalKcal, note? }` — kcal 查 `data/foods.json` 估算
 - **walk**(散步等轻活动):`data = { durationMin?, distanceKm?, note? }`
 - **screenshot**(截图,如 Apple Workout):图片存 `assets/`,`data = { image:"assets/xxx.png", source, extracted:{ 你从图里读出的数据 } }`
