@@ -37,10 +37,16 @@ details[open] summary::before{content:"▾ "}
 .badge{display:inline-block;color:#fff;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px}
 .entry .ctitle{font-size:14px;margin:2px 0 8px}
 .ex-list .ex,.ex{display:flex;justify-content:space-between;gap:10px;padding:4px 0 2px;font-size:14px}
-.exblock{border-bottom:1px dashed var(--line);padding-bottom:4px}
+.exblock{border-bottom:1px dashed var(--line)}
 .exblock:last-child{border-bottom:none}
+.exhead{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:14px;padding:8px 0}
+.exhead .exname{flex:1;min-width:0}
+details.exblock summary.exhead{cursor:pointer;list-style:none}
+details.exblock summary.exhead::-webkit-details-marker{display:none}
+details.exblock summary.exhead::after{content:"›";color:var(--sub);font-size:17px;line-height:1;transition:transform .15s;flex:none}
+details.exblock[open] summary.exhead::after{transform:rotate(90deg)}
+.exdetail{font-size:12.5px;color:var(--sub);padding:2px 0 8px 4px}
 .en{color:var(--sub);font-weight:400;font-size:12px}
-.equip{font-size:12px;color:var(--sub);padding:0 0 2px 2px}
 .ss{font-size:11px;background:var(--accent);color:#fff;padding:1px 6px;border-radius:6px}
 .note{margin-top:9px;font-size:13px;color:var(--sub);background:rgba(148,163,184,.1);padding:7px 10px;border-radius:9px}
 .comment{margin-top:10px;font-size:13px;line-height:1.6;background:rgba(59,130,246,.08);border-left:3px solid var(--accent);padding:9px 11px;border-radius:8px}
@@ -133,9 +139,14 @@ async function load(){
 // 单个动作: 名(双语) + 重量(有才写) + 器械(有才写)
 function exerciseHtml(x){
   const s=fmtSets(x.sets);
-  let h='<div class="exblock"><div class="ex"><span>'+x.name+(x.nameEn?' <span class="en">'+x.nameEn+'</span>':'')+'</span>'+(s?'<span class="muted">'+s+'</span>':'')+'</div>';
-  if(x.equipment)h+='<div class="equip">器械:'+x.equipment+(x.equipmentEn?' <span class="en">'+x.equipmentEn+'</span>':'')+'</div>';
-  return h+'</div>';
+  const nameHtml=x.name+(x.nameEn?' <span class="en">'+x.nameEn+'</span>':'');
+  const right=s?'<span class="muted">'+s+'</span>':'';
+  const meta=[];
+  if(x.equipment)meta.push('<div class="exdetail">器械:'+x.equipment+(x.equipmentEn?' <span class="en">'+x.equipmentEn+'</span>':'')+'</div>');
+  if(x.target)meta.push('<div class="exdetail">部位:'+x.target+(x.targetEn?' <span class="en">'+x.targetEn+'</span>':'')+'</div>');
+  if(x.note)meta.push('<div class="exdetail">备注:'+x.note+'</div>');
+  if(!meta.length)return '<div class="exblock"><div class="exhead"><span class="exname">'+nameHtml+'</span>'+right+'</div></div>';
+  return '<details class="exblock"><summary class="exhead"><span class="exname">'+nameHtml+'</span>'+right+'</summary>'+meta.join('')+'</details>';
 }
 
 function renderCard(e){

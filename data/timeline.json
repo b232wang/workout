@@ -8,12 +8,12 @@
         "type": "腿",
         "round": 1,
         "exercises": [
-          { "name": "倒蹬(腿举)", "nameEn": "Leg Press", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "腿屈伸", "nameEn": "Leg Extension", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "坐姿腿弯举", "nameEn": "Seated Leg Curl", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "坐姿夹腿(大腿内收)", "nameEn": "Hip Adduction", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "坐姿分腿(大腿外展)", "nameEn": "Hip Abduction", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "垂直举腿(悬垂举腿)", "nameEn": "Captain's Chair Leg Raise", "sets": [{ "weight": null, "reps": null }] }
+          { "name": "倒蹬(腿举)", "nameEn": "Leg Press", "equipment": "倒蹬机", "equipmentEn": "Leg Press Machine", "target": "股四头+臀", "targetEn": "Quads & Glutes", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "腿屈伸", "nameEn": "Leg Extension", "equipment": "腿屈伸机", "equipmentEn": "Leg Extension Machine", "target": "股四头肌", "targetEn": "Quadriceps", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "坐姿腿弯举", "nameEn": "Seated Leg Curl", "equipment": "腿弯举机", "equipmentEn": "Leg Curl Machine", "target": "腘绳肌", "targetEn": "Hamstrings", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "坐姿夹腿(大腿内收)", "nameEn": "Hip Adduction", "equipment": "大腿内收机", "equipmentEn": "Hip Adduction Machine", "target": "大腿内侧内收肌", "targetEn": "Adductors", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "坐姿分腿(大腿外展)", "nameEn": "Hip Abduction", "equipment": "大腿外展机", "equipmentEn": "Hip Abduction Machine", "target": "臀中肌/大腿外侧", "targetEn": "Gluteus Medius", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "垂直举腿(悬垂举腿)", "nameEn": "Captain's Chair Leg Raise", "equipment": "罗马椅", "equipmentEn": "Captain's Chair", "target": "下腹+髂腰肌", "targetEn": "Lower Abs & Hip Flexors", "sets": [{ "weight": null, "reps": null }] }
         ],
         "comment": "这套腿练得很全:倒蹬主攻股四+臀,腿屈伸、腿弯举分别孤立股四和腘绳,内收外展补齐大腿内外侧,悬垂举腿收个核心。唯一没练到小腿(提踵),下次腿日补个站姿提踵就齐了。重量这次没记,下次报给我就能看趋势。"
       },
