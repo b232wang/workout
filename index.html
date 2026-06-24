@@ -36,11 +36,13 @@ details[open] summary::before{content:"▾ "}
 .entry .chead{margin-bottom:8px}
 .badge{display:inline-block;color:#fff;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px}
 .entry .ctitle{font-size:14px;margin:2px 0 8px}
-.ex-list .ex,.ex{display:flex;justify-content:space-between;gap:10px;padding:4px 0;font-size:14px;border-bottom:1px dashed var(--line)}
-.ex:last-child{border-bottom:none}
+.ex-list .ex,.ex{display:flex;justify-content:space-between;gap:10px;padding:4px 0 2px;font-size:14px}
+.exblock{border-bottom:1px dashed var(--line);padding-bottom:4px}
+.exblock:last-child{border-bottom:none}
+.en{color:var(--sub);font-weight:400;font-size:12px}
+.equip{font-size:12px;color:var(--sub);padding:0 0 2px 2px}
 .ss{font-size:11px;background:var(--accent);color:#fff;padding:1px 6px;border-radius:6px}
 .note{margin-top:9px;font-size:13px;color:var(--sub);background:rgba(148,163,184,.1);padding:7px 10px;border-radius:9px}
-.en{color:var(--sub);font-weight:400;font-size:12px}
 .comment{margin-top:10px;font-size:13px;line-height:1.6;background:rgba(59,130,246,.08);border-left:3px solid var(--accent);padding:9px 11px;border-radius:8px}
 .shot{max-width:100%;border-radius:10px;margin:4px 0}
 .raw{font-size:12px;white-space:pre-wrap;color:var(--sub);overflow-x:auto}
@@ -95,9 +97,10 @@ let selDate=iso(new Date());
 function addDays(date,n){const d=new Date(date+'T00:00:00');d.setDate(d.getDate()+n);return iso(d)}
 function daysAgo(date){const d=new Date(date+'T00:00:00');const t=new Date();t.setHours(0,0,0,0);const n=Math.round((t-d)/86400000);return n===0?'今天':n===1?'昨天':n>0?n+'天前':(-n)+'天后'}
 function byDateDesc(a,b){return a.date<b.date?1:a.date>b.date?-1:0}
+// 有提供重量/次数才返回字符串, 全空返回 ''(没提供就不写)
 function fmtSets(sets){
   if(!sets||!sets.length)return '';
-  if(sets.every(s=>s.weight==null&&s.reps==null))return '未记录重量';
+  if(sets.every(s=>s.weight==null&&s.reps==null))return '';
   const w=sets[0].weight,sameW=sets.every(s=>s.weight===w);
   const reps=sets.map(s=>s.reps==null?'?':s.reps).join('/');
   if(sameW&&w!=null)return w+'kg × '+reps;
@@ -108,7 +111,7 @@ function fmtSets(sets){
 function splitKeys(){return PLAN.splits.map(s=>s.key)}
 function workoutTypeOn(date){const e=TL.entries.find(x=>x.date===date&&x.category==='workout');return e?e.data.type:null}
 function lastWorkoutBefore(date){const ws=TL.entries.filter(x=>x.category==='workout'&&x.date<date).sort(byDateDesc);return ws.length?ws[0].data.type:null}
-function suggestFor(date){const keys=splitKeys();if(!keys.length)return null;const last=lastWorkoutBefore(date);if(last==null)return keys[0];const i=keys.indexOf(last);return keys[(i+1)%keys.length]}
+function suggestFor(date){const keys=splitKeys();if(!keys.length)return null;const last=lastWorkoutBefore(date);if(last==null)return keys[0];return keys[(keys.indexOf(last)+1)%keys.length]}
 
 async function load(){
   try{
@@ -127,12 +130,20 @@ async function load(){
   renderDay();renderFitness();renderCalendar();renderCalories();
 }
 
+// 单个动作: 名(双语) + 重量(有才写) + 器械(有才写)
+function exerciseHtml(x){
+  const s=fmtSets(x.sets);
+  let h='<div class="exblock"><div class="ex"><span>'+x.name+(x.nameEn?' <span class="en">'+x.nameEn+'</span>':'')+'</span>'+(s?'<span class="muted">'+s+'</span>':'')+'</div>';
+  if(x.equipment)h+='<div class="equip">器械:'+x.equipment+(x.equipmentEn?' <span class="en">'+x.equipmentEn+'</span>':'')+'</div>';
+  return h+'</div>';
+}
+
 function renderCard(e){
   const c=cat(e.category);let body='';
   if(e.category==='workout'){
     const d=e.data;
     body='<div class="ctitle">'+(d.type||'')+(d.round?' · 第'+d.round+'轮':'')+'</div>';
-    body+='<div class="ex-list">'+(d.exercises||[]).map(x=>'<div class="ex"><span>'+x.name+(x.nameEn?' <span class="en">'+x.nameEn+'</span>':'')+'</span><span class="muted">'+fmtSets(x.sets)+'</span></div>').join('')+'</div>';
+    body+='<div class="ex-list">'+(d.exercises||[]).map(exerciseHtml).join('')+'</div>';
     if(d.comment)body+='<div class="comment">'+d.comment+'</div>';
   }else if(e.category==='diet'){
     const d=e.data;
@@ -158,7 +169,6 @@ function renderDay(){
   const done=workoutTypeOn(d);
   let html='<div class="wrap">';
   html+='<div class="datenav"><button id="prevd" aria-label="前一天">‹</button><input type="date" id="datepick" value="'+d+'"><button id="nextd" aria-label="后一天">›</button><button id="todayb" class="todaybtn">今天</button></div>';
-  // 训练建议
   if(done){
     const sp=PLAN.splits.find(s=>s.key===done);
     html+='<div class="card suggest"><div class="muted small">这天的训练</div><div class="big">已练:'+(sp?sp.label:done)+'</div></div>';
@@ -170,7 +180,6 @@ function renderDay(){
   }else{
     html+='<div class="card suggest rest"><div class="muted small">'+d+' · '+daysAgo(d)+'</div><div class="big">休息日</div><div class="muted small">这天没有训练记录</div></div>';
   }
-  // 当天记录
   if(dayEntries.length){
     html+='<div class="date-h">这天的记录('+dayEntries.length+')</div>';
     dayEntries.forEach(e=>html+=renderCard(e));
@@ -202,7 +211,7 @@ let chart;
 function drawTrend(name){
   const h=workoutHistory(name),note=document.getElementById('trendnote'),cv=document.getElementById('trend');
   if(chart)chart.destroy();
-  if(!h.some(p=>p.maxWeight!=null)){note.textContent='这个动作还没记录重量(都是 null),记几次就有曲线了。';cv.style.display='none';return}
+  if(!h.some(p=>p.maxWeight!=null)){note.textContent='这个动作还没记录重量,记几次就有曲线了。';cv.style.display='none';return}
   cv.style.display='';note.textContent='';
   chart=new Chart(cv,{type:'line',
     data:{labels:h.map(p=>p.date.slice(5)),datasets:[
@@ -223,7 +232,7 @@ function renderFitness(){
       const lr=lastResult(x.name);
       html+='<div class="planex"><div class="pe-head"><b>'+x.name+'</b>'+(x.superset?'<span class="ss">超'+x.superset+'</span>':'')+'<span class="muted">'+x.setsReps+'</span></div>';
       html+='<div class="muted small">'+x.target+' · '+x.cue+'</div>';
-      if(lr)html+='<div class="last">上次('+daysAgo(lr.date)+'):'+fmtSets(lr.sets)+'</div>';
+      if(lr){const s=fmtSets(lr.sets);html+='<div class="last">上次('+daysAgo(lr.date)+')'+(s?': '+s:' 练过(没记重量)')+'</div>';}
       html+='<div class="alt">备用:'+x.alternates.join(' / ')+'</div></div>';
     });
     html+='</div>';
