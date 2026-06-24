@@ -1,6 +1,25 @@
 {
   "entries": [
     {
+      "id": "2026-06-23-workout-1",
+      "date": "2026-06-23",
+      "category": "workout",
+      "data": {
+        "type": "腿",
+        "round": 1,
+        "exercises": [
+          { "name": "倒蹬(腿举)", "nameEn": "Leg Press", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "腿屈伸", "nameEn": "Leg Extension", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "坐姿腿弯举", "nameEn": "Seated Leg Curl", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "坐姿夹腿(大腿内收)", "nameEn": "Hip Adduction", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "坐姿分腿(大腿外展)", "nameEn": "Hip Abduction", "sets": [{ "weight": null, "reps": null }] },
+          { "name": "垂直举腿(悬垂举腿)", "nameEn": "Captain's Chair Leg Raise", "sets": [{ "weight": null, "reps": null }] }
+        ],
+        "comment": "这套腿练得很全:倒蹬主攻股四+臀,腿屈伸、腿弯举分别孤立股四和腘绳,内收外展补齐大腿内外侧,悬垂举腿收个核心。唯一没练到小腿(提踵),下次腿日补个站姿提踵就齐了。重量这次没记,下次报给我就能看趋势。"
+      },
+      "note": "动作名由描述识别; 重量次数未记录"
+    },
+    {
       "id": "2026-06-22-workout-1",
       "date": "2026-06-22",
       "category": "workout",

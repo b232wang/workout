@@ -40,6 +40,8 @@ details[open] summary::before{content:"▾ "}
 .ex:last-child{border-bottom:none}
 .ss{font-size:11px;background:var(--accent);color:#fff;padding:1px 6px;border-radius:6px}
 .note{margin-top:9px;font-size:13px;color:var(--sub);background:rgba(148,163,184,.1);padding:7px 10px;border-radius:9px}
+.en{color:var(--sub);font-weight:400;font-size:12px}
+.comment{margin-top:10px;font-size:13px;line-height:1.6;background:rgba(59,130,246,.08);border-left:3px solid var(--accent);padding:9px 11px;border-radius:8px}
 .shot{max-width:100%;border-radius:10px;margin:4px 0}
 .raw{font-size:12px;white-space:pre-wrap;color:var(--sub);overflow-x:auto}
 select{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:14px;margin-bottom:12px}
@@ -130,7 +132,8 @@ function renderCard(e){
   if(e.category==='workout'){
     const d=e.data;
     body='<div class="ctitle">'+(d.type||'')+(d.round?' · 第'+d.round+'轮':'')+'</div>';
-    body+='<div class="ex-list">'+(d.exercises||[]).map(x=>'<div class="ex"><span>'+x.name+'</span><span class="muted">'+fmtSets(x.sets)+'</span></div>').join('')+'</div>';
+    body+='<div class="ex-list">'+(d.exercises||[]).map(x=>'<div class="ex"><span>'+x.name+(x.nameEn?' <span class="en">'+x.nameEn+'</span>':'')+'</span><span class="muted">'+fmtSets(x.sets)+'</span></div>').join('')+'</div>';
+    if(d.comment)body+='<div class="comment">'+d.comment+'</div>';
   }else if(e.category==='diet'){
     const d=e.data;
     body='<div>'+(d.items||[]).map(i=>i.food+(i.qty?' ×'+i.qty:'')+(i.kcal?' <span class="muted">('+i.kcal+'卡)</span>':'')).join('、')+'</div>';
