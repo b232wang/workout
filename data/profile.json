@@ -1,0 +1,9 @@
+{
+  "age": 32,
+  "sex": "male",
+  "heightCm": 180,
+  "goal": "增肌",
+  "activityLevel": 1.55,
+  "activityNote": "每周 6 练、每次约 30 分钟,按中等活动(1.55)估",
+  "weightNote": "体重记在 timeline 的 weight 类别,TDEE 取最新体重计算"
+}

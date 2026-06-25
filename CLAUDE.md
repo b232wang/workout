@@ -24,13 +24,15 @@
 ### 已知 category
 
 - **workout**(健身):`data = { type:"推/拉/腿", round, exercises:[{ name, nameEn, equipment?, equipmentEn?, target?, targetEn?, sets:[{weight,reps}], note? }], comment? }` — 动作配中英文名 `name`/`nameEn`;**器械 `equipment`/`equipmentEn`、部位 `target`/`targetEn`(均中英)、组数重量 `sets` 都可选,提供或可推断才填**;网页里动作可点开,展开看器械/部位;没有的字段就不显示。`comment` 是一句中文评语,显示在训练卡片底部
-- **diet**(饮食):`data = { meals:[{ slot:"早餐/中午/晚餐/其他", dishes:[{ name, ref?, kcal, items:[{ name, nameEn, qty, kcal, protein?, fat?, carb?, ... }] }] }], totals:{kcal,protein,carb,fat}, summary }` — 时段(没说归「其他」)> 组 `dish`(显总卡)> 项 `item`(带营养表,用户列了按用户、没列你估)。`ref` 关联 `foods.json` 的 id(网页可点「库」跳转)。`summary` 是你写的全天总结+建议。算 `totals`(全天卡/蛋白/碳水/脂肪)
+- **diet**(饮食):`data = { meals:[{ slot:"早餐/中午/晚餐/其他", dishes:[{ name, ref?, kcal, items:[{ name, nameEn, qty, kcal, protein?, fat?, carb?, ... }] }] }], totals:{kcal,protein,carb,fat} }` — 时段(没说归「其他」)> 组 `dish` > 项 `item`(带营养,用户列了按用户、没列你估)。**单品(香蕉/罐头)只放 1 个 item,网页点开直接看营养;组合(一碗麦片)放多个 item**。`ref` 关联 `foods.json` id(网页可跳转)。必须算对 `totals`。**当天小结不写进数据——网页按当天 workout+diet+TDEE 自动生成、回顾性措辞(不要"若今天…""可再加"这类穿越/假设语)**
+- **weight**(体重):`data = { kg }` — 体重记成时间线事件;网页取最新值算 TDEE、多点时画变化趋势
 - **walk**(散步等轻活动):`data = { durationMin?, distanceKm?, note? }`
 - **screenshot**(截图,如 Apple Workout):图片存 `assets/`,`data = { image:"assets/xxx.png", source, extracted:{ 你从图里读出的数据 } }`
 - **note**(随手记):`data = { text }`
 
 ## 库文件(参考数据)
 
+- `data/profile.json` — 个人信息(年龄/性别/身高/目标/活动系数),用于算每日卡路里需求 TDEE(配合最新体重)
 - `data/plan.json` — 健身计划(推/拉/腿动作安排,含组数次数/目标肌/要点/备用/超级组)
 - `data/foods.json` — **常用食物 / 罐头 / 组合的营养库**(会更新)。每项含份量 `serving` + 营养(`kcal`/`protein`/`fat`/`carb`,有详细表就全存 `sodiumMg` 等),可带 `components`(组合配料)和 `aliases`(别名/口令,如「饼干a」=Skyflakes)。用户报饮食时查库(含别名匹配)算;库里没有就网络估算或问用户,把常吃的存进来复用
 - `动作库.md` — 健身动作详细文字要领
