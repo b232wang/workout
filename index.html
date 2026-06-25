@@ -150,7 +150,7 @@ function tdee(asOf){
   return {kg,bmr:Math.round(bmr),maint,bulk:maint+250};
 }
 
-function splitKeys(){return PLAN.splits.map(s=>s.key)}
+function splitKeys(){return PLAN.cycleOrder||PLAN.splits.map(s=>s.key)}
 function workoutTypeOn(date){const e=TL.entries.find(x=>x.date===date&&x.category==='workout');return e?e.data.type:null}
 function lastWorkoutBefore(date){const ws=TL.entries.filter(x=>x.category==='workout'&&x.date<date).sort(byDateDesc);return ws.length?ws[0].data.type:null}
 function suggestFor(date){const keys=splitKeys();if(!keys.length)return null;const last=lastWorkoutBefore(date);if(last==null)return keys[0];return keys[(keys.indexOf(last)+1)%keys.length]}
@@ -333,7 +333,8 @@ function renderFitness(){
   if(names.length)html+='<select id="exsel">'+names.map(n=>'<option>'+n+'</option>').join('')+'</select><canvas id="trend" height="170"></canvas><div class="muted small" id="trendnote"></div>';
   else html+='<div class="empty">还没有健身记录,报一次训练就能看趋势。</div>';
   html+='</div>';
-  PLAN.splits.forEach(sp=>{
+  const order=splitKeys();
+  [...PLAN.splits].sort((a,b)=>order.indexOf(a.key)-order.indexOf(b.key)).forEach(sp=>{
     html+='<div class="card"><div class="ctitle">'+sp.label+'</div>';
     sp.exercises.forEach(x=>{
       const lr=lastResult(x.name);
