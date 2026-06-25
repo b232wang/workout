@@ -141,7 +141,7 @@ function nutritionHtml(o){
 }
 
 // 体重 & TDEE
-function latestWeight(asOf){const w=TL.entries.filter(e=>e.category==='weight'&&(!asOf||e.date<=asOf)).sort(byDateDesc);return w.length?w[0].data.kg:null}
+function latestWeight(asOf){const ws=TL.entries.filter(e=>e.category==='weight').sort(byDateDesc);if(!ws.length)return null;if(asOf){const m=ws.find(e=>e.date<=asOf);return m?m.data.kg:ws[ws.length-1].data.kg}return ws[0].data.kg}
 function tdee(asOf){
   const kg=latestWeight(asOf);
   if(!kg||!PROFILE.age||!PROFILE.heightCm)return null;
