@@ -32,7 +32,7 @@
 ## 库文件(参考数据)
 
 - `data/plan.json` — 健身计划(推/拉/腿动作安排,含组数次数/目标肌/要点/备用/超级组)
-- `data/foods.json` — 常吃食物的卡路里/份量。用户说「常吃的饼干 150 卡/包」就存进去;以后说「吃了 2 包」你查库算 kcal
+- `data/foods.json` — **常用食物 / 罐头 / 组合的营养库**(会更新)。每项含份量 `serving` + 营养(`kcal`/`protein`/`fat`/`carb`,有详细表就全存 `sodiumMg` 等),可带 `components`(组合配料)和 `aliases`(别名/口令,如「饼干a」=Skyflakes)。用户报饮食时查库(含别名匹配)算;库里没有就网络估算或问用户,把常吃的存进来复用
 - `动作库.md` — 健身动作详细文字要领
 - `拉伸方案.md` — 练前热身 / 练后拉伸
 
@@ -40,7 +40,7 @@
 
 1. **记录任何事** → 追加一条 entry 到 `timeline.json`(date 用当天,选或新定 category,填 data)。同一天同类可多条。
 2. **报健身数据**(如「卧推 60 做了 10/10/8」)→ 当天有 workout entry 就往其 `exercises` 加,否则新建 workout entry。重量 kg、哑铃单只,各组 `{weight,reps}`。
-3. **报饮食**(如「吃了 2 包饼干」)→ 查 `foods.json` 算 kcal 记 diet entry;库里没有就问用户份量/卡路里,先存进库再记。
+3. **报饮食** → 优先查 `foods.json`(含 `aliases` 别名)算每项 kcal/蛋白,记 diet entry(算 `totalKcal` + `totalProtein`);库里没有就网络估算或问用户,常吃的存进库复用。估算的在 `note` 标注。
 4. **「今天练什么 / 该练什么」** → 训练循环**自动顺延**:看 `timeline.json` 里**最近一次 workout 的 type**,练循环下一个(推→拉→腿→推…);从没练过就从推开始。然后读 `plan.json` 对应 split + `动作库.md` 要领,从 timeline 找各动作上次成绩提醒。**休息日不用记任何东西——循环只认「上次练的下一个」,不认日历。**
 5. **「换动作 / 不喜欢」** → 改 `plan.json` 对应动作的 `alternates`。
 6. **回看 / 趋势**(「卧推进步」「今天吃了多少卡」「这周练几次」)→ 从 `timeline.json` 过滤聚合后回答。

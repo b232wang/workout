@@ -1,3 +1,42 @@
 {
-  "foods": []
+  "foods": [
+    {
+      "id": "steel-cut-oats-bowl",
+      "name": "钢切麦片(一碗)",
+      "nameEn": "Steel-cut Oats Bowl",
+      "serving": "1 碗",
+      "components": ["60g 钢切燕麦(干)", "200g 3% 牛奶", "5g 肌酸"],
+      "kcal": 350, "protein": 14, "fat": 10, "carb": 50,
+      "note": "组合估算(肌酸不计热量)"
+    },
+    {
+      "id": "hot-pepper-tuna",
+      "name": "Hot Pepper Tuna 金枪鱼罐头",
+      "nameEn": "Hot Pepper Tuna (canned)",
+      "aliases": ["金枪鱼罐头", "hot pepper tuna"],
+      "serving": "1 罐 150g",
+      "kcal": 200, "protein": 21, "fat": 7, "saturatedFat": 2, "carb": 14,
+      "cholesterolMg": 40, "sodiumMg": 920, "potassiumMg": 500, "calciumMg": 20, "ironMg": 1.25,
+      "note": "用户提供营养表"
+    },
+    {
+      "id": "greek-yogurt",
+      "name": "希腊酸奶",
+      "nameEn": "Greek Yogurt",
+      "aliases": ["希腊酸奶"],
+      "serving": "1/2 cup 115g",
+      "kcal": 90, "protein": 4, "fat": 6, "saturatedFat": 4, "transFat": 0.2, "carb": 5, "sugar": 3,
+      "cholesterolMg": 20, "sodiumMg": 40, "potassiumMg": 175, "calciumMg": 125,
+      "note": "用户提供营养表(每 1/2 cup 115g);蛋白偏低,待用户核对"
+    },
+    {
+      "id": "biscuit-a",
+      "name": "饼干a(蓝色空中霸王 Skyflakes)",
+      "nameEn": "Skyflakes Crackers (blue)",
+      "aliases": ["饼干a", "空中霸王", "skyflakes"],
+      "serving": "1 包 25g",
+      "kcal": 115, "protein": 2.4, "fat": 3, "carb": 19,
+      "note": "网络估算;口令「饼干a」=这个"
+    }
+  ]
 }

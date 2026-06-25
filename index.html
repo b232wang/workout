@@ -159,7 +159,7 @@ function renderCard(e){
   }else if(e.category==='diet'){
     const d=e.data;
     body='<div>'+(d.items||[]).map(i=>i.food+(i.qty?' ×'+i.qty:'')+(i.kcal?' <span class="muted">('+i.kcal+'卡)</span>':'')).join('、')+'</div>';
-    if(d.totalKcal)body+='<div class="muted small">合计 '+d.totalKcal+' 卡</div>';
+    if(d.totalKcal)body+='<div class="muted small">合计 '+d.totalKcal+' 卡'+(d.totalProtein?' · 蛋白 '+d.totalProtein+'g':'')+'</div>';
   }else if(e.category==='walk'){
     const d=e.data;body=[d.durationMin?d.durationMin+' 分钟':'',d.distanceKm?d.distanceKm+' km':''].filter(Boolean).join(' · ')||'活动';
   }else if(e.category==='screenshot'){
@@ -270,9 +270,9 @@ function renderCalendar(){
 function renderCalories(){
   const el=document.getElementById('calories'),diet=TL.entries.filter(e=>e.category==='diet');
   if(!diet.length){el.innerHTML='<div class="wrap"><div class="card empty">还没有饮食记录。<br><br>先告诉我你常吃的东西(如「某饼干 150 卡/包」)存进食物库,以后报「吃了 2 包」我就能算卡路里,这里会出现每日摄入。</div></div>';return}
-  const by={};diet.forEach(e=>{by[e.date]=(by[e.date]||0)+(e.data.totalKcal||0)});
+  const by={};diet.forEach(e=>{const b=by[e.date]=by[e.date]||{kcal:0,protein:0};b.kcal+=(e.data.totalKcal||0);b.protein+=(e.data.totalProtein||0)});
   let html='<div class="wrap"><div class="card"><div class="ctitle">每日摄入(估算)</div>';
-  Object.keys(by).sort().reverse().forEach(d=>html+='<div class="ex"><span>'+d+' <span class="muted small">'+daysAgo(d)+'</span></span><span class="muted">'+by[d]+' 卡</span></div>');
+  Object.keys(by).sort().reverse().forEach(d=>html+='<div class="ex"><span>'+d+' <span class="muted small">'+daysAgo(d)+'</span></span><span class="muted">'+by[d].kcal+' 卡'+(by[d].protein?' · '+by[d].protein+'g 蛋白':'')+'</span></div>');
   el.innerHTML=html+'</div></div>';
 }
 
