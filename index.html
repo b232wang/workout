@@ -261,7 +261,7 @@ function daySummaryHtml(date){
     if(t){
       const gap=tot.kcal-t.bulk, ppk=(tot.protein/t.kg);
       s+='。增肌目标约 '+t.bulk+' 卡,这天'+(gap<-300?('缺口 '+(-gap)+' 卡、明显偏少'):gap>300?('盈余 '+gap+' 卡'):'基本达标');
-      s+=';蛋白 '+ppk.toFixed(1)+'g/kg '+(ppk>=1.6?'(充足)':'(略低于 1.6 下限)')+'。';
+      s+=';蛋白 '+ppk.toFixed(2)+'g/kg '+(ppk>=1.6?'(充足)':'(略低于 1.6 下限)')+'。';
     }
     lines.push(s);
   }else lines.push('饮食:无记录');
