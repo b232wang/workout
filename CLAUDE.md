@@ -24,7 +24,7 @@
 ### 已知 category
 
 - **workout**(健身):`data = { type:"推/拉/腿", round, exercises:[{ name, nameEn, equipment?, equipmentEn?, target?, targetEn?, sets:[{weight,reps}], note? }], comment? }` — 动作配中英文名 `name`/`nameEn`;**器械 `equipment`/`equipmentEn`、部位 `target`/`targetEn`(均中英)、组数重量 `sets` 都可选,提供或可推断才填**;网页里动作可点开,展开看器械/部位;没有的字段就不显示。`comment` 是一句中文评语,显示在训练卡片底部
-- **diet**(饮食):`data = { items:[{ food, qty, unit, kcal }], totalKcal, note? }` — kcal 查 `data/foods.json` 估算
+- **diet**(饮食):`data = { meals:[{ slot:"早餐/中午/晚餐/其他", dishes:[{ name, ref?, kcal, items:[{ name, nameEn, qty, kcal, protein?, fat?, carb?, ... }] }] }], totals:{kcal,protein,carb,fat}, summary }` — 时段(没说归「其他」)> 组 `dish`(显总卡)> 项 `item`(带营养表,用户列了按用户、没列你估)。`ref` 关联 `foods.json` 的 id(网页可点「库」跳转)。`summary` 是你写的全天总结+建议。算 `totals`(全天卡/蛋白/碳水/脂肪)
 - **walk**(散步等轻活动):`data = { durationMin?, distanceKm?, note? }`
 - **screenshot**(截图,如 Apple Workout):图片存 `assets/`,`data = { image:"assets/xxx.png", source, extracted:{ 你从图里读出的数据 } }`
 - **note**(随手记):`data = { text }`

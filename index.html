@@ -29,10 +29,7 @@ header .sub{color:var(--sub);font-size:13px;margin-top:3px}
 .suggest{border-left:3px solid var(--accent)}
 .suggest .big{font-size:20px;font-weight:700}
 .rest .big{color:var(--sub)}
-details summary{cursor:pointer;color:var(--accent);font-size:13px;margin-top:8px;list-style:none}
-details summary::-webkit-details-marker{display:none}
-details summary::before{content:"▸ "}
-details[open] summary::before{content:"▾ "}
+details summary{cursor:pointer}
 .entry .chead{margin-bottom:8px}
 .badge{display:inline-block;color:#fff;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px}
 .entry .ctitle{font-size:14px;margin:2px 0 8px}
@@ -47,7 +44,6 @@ details.exblock summary.exhead::after{content:"›";color:var(--sub);font-size:1
 details.exblock[open] summary.exhead::after{transform:rotate(90deg)}
 .exdetail{font-size:12.5px;color:var(--sub);padding:2px 0 8px 4px}
 .en{color:var(--sub);font-weight:400;font-size:12px}
-.ss{font-size:11px;background:var(--accent);color:#fff;padding:1px 6px;border-radius:6px}
 .note{margin-top:9px;font-size:13px;color:var(--sub);background:rgba(148,163,184,.1);padding:7px 10px;border-radius:9px}
 .comment{margin-top:10px;font-size:13px;line-height:1.6;background:rgba(59,130,246,.08);border-left:3px solid var(--accent);padding:9px 11px;border-radius:8px}
 .shot{max-width:100%;border-radius:10px;margin:4px 0}
@@ -61,9 +57,33 @@ select{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:10
 .alt{font-size:12.5px;color:var(--sub);margin-top:3px}
 .calgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
 .cell{aspect-ratio:1;border-radius:5px;background:var(--line)}
+/* diet 多层 */
+.slot{font-size:12px;font-weight:700;color:var(--diet);margin:12px 0 5px;letter-spacing:.5px}
+.lv1{border:1px solid var(--line);border-radius:10px;margin-bottom:6px;overflow:hidden}
+.row1{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 11px;cursor:pointer;list-style:none;font-size:14px}
+.row1::-webkit-details-marker{display:none}
+.lv1>summary.row1::after,.foodcard>summary.row1::after{content:"›";color:var(--sub);transition:transform .15s;flex:none}
+.lv1[open]>summary.row1::after,.foodcard[open]>summary.row1::after{transform:rotate(90deg)}
+.dishname{flex:1;min-width:0;font-weight:600}
+.lv2{margin:0 9px}
+.lv2+.lv2,.row2+.lv2{border-top:1px dashed var(--line)}
+.row2{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 2px;cursor:pointer;list-style:none;font-size:13.5px}
+.row2::-webkit-details-marker{display:none}
+.itemname{flex:1;min-width:0}
+details.lv2>summary.row2::after{content:"营养 ›";color:var(--sub);font-size:11px;flex:none}
+details.lv2[open]>summary.row2::after{content:"营养 ▾"}
+.nutri{padding:4px 10px 10px}
+.nrow{display:flex;justify-content:space-between;font-size:12.5px;padding:2px 0}
+.nrow span:first-child{color:var(--sub)}
+.nmuted span{color:var(--sub)}
+.totals{margin-top:12px;font-size:13px;font-weight:600;background:rgba(16,185,129,.1);padding:9px 11px;border-radius:8px;border-left:3px solid var(--walk)}
+.reflink{font-size:11px;background:rgba(59,130,246,.13);color:var(--accent);border:none;border-radius:6px;padding:2px 7px;cursor:pointer;margin-left:6px;font-weight:500}
+.foodcard{padding:0}
+.foodcard>summary.row1{padding:13px 15px}
+.foodcard.flash{outline:2px solid var(--accent);outline-offset:-2px}
 nav.tabs{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);display:flex;padding:7px 0 calc(7px + env(safe-area-inset-bottom));z-index:20}
-nav.tabs button{background:none;border:none;font-size:11px;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;flex:1}
-nav.tabs button .ico{font-size:21px;line-height:1}
+nav.tabs button{background:none;border:none;font-size:10.5px;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;flex:1}
+nav.tabs button .ico{font-size:20px;line-height:1}
 nav.tabs button.active{color:var(--accent)}
 section{display:none}section.active{display:block}
 </style>
@@ -78,15 +98,16 @@ section{display:none}section.active{display:block}
   <section id="fitness"></section>
   <section id="calendar"></section>
   <section id="calories"></section>
+  <section id="foods"></section>
 </main>
 <nav class="tabs">
   <button data-tab="today" class="active"><span class="ico">📆</span>今天</button>
   <button data-tab="fitness"><span class="ico">🏋️</span>健身</button>
   <button data-tab="calendar"><span class="ico">📅</span>日历</button>
   <button data-tab="calories"><span class="ico">🔥</span>卡路里</button>
+  <button data-tab="foods"><span class="ico">🥫</span>食物库</button>
 </nav>
 <script>
-// ── 可扩展的核心:category 注册表。加新类别只要往这里加一项 ──
 const CATEGORIES={
   workout:{label:'健身',emoji:'🏋️',color:'var(--workout)'},
   diet:{label:'饮食',emoji:'🍽️',color:'var(--diet)'},
@@ -103,7 +124,6 @@ let selDate=iso(new Date());
 function addDays(date,n){const d=new Date(date+'T00:00:00');d.setDate(d.getDate()+n);return iso(d)}
 function daysAgo(date){const d=new Date(date+'T00:00:00');const t=new Date();t.setHours(0,0,0,0);const n=Math.round((t-d)/86400000);return n===0?'今天':n===1?'昨天':n>0?n+'天前':(-n)+'天后'}
 function byDateDesc(a,b){return a.date<b.date?1:a.date>b.date?-1:0}
-// 有提供重量/次数才返回字符串, 全空返回 ''(没提供就不写)
 function fmtSets(sets){
   if(!sets||!sets.length)return '';
   if(sets.every(s=>s.weight==null&&s.reps==null))return '';
@@ -112,12 +132,29 @@ function fmtSets(sets){
   if(sameW&&w!=null)return w+'kg × '+reps;
   return sets.map(s=>(s.weight==null?'?':s.weight)+'kg×'+(s.reps==null?'?':s.reps)).join(', ');
 }
+// 营养表(有的字段才显示)
+function nutritionHtml(o){
+  const map=[['protein','蛋白','g'],['fat','脂肪','g'],['saturatedFat','饱和脂肪','g'],['transFat','反式脂肪','g'],['carb','碳水','g'],['sugar','糖','g'],['cholesterolMg','胆固醇','mg'],['sodiumMg','钠','mg'],['potassiumMg','钾','mg'],['calciumMg','钙','mg'],['ironMg','铁','mg']];
+  const rows=map.filter(m=>o[m[0]]!=null).map(m=>'<div class="nrow"><span>'+m[1]+'</span><span>'+o[m[0]]+m[2]+'</span></div>');
+  if(o.note)rows.push('<div class="nrow nmuted"><span>备注</span><span>'+o.note+'</span></div>');
+  return rows.length?'<div class="nutri">'+rows.join('')+'</div>':'';
+}
 
-// ── 训练循环:只认"上次练的下一个",不认日历 ──
 function splitKeys(){return PLAN.splits.map(s=>s.key)}
 function workoutTypeOn(date){const e=TL.entries.find(x=>x.date===date&&x.category==='workout');return e?e.data.type:null}
 function lastWorkoutBefore(date){const ws=TL.entries.filter(x=>x.category==='workout'&&x.date<date).sort(byDateDesc);return ws.length?ws[0].data.type:null}
 function suggestFor(date){const keys=splitKeys();if(!keys.length)return null;const last=lastWorkoutBefore(date);if(last==null)return keys[0];return keys[(keys.indexOf(last)+1)%keys.length]}
+
+function switchTab(name){
+  document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));
+  document.querySelectorAll('section').forEach(s=>s.classList.toggle('active',s.id===name));
+}
+function gotoFood(ev,id){
+  ev.preventDefault();ev.stopPropagation();
+  switchTab('foods');
+  const el=document.getElementById('food-'+id);
+  if(el){el.open=true;el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('flash');setTimeout(()=>el.classList.remove('flash'),1600);}
+}
 
 async function load(){
   try{
@@ -129,14 +166,13 @@ async function load(){
     TL=tl;PLAN=plan;FOODS=foods;
   }catch(e){
     document.getElementById('subline').textContent='数据加载失败';
-    document.getElementById('today').innerHTML='<div class="wrap"><div class="card empty">数据加载失败:'+e.message+'<br><br>本地预览要用 http 服务器打开(<code>file://</code> 读不到 JSON)。</div></div>';
+    document.getElementById('today').innerHTML='<div class="wrap"><div class="card empty">数据加载失败:'+e.message+'<br><br>本地预览要用 http 服务器打开。</div></div>';
     return;
   }
   document.getElementById('subline').textContent=TL.entries.length+' 条记录 · '+new Set(TL.entries.map(e=>e.date)).size+' 天';
-  renderDay();renderFitness();renderCalendar();renderCalories();
+  renderDay();renderFitness();renderCalendar();renderCalories();renderFoods();
 }
 
-// 单个动作: 名(双语) + 重量(有才写) + 器械(有才写)
 function exerciseHtml(x){
   const s=fmtSets(x.sets);
   const nameHtml=x.name+(x.nameEn?' <span class="en">'+x.nameEn+'</span>':'');
@@ -149,6 +185,27 @@ function exerciseHtml(x){
   return '<details class="exblock"><summary class="exhead"><span class="exname">'+nameHtml+'</span>'+right+'</summary>'+meta.join('')+'</details>';
 }
 
+function dietHtml(d){
+  let body='';
+  (d.meals||[]).forEach(m=>{
+    body+='<div class="slot">'+(m.slot||'其他')+'</div>';
+    (m.dishes||[]).forEach(dish=>{
+      let items='';
+      (dish.items||[]).forEach(it=>{
+        const nut=nutritionHtml(it);
+        const head='<span class="itemname">'+it.name+(it.qty?' <span class="en">'+it.qty+'</span>':'')+'</span>'+(it.kcal!=null?'<span class="muted">'+it.kcal+' 卡</span>':'');
+        items+=nut?'<details class="lv2"><summary class="row2">'+head+'</summary>'+nut+'</details>':'<div class="lv2"><div class="row2">'+head+'</div></div>';
+      });
+      const ref=dish.ref?' <button class="reflink" onclick="gotoFood(event,\''+dish.ref+'\')">库 ›</button>':'';
+      const dhead='<span class="dishname">'+dish.name+ref+'</span>'+(dish.kcal!=null?'<span class="muted">'+dish.kcal+' 卡</span>':'');
+      body+='<details class="lv1"><summary class="row1">'+dhead+'</summary>'+items+'</details>';
+    });
+  });
+  if(d.totals){const t=d.totals;body+='<div class="totals">全天 '+t.kcal+' 卡 · 蛋白 '+t.protein+'g · 碳水 '+t.carb+'g · 脂肪 '+t.fat+'g</div>';}
+  if(d.summary)body+='<div class="comment">'+d.summary+'</div>';
+  return body;
+}
+
 function renderCard(e){
   const c=cat(e.category);let body='';
   if(e.category==='workout'){
@@ -157,9 +214,7 @@ function renderCard(e){
     body+='<div class="ex-list">'+(d.exercises||[]).map(exerciseHtml).join('')+'</div>';
     if(d.comment)body+='<div class="comment">'+d.comment+'</div>';
   }else if(e.category==='diet'){
-    const d=e.data;
-    body='<div>'+(d.items||[]).map(i=>i.food+(i.qty?' ×'+i.qty:'')+(i.kcal?' <span class="muted">('+i.kcal+'卡)</span>':'')).join('、')+'</div>';
-    if(d.totalKcal)body+='<div class="muted small">合计 '+d.totalKcal+' 卡'+(d.totalProtein?' · 蛋白 '+d.totalProtein+'g':'')+'</div>';
+    body=dietHtml(e.data);
   }else if(e.category==='walk'){
     const d=e.data;body=[d.durationMin?d.durationMin+' 分钟':'',d.distanceKm?d.distanceKm+' km':''].filter(Boolean).join(' · ')||'活动';
   }else if(e.category==='screenshot'){
@@ -172,7 +227,6 @@ function renderCard(e){
   return '<div class="card entry" style="border-left:3px solid '+c.color+'"><div class="chead"><span class="badge" style="background:'+c.color+'">'+c.emoji+' '+c.label+'</span></div>'+body+(e.note?'<div class="note">'+e.note+'</div>':'')+'</div>';
 }
 
-// ── 当天视图:默认今天,可翻天 ──
 function renderDay(){
   const el=document.getElementById('today');
   const d=selDate, todayStr=iso(new Date());
@@ -186,7 +240,7 @@ function renderDay(){
   }else if(d>=todayStr){
     const sug=suggestFor(d), sp=PLAN.splits.find(s=>s.key===sug);
     html+='<div class="card suggest"><div class="muted small">'+(d===todayStr?'今天建议':'建议')+'(循环顺延)</div><div class="big">练 '+(sp?sp.label:sug)+'</div>';
-    if(sp)html+='<details><summary>看动作</summary>'+sp.exercises.map(x=>'<div class="ex"><span>'+x.name+(x.superset?' <span class="ss">超'+x.superset+'</span>':'')+'</span><span class="muted">'+x.setsReps+'</span></div>').join('')+'</details>';
+    if(sp)html+='<details><summary class="muted small" style="margin-top:8px;list-style:none">▸ 看动作</summary>'+sp.exercises.map(x=>'<div class="ex"><span>'+x.name+(x.superset?' 〔超'+x.superset+'〕':'')+'</span><span class="muted">'+x.setsReps+'</span></div>').join('')+'</details>';
     html+='</div>';
   }else{
     html+='<div class="card suggest rest"><div class="muted small">'+d+' · '+daysAgo(d)+'</div><div class="big">休息日</div><div class="muted small">这天没有训练记录</div></div>';
@@ -241,7 +295,7 @@ function renderFitness(){
     html+='<div class="card"><div class="ctitle">'+sp.label+'</div>';
     sp.exercises.forEach(x=>{
       const lr=lastResult(x.name);
-      html+='<div class="planex"><div class="pe-head"><b>'+x.name+'</b>'+(x.superset?'<span class="ss">超'+x.superset+'</span>':'')+'<span class="muted">'+x.setsReps+'</span></div>';
+      html+='<div class="planex"><div class="pe-head"><b>'+x.name+'</b>'+(x.superset?'<span class="en">〔超'+x.superset+'〕</span>':'')+'<span class="muted">'+x.setsReps+'</span></div>';
       html+='<div class="muted small">'+x.target+' · '+x.cue+'</div>';
       if(lr){const s=fmtSets(lr.sets);html+='<div class="last">上次('+daysAgo(lr.date)+')'+(s?': '+s:' 练过(没记重量)')+'</div>';}
       html+='<div class="alt">备用:'+x.alternates.join(' / ')+'</div></div>';
@@ -269,18 +323,28 @@ function renderCalendar(){
 
 function renderCalories(){
   const el=document.getElementById('calories'),diet=TL.entries.filter(e=>e.category==='diet');
-  if(!diet.length){el.innerHTML='<div class="wrap"><div class="card empty">还没有饮食记录。<br><br>先告诉我你常吃的东西(如「某饼干 150 卡/包」)存进食物库,以后报「吃了 2 包」我就能算卡路里,这里会出现每日摄入。</div></div>';return}
-  const by={};diet.forEach(e=>{const b=by[e.date]=by[e.date]||{kcal:0,protein:0};b.kcal+=(e.data.totalKcal||0);b.protein+=(e.data.totalProtein||0)});
+  if(!diet.length){el.innerHTML='<div class="wrap"><div class="card empty">还没有饮食记录。</div></div>';return}
+  const by={};diet.forEach(e=>{const t=e.data.totals||{};const b=by[e.date]=by[e.date]||{kcal:0,protein:0};b.kcal+=(t.kcal||e.data.totalKcal||0);b.protein+=(t.protein||e.data.totalProtein||0)});
   let html='<div class="wrap"><div class="card"><div class="ctitle">每日摄入(估算)</div>';
   Object.keys(by).sort().reverse().forEach(d=>html+='<div class="ex"><span>'+d+' <span class="muted small">'+daysAgo(d)+'</span></span><span class="muted">'+by[d].kcal+' 卡'+(by[d].protein?' · '+by[d].protein+'g 蛋白':'')+'</span></div>');
   el.innerHTML=html+'</div></div>';
 }
 
-document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.remove('active'));
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active');
-});
+function renderFoods(){
+  const el=document.getElementById('foods');
+  if(!FOODS.foods||!FOODS.foods.length){el.innerHTML='<div class="wrap"><div class="card empty">食物库还是空的。报饮食时我会把你给过的食物存进来。</div></div>';return}
+  let html='<div class="wrap"><div class="card"><div class="ctitle">食物库 · Food Library</div><div class="muted small">你给过的组合和单品都在这,点开看营养。报饮食时我从这里查;数据变了告诉我就更新。</div></div>';
+  FOODS.foods.forEach(f=>{
+    html+='<details class="card foodcard" id="food-'+f.id+'"><summary class="row1"><span class="dishname"><b>'+f.name+'</b>'+(f.nameEn?' <span class="en">'+f.nameEn+'</span>':'')+'</span><span class="muted small">'+(f.serving||'')+(f.kcal!=null?' · '+f.kcal+'卡':'')+'</span></summary>';
+    if(f.components)html+='<div class="nutri"><div class="nrow nmuted"><span>配料</span><span>'+f.components.join(' + ')+'</span></div></div>';
+    html+=nutritionHtml(f);
+    if(f.aliases&&f.aliases.length)html+='<div class="nutri"><div class="nrow nmuted"><span>别名/口令</span><span>'+f.aliases.join('、')+'</span></div></div>';
+    html+='</details>';
+  });
+  el.innerHTML=html+'</div>';
+}
+
+document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
 load();
 </script>
 </body>

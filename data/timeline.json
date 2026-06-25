@@ -24,20 +24,47 @@
       "date": "2026-06-23",
       "category": "diet",
       "data": {
-        "items": [
-          { "food": "钢切麦片(一碗)", "qty": 1, "kcal": 350, "protein": 14 },
-          { "food": "咖啡", "qty": 1, "kcal": 5, "note": "按黑咖啡估" },
-          { "food": "饼干a(Skyflakes)", "qty": 1, "unit": "包", "kcal": 115, "protein": 2.4 },
-          { "food": "鸡蛋", "qty": 2, "kcal": 140, "protein": 12 },
-          { "food": "虾", "qty": 250, "unit": "g", "kcal": 250, "protein": 60 },
-          { "food": "Hot Pepper Tuna 金枪鱼罐头", "qty": 1, "unit": "罐", "kcal": 200, "protein": 21 },
-          { "food": "香蕉", "qty": 1, "kcal": 105, "protein": 1 },
-          { "food": "希腊酸奶2勺+蓝莓+坚果", "qty": 1, "kcal": 190, "protein": 6, "note": "份量粗估" },
-          { "food": "土豆", "qty": 300, "unit": "g", "kcal": 230, "protein": 6, "note": "2 个约 300g,按水煮估" }
+        "meals": [
+          {
+            "slot": "其他",
+            "dishes": [
+              { "name": "一碗钢切麦片", "ref": "steel-cut-oats-bowl", "kcal": 350, "items": [
+                { "name": "钢切燕麦", "nameEn": "Steel-cut Oats", "qty": "60g", "kcal": 227, "protein": 8, "fat": 4, "carb": 40 },
+                { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
+                { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
+              ] },
+              { "name": "咖啡", "kcal": 5, "items": [
+                { "name": "黑咖啡", "nameEn": "Black Coffee", "qty": "1 杯", "kcal": 5, "note": "估算" }
+              ] },
+              { "name": "饼干a", "ref": "biscuit-a", "kcal": 115, "items": [
+                { "name": "Skyflakes 空中霸王", "nameEn": "Skyflakes", "qty": "1 包 25g", "kcal": 115, "protein": 2.4, "fat": 3, "carb": 19 }
+              ] },
+              { "name": "鸡蛋", "kcal": 140, "items": [
+                { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
+              ] },
+              { "name": "虾", "kcal": 250, "items": [
+                { "name": "虾", "nameEn": "Shrimp", "qty": "250g", "kcal": 250, "protein": 60, "fat": 2, "carb": 0, "note": "通用值估算" }
+              ] },
+              { "name": "辣味金枪鱼罐头", "ref": "hot-pepper-tuna", "kcal": 200, "items": [
+                { "name": "Hot Pepper Tuna", "nameEn": "Hot Pepper Tuna", "qty": "1 罐 150g", "kcal": 200, "protein": 21, "fat": 7, "saturatedFat": 2, "carb": 14, "sodiumMg": 920 }
+              ] },
+              { "name": "香蕉", "kcal": 105, "items": [
+                { "name": "香蕉", "nameEn": "Banana", "qty": "1 根", "kcal": 105, "protein": 1, "fat": 0, "carb": 27 }
+              ] },
+              { "name": "希腊酸奶配蓝莓坚果", "ref": "greek-yogurt", "kcal": 187, "items": [
+                { "name": "希腊酸奶", "nameEn": "Greek Yogurt", "qty": "2 勺 ~60g", "kcal": 47, "protein": 2, "fat": 3, "carb": 3, "note": "份量粗估" },
+                { "name": "蓝莓", "nameEn": "Blueberries", "qty": "一把", "kcal": 40, "protein": 0, "fat": 0, "carb": 10, "note": "估算" },
+                { "name": "坚果", "nameEn": "Nuts", "qty": "一把", "kcal": 100, "protein": 4, "fat": 9, "carb": 4, "note": "估算" }
+              ] },
+              { "name": "土豆", "kcal": 230, "items": [
+                { "name": "土豆", "nameEn": "Potato", "qty": "2 个 ~300g", "kcal": 230, "protein": 6, "fat": 0, "carb": 51, "note": "按水煮估" }
+              ] }
+            ]
+          }
         ],
-        "totalKcal": 1585,
-        "totalProtein": 123,
-        "note": "卡路里/蛋白为估算;咖啡按黑咖啡,虾、酸奶、蓝莓坚果、土豆份量/做法粗估"
+        "totals": { "kcal": 1582, "protein": 123, "carb": 179, "fat": 44 },
+        "summary": "全天约 1582 卡:蛋白 123g(很足,增肌够用)、碳水 179g、脂肪 44g。蛋白来源丰富(虾、金枪鱼、鸡蛋、酸奶)。若今天是训练日,这个热量对增肌略偏低,可再加一份碳水(米饭/燕麦)顶到盈余;脂肪适中。",
+        "note": "未列出营养的项为估算"
       }
     },
     {
