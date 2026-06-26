@@ -1,6 +1,44 @@
 {
   "entries": [
     {
+      "id": "2026-06-26-workout-1",
+      "date": "2026-06-26",
+      "category": "workout",
+      "data": {
+        "type": "拉",
+        "round": 1,
+        "exercises": [
+          { "name": "器械高位下拉", "nameEn": "Lat Pulldown (Machine)", "equipment": "高位下拉器械", "equipmentEn": "Lat Pulldown Machine", "target": "背阔肌", "targetEn": "Latissimus Dorsi", "sets": [
+            { "weight": 80, "reps": 12 },
+            { "weight": 90, "reps": 12 },
+            { "weight": 100, "reps": 10 },
+            { "weight": 100, "reps": 10 },
+            { "weight": 100, "reps": 10 }
+          ], "note": "重量为磅(器械刻度);首组 80磅×12 热身" },
+          { "name": "辅助引体向上", "nameEn": "Assisted Pull-up", "equipment": "辅助引体机", "equipmentEn": "Assisted Pull-up Machine", "target": "背阔肌", "targetEn": "Latissimus Dorsi", "sets": [
+            { "weight": 34, "reps": 6 },
+            { "weight": 34, "reps": 8 },
+            { "weight": 34, "reps": 8 },
+            { "weight": 34, "reps": 8 },
+            { "weight": 34, "reps": 8 }
+          ], "note": "weight 为辅助配重 34kg,越大越省力(≈ 体重−34kg),非负重" },
+          { "name": "坐姿划船", "nameEn": "Seated Row", "equipment": "坐姿划船器械", "equipmentEn": "Seated Row Machine", "target": "中背/背阔肌", "targetEn": "Mid-back & Lats", "sets": [
+            { "weight": 70, "reps": 10 },
+            { "weight": 70, "reps": 8 },
+            { "weight": 70, "reps": 10 },
+            { "weight": 70, "reps": 10 }
+          ], "note": "重量为磅;坐姿水平向后拉" },
+          { "name": "高位下拉(曲柄宽握杆)", "nameEn": "Lat Pulldown (Cambered Bar)", "equipment": "高位下拉器械 + 曲柄宽握杆", "equipmentEn": "Lat Pulldown + Cambered Bar", "target": "背阔肌(宽度)", "targetEn": "Latissimus Dorsi (width)", "sets": [
+            { "weight": 85, "reps": 6 },
+            { "weight": 85, "reps": 8 },
+            { "weight": 85, "reps": 8 }
+          ], "note": "重量为磅;中间直两边弯的宽握杆" }
+        ],
+        "comment": "拉伤没好还能把背练得挺全,而且全挑器械和辅助引体、轨迹可控、没碰自由重量,这点很稳。两个高位下拉(机器 100磅×10×3 + 曲柄杆 85磅)宽度厚度都顾到了;坐姿划船 70磅中间掉到 8 次说明真到力竭、重量合适;引体辅助 34kg 能做 8 次,等拉伤好了可减到 30kg 进阶。恢复优先:拉伤期间下拉/划船拉到末端有牵扯感就别拉到底、收一点幅度,宁可降重也别代偿发力;练后轻拉伸+热敷,蛋白和睡眠务必跟上。只要不是关节痛或刺痛,48–72h 轻量活动促血流反而帮恢复,但别再往上加量。"
+      },
+      "note": "背部有拉伤未愈,以恢复为主;重量除引体辅助(kg)外均为磅(PF 器械刻度)"
+    },
+    {
       "id": "2026-06-26-diet-1",
       "date": "2026-06-26",
       "category": "diet",
