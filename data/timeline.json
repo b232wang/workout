@@ -7,6 +7,63 @@
       "data": { "kg": 78 }
     },
     {
+      "id": "2026-06-25-diet-1",
+      "date": "2026-06-25",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "早餐",
+            "dishes": [
+              { "name": "一碗钢切麦片", "ref": "steel-cut-oats-bowl", "kcal": 350, "items": [
+                { "name": "钢切燕麦", "nameEn": "Steel-cut Oats", "qty": "60g", "kcal": 227, "protein": 8, "fat": 4, "carb": 40 },
+                { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
+                { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
+              ] },
+              { "name": "咖啡", "kcal": 5, "items": [
+                { "name": "黑咖啡", "nameEn": "Black Coffee", "qty": "1 杯", "kcal": 5, "note": "估算" }
+              ] }
+            ]
+          },
+          {
+            "slot": "午餐",
+            "dishes": [
+              { "name": "饼干a", "ref": "biscuit-a", "kcal": 345, "items": [
+                { "name": "Skyflakes 空中霸王", "nameEn": "Skyflakes", "qty": "3 包(75g)", "kcal": 345, "protein": 7.2, "fat": 9, "carb": 57 }
+              ] },
+              { "name": "鸡蛋", "kcal": 140, "items": [
+                { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
+              ] }
+            ]
+          },
+          {
+            "slot": "晚餐",
+            "dishes": [
+              { "name": "土豆", "kcal": 268, "items": [
+                { "name": "土豆", "nameEn": "Potato", "qty": "350g", "kcal": 268, "protein": 7, "fat": 0, "carb": 60, "note": "按水煮估" }
+              ] },
+              { "name": "虾", "kcal": 134, "items": [
+                { "name": "虾", "nameEn": "Shrimp", "qty": "134g", "kcal": 134, "protein": 32, "fat": 1, "carb": 0, "note": "通用值估算" }
+              ] },
+              { "name": "蓝莓桑葚 + 希腊酸奶 + 坚果", "ref": "greek-yogurt", "kcal": 707, "items": [
+                { "name": "蓝莓桑葚", "nameEn": "Blueberry & Mulberry", "qty": "~120g", "kcal": 60, "protein": 1, "fat": 0, "carb": 15, "note": "估算" },
+                { "name": "希腊酸奶", "nameEn": "Greek Yogurt", "qty": "2 勺 ~60g", "kcal": 47, "protein": 2, "fat": 3, "carb": 3, "note": "份量粗估" },
+                { "name": "坚果 mix", "nameEn": "Nut Mix", "qty": "~100g", "kcal": 600, "protein": 20, "fat": 52, "carb": 20, "note": "通用混合坚果 ~600卡/100g 估算" }
+              ] },
+              { "name": "鸡蛋", "kcal": 140, "items": [
+                { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
+              ] },
+              { "name": "辣吞拿", "ref": "hot-pepper-tuna", "kcal": 200, "items": [
+                { "name": "Hot Pepper Tuna", "nameEn": "Hot Pepper Tuna", "qty": "1 罐 150g", "kcal": 200, "protein": 21, "fat": 7, "saturatedFat": 2, "carb": 14, "sodiumMg": 920 }
+              ] }
+            ]
+          }
+        ],
+        "totals": { "kcal": 2289, "protein": 127, "carb": 221, "fat": 102 },
+        "note": "部分份量/做法为估算;坚果 mix 按通用 ~600卡/100g"
+      }
+    },
+    {
       "id": "2026-06-23-workout-1",
       "date": "2026-06-23",
       "category": "workout",
