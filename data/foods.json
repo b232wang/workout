@@ -40,13 +40,13 @@
     },
     {
       "id": "coffee-latte",
-      "name": "咖啡(牛奶 + 浓缩)",
-      "nameEn": "Latte (milk + espresso)",
-      "aliases": ["咖啡"],
-      "serving": "1 杯",
-      "components": ["100g 3% 牛奶", "Nespresso espresso 胶囊"],
+      "name": "咖啡(自制:牛奶 + 浓缩)",
+      "nameEn": "Homemade Latte (milk + espresso)",
+      "aliases": ["咖啡", "拿铁"],
+      "serving": "1 杯(牛奶 100–200g + espresso)",
+      "components": ["100–200g 3% 牛奶", "Nespresso espresso 胶囊"],
       "kcal": 65, "protein": 3, "fat": 3, "carb": 5,
-      "note": "牛奶 ~60卡 + espresso ~5卡"
+      "note": "基准按 100g 牛奶 ≈65卡;牛奶每 +100g 约 +60卡(200g≈125卡),记录时按当次牛奶量算"
     }
   ]
 }
