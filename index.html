@@ -199,7 +199,8 @@ function exerciseHtml(x){
 function dietHtml(d){
   let body='';
   (d.meals||[]).forEach(m=>{
-    body+='<div class="slot">'+(m.slot||'其他')+'</div>';
+    const slotKcal=(m.dishes||[]).reduce((a,x)=>a+(x.kcal||0),0);
+    body+='<div class="slot">'+(m.slot||'其他')+' · '+slotKcal+' 卡</div>';
     (m.dishes||[]).forEach(dish=>{
       const items=dish.items||[];
       const ref=dish.ref?' <button class="reflink" onclick="gotoFood(event,\''+dish.ref+'\')">库 ›</button>':'';
@@ -260,8 +261,9 @@ function daySummaryHtml(date){
     let s='饮食:摄入 '+tot.kcal+' 卡(蛋白 '+tot.protein+'g / 碳水 '+tot.carb+'g / 脂肪 '+tot.fat+'g)';
     if(t){
       const gap=tot.kcal-t.bulk, ppk=(tot.protein/t.kg);
+      const pr=PROFILE.proteinPerKg||[1.6,2], pLow=Math.round(t.kg*pr[0]), pHigh=Math.round(t.kg*pr[1]);
       s+='。增肌目标约 '+t.bulk+' 卡,这天'+(gap<-300?('缺口 '+(-gap)+' 卡、明显偏少'):gap>300?('盈余 '+gap+' 卡'):'基本达标');
-      s+=';蛋白 '+ppk.toFixed(2)+'g/kg '+(ppk>=1.6?'(充足)':'(略低于 1.6 下限)')+'。';
+      s+=';蛋白 '+tot.protein+'g('+ppk.toFixed(2)+'g/kg),目标 '+pLow+'-'+pHigh+'g '+(tot.protein>=pLow?'(达标)':('(还差 '+(pLow-tot.protein)+'g)'))+'。';
     }
     lines.push(s);
   }else lines.push('饮食:无记录');
@@ -374,6 +376,8 @@ function renderCalories(){
     html+='<div class="ex"><span>BMR 基础代谢</span><span class="muted">'+t.bmr+' 卡</span></div>';
     html+='<div class="ex"><span>维持需求</span><span class="muted">'+t.maint+' 卡/天</span></div>';
     html+='<div class="ex"><span>增肌目标</span><span class="muted">'+t.bulk+' 卡/天</span></div>';
+    const pr=PROFILE.proteinPerKg||[1.6,2];
+    html+='<div class="ex"><span>蛋白目标</span><span class="muted">'+Math.round(t.kg*pr[0])+'-'+Math.round(t.kg*pr[1])+' g/天</span></div>';
     const ws=TL.entries.filter(e=>e.category==='weight').sort((a,b)=>a.date<b.date?-1:1);
     if(ws.length>1)html+='<canvas id="wchart" height="150" style="margin-top:10px"></canvas>';
     else html+='<div class="muted small" style="margin-top:8px">再记几次体重就能看变化趋势。</div>';
