@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "id": "2026-06-26-diet-1",
+      "date": "2026-06-26",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "早餐",
+            "dishes": [
+              { "name": "一碗钢切麦片", "ref": "steel-cut-oats-bowl", "kcal": 350, "items": [
+                { "name": "钢切燕麦", "nameEn": "Steel-cut Oats", "qty": "60g", "kcal": 227, "protein": 8, "fat": 4, "carb": 40 },
+                { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
+                { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
+              ] },
+              { "name": "咖啡", "ref": "coffee-latte", "kcal": 95, "items": [
+                { "name": "咖啡(自制)", "nameEn": "Homemade Latte", "qty": "150g 牛奶 + espresso", "kcal": 95, "protein": 5, "fat": 5, "carb": 7 }
+              ] }
+            ]
+          }
+        ],
+        "totals": { "kcal": 445, "protein": 20, "carb": 57, "fat": 15 },
+        "note": "麦片/咖啡按食物库估算"
+      }
+    },
+    {
       "id": "2026-06-25-weight-1",
       "date": "2026-06-25",
       "category": "weight",
