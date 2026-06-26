@@ -18,10 +18,24 @@
                 { "name": "咖啡(自制)", "nameEn": "Homemade Latte", "qty": "150g 牛奶 + espresso", "kcal": 95, "protein": 5, "fat": 5, "carb": 7 }
               ] }
             ]
+          },
+          {
+            "slot": "午餐",
+            "dishes": [
+              { "name": "饼干a", "ref": "biscuit-a", "kcal": 115, "items": [
+                { "name": "Skyflakes 空中霸王", "nameEn": "Skyflakes", "qty": "1 包 25g", "kcal": 115, "protein": 2.4, "fat": 3, "carb": 19 }
+              ] },
+              { "name": "香蕉", "kcal": 105, "items": [
+                { "name": "香蕉", "nameEn": "Banana", "qty": "1 根", "kcal": 105, "protein": 1, "fat": 0, "carb": 27 }
+              ] },
+              { "name": "鸡蛋", "kcal": 140, "items": [
+                { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
+              ] }
+            ]
           }
         ],
-        "totals": { "kcal": 445, "protein": 20, "carb": 57, "fat": 15 },
-        "note": "麦片/咖啡按食物库估算"
+        "totals": { "kcal": 805, "protein": 35, "carb": 104, "fat": 28 },
+        "note": "麦片/咖啡按食物库估算;香蕉为常见食物估算"
       }
     },
     {
