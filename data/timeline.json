@@ -20,8 +20,8 @@
                 { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
                 { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
               ] },
-              { "name": "咖啡", "kcal": 5, "items": [
-                { "name": "黑咖啡", "nameEn": "Black Coffee", "qty": "1 杯", "kcal": 5, "note": "估算" }
+              { "name": "咖啡", "ref": "coffee-latte", "kcal": 65, "items": [
+                { "name": "咖啡(牛奶+浓缩)", "nameEn": "Latte", "qty": "100g 牛奶 + espresso", "kcal": 65, "protein": 3, "fat": 3, "carb": 5 }
               ] }
             ]
           },
@@ -45,10 +45,10 @@
               { "name": "虾", "kcal": 134, "items": [
                 { "name": "虾", "nameEn": "Shrimp", "qty": "134g", "kcal": 134, "protein": 32, "fat": 1, "carb": 0, "note": "通用值估算" }
               ] },
-              { "name": "蓝莓桑葚 + 希腊酸奶 + 坚果", "ref": "greek-yogurt", "kcal": 707, "items": [
+              { "name": "蓝莓桑葚 + 希腊酸奶 + 坚果", "ref": "greek-yogurt", "kcal": 317, "items": [
                 { "name": "蓝莓桑葚", "nameEn": "Blueberry & Mulberry", "qty": "~120g", "kcal": 60, "protein": 1, "fat": 0, "carb": 15, "note": "估算" },
                 { "name": "希腊酸奶", "nameEn": "Greek Yogurt", "qty": "2 勺 ~60g", "kcal": 47, "protein": 2, "fat": 3, "carb": 3, "note": "份量粗估" },
-                { "name": "坚果 mix", "nameEn": "Nut Mix", "qty": "~100g", "kcal": 600, "protein": 20, "fat": 52, "carb": 20, "note": "通用混合坚果 ~600卡/100g 估算" }
+                { "name": "坚果 mix", "nameEn": "Nut Mix", "qty": "35g", "kcal": 210, "protein": 7, "fat": 18, "carb": 7, "note": "混合坚果 ~600卡/100g" }
               ] },
               { "name": "鸡蛋", "kcal": 140, "items": [
                 { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
@@ -59,7 +59,7 @@
             ]
           }
         ],
-        "totals": { "kcal": 2289, "protein": 127, "carb": 221, "fat": 102 },
+        "totals": { "kcal": 1959, "protein": 118, "carb": 213, "fat": 71 },
         "note": "部分份量/做法为估算;坚果 mix 按通用 ~600卡/100g"
       }
     },
@@ -96,8 +96,8 @@
                 { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
                 { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
               ] },
-              { "name": "咖啡", "kcal": 5, "items": [
-                { "name": "黑咖啡", "nameEn": "Black Coffee", "qty": "1 杯", "kcal": 5, "note": "估算" }
+              { "name": "咖啡", "ref": "coffee-latte", "kcal": 65, "items": [
+                { "name": "咖啡(牛奶+浓缩)", "nameEn": "Latte", "qty": "100g 牛奶 + espresso", "kcal": 65, "protein": 3, "fat": 3, "carb": 5 }
               ] },
               { "name": "饼干a", "ref": "biscuit-a", "kcal": 115, "items": [
                 { "name": "Skyflakes 空中霸王", "nameEn": "Skyflakes", "qty": "1 包 25g", "kcal": 115, "protein": 2.4, "fat": 3, "carb": 19 }
@@ -125,7 +125,7 @@
             ]
           }
         ],
-        "totals": { "kcal": 1582, "protein": 123, "carb": 179, "fat": 44 },
+        "totals": { "kcal": 1642, "protein": 126, "carb": 184, "fat": 47 },
         "note": "未列出营养的项为估算"
       }
     },
