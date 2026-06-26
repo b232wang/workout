@@ -42,7 +42,7 @@
 
 1. **记录任何事** → 追加一条 entry 到 `timeline.json`(date 用当天,选或新定 category,填 data)。同一天同类可多条。
 2. **报健身数据**(如「卧推 60 做了 10/10/8」)→ 当天有 workout entry 就往其 `exercises` 加,否则新建 workout entry。重量 kg、哑铃单只,各组 `{weight,reps}`。
-3. **报饮食** → 优先查 `foods.json`(含 `aliases` 别名)算每项 kcal/蛋白,记 diet entry(算 `totalKcal` + `totalProtein`);库里没有就网络估算或问用户,常吃的存进库复用。估算的在 `note` 标注。
+3. **报饮食** → 优先查 `foods.json`(含 `aliases` 别名)算每项 kcal/蛋白,记 diet entry(算 `totalKcal` + `totalProtein`);库里没有就网络估算或问用户,常吃的存进库复用。估算的在 `note` 标注。**咖啡特例:只有单说「咖啡」=自制那杯(150g 牛奶+espresso,95卡)才套 `coffee-latte`;带店名/品牌(%、星巴克等)按外购单独估,不套库。**
 4. **「今天练什么 / 该练什么」** → 训练循环**自动顺延**:看 `timeline.json` 里**最近一次 workout 的 type**,按 `plan.json` 的 `cycleOrder`(当前 **推→腿→拉**)取下一个;从没练过就从 cycleOrder 第一个开始。然后读对应 split + `动作库.md` 要领,从 timeline 找各动作上次成绩提醒。**休息日不用记任何东西——循环只认「上次练的下一个」,不认日历。注意:用户顺序是 推→腿→拉,不是标准 PPL 的推拉腿。**
 5. **「换动作 / 不喜欢」** → 改 `plan.json` 对应动作的 `alternates`。
 6. **回看 / 趋势**(「卧推进步」「今天吃了多少卡」「这周练几次」)→ 从 `timeline.json` 过滤聚合后回答。

@@ -20,8 +20,8 @@
                 { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
                 { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
               ] },
-              { "name": "咖啡", "ref": "coffee-latte", "kcal": 65, "items": [
-                { "name": "咖啡(牛奶+浓缩)", "nameEn": "Latte", "qty": "100g 牛奶 + espresso", "kcal": 65, "protein": 3, "fat": 3, "carb": 5 }
+              { "name": "咖啡", "ref": "coffee-latte", "kcal": 95, "items": [
+                { "name": "咖啡(自制)", "nameEn": "Homemade Latte", "qty": "150g 牛奶 + espresso", "kcal": 95, "protein": 5, "fat": 5, "carb": 7 }
               ] }
             ]
           },
@@ -59,7 +59,7 @@
             ]
           }
         ],
-        "totals": { "kcal": 1959, "protein": 118, "carb": 213, "fat": 71 },
+        "totals": { "kcal": 1989, "protein": 120, "carb": 215, "fat": 73 },
         "note": "部分份量/做法为估算;坚果 mix 按通用 ~600卡/100g"
       }
     },
@@ -96,8 +96,8 @@
                 { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
                 { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
               ] },
-              { "name": "咖啡", "ref": "coffee-latte", "kcal": 65, "items": [
-                { "name": "咖啡(牛奶+浓缩)", "nameEn": "Latte", "qty": "100g 牛奶 + espresso", "kcal": 65, "protein": 3, "fat": 3, "carb": 5 }
+              { "name": "咖啡", "ref": "coffee-latte", "kcal": 95, "items": [
+                { "name": "咖啡(自制)", "nameEn": "Homemade Latte", "qty": "150g 牛奶 + espresso", "kcal": 95, "protein": 5, "fat": 5, "carb": 7 }
               ] },
               { "name": "饼干a", "ref": "biscuit-a", "kcal": 115, "items": [
                 { "name": "Skyflakes 空中霸王", "nameEn": "Skyflakes", "qty": "1 包 25g", "kcal": 115, "protein": 2.4, "fat": 3, "carb": 19 }
@@ -125,7 +125,7 @@
             ]
           }
         ],
-        "totals": { "kcal": 1642, "protein": 126, "carb": 184, "fat": 47 },
+        "totals": { "kcal": 1672, "protein": 128, "carb": 186, "fat": 49 },
         "note": "未列出营养的项为估算"
       }
     },
