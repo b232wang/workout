@@ -150,6 +150,31 @@ function tdee(asOf){
   return {kg,bmr:Math.round(bmr),maint,bulk:maint+250};
 }
 
+// 动态每日热量目标:当天活动分档基准 + 近3天周平衡补偿(±300/天)
+function dayActivity(date){
+  if(TL.entries.some(e=>e.date===date&&e.category==='workout'))return{type:'训练日',coef:1.55,surplus:300};
+  if(TL.entries.some(e=>e.date===date&&e.category==='walk'))return{type:'轻活动日',coef:1.4,surplus:200};
+  return{type:'休息日',coef:1.3,surplus:200};
+}
+function dayBaseTarget(date){
+  const kg=latestWeight(date);
+  if(!kg||!PROFILE.age||!PROFILE.heightCm)return null;
+  const bmr=10*kg+6.25*PROFILE.heightCm-5*PROFILE.age+(PROFILE.sex==='male'?5:-161);
+  const a=dayActivity(date);
+  return Math.round(bmr*a.coef/10)*10+a.surplus;
+}
+function dayIntake(date){const d=TL.entries.find(e=>e.date===date&&e.category==='diet');return d&&d.data.totals?d.data.totals.kcal:null}
+function dailyTarget(date){
+  const base=dayBaseTarget(date);
+  if(base==null)return null;
+  const past=TL.entries.filter(e=>e.category==='diet'&&e.date<date).map(e=>e.date).sort((a,b)=>a<b?1:-1).slice(0,3);
+  let debt=0,n=0;
+  past.forEach(d=>{const ik=dayIntake(d),b=dayBaseTarget(d);if(ik!=null&&b!=null){debt+=ik-b;n++}});
+  const comp=n?Math.max(-300,Math.min(300,Math.round(-debt/10)*10)):0;
+  return {target:base+comp,base,comp,type:dayActivity(date).type,debt:Math.round(debt),n};
+}
+function todayKey(){const d=new Date();if(d.getHours()<4)d.setDate(d.getDate()-1);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+
 function splitKeys(){return PLAN.cycleOrder||PLAN.splits.map(s=>s.key)}
 function workoutTypeOn(date){const e=TL.entries.find(x=>x.date===date&&x.category==='workout');return e?e.data.type:null}
 function lastWorkoutBefore(date){const ws=TL.entries.filter(x=>x.category==='workout'&&x.date<date).sort(byDateDesc);return ws.length?ws[0].data.type:null}
@@ -260,9 +285,11 @@ function daySummaryHtml(date){
     const tot=diet.data.totals;
     let s='饮食:摄入 '+tot.kcal+' 卡(蛋白 '+tot.protein+'g / 碳水 '+tot.carb+'g / 脂肪 '+tot.fat+'g)';
     if(t){
-      const gap=tot.kcal-t.bulk, ppk=(tot.protein/t.kg);
+      const dt=dailyTarget(date), goal=dt?dt.target:t.bulk;
+      const gap=tot.kcal-goal, ppk=(tot.protein/t.kg);
       const pr=PROFILE.proteinPerKg||[1.6,2], pLow=Math.round(t.kg*pr[0]), pHigh=Math.round(t.kg*pr[1]);
-      s+='。增肌目标约 '+t.bulk+' 卡,这天'+(gap<-300?('缺口 '+(-gap)+' 卡、明显偏少'):gap>300?('盈余 '+gap+' 卡'):'基本达标');
+      const compTxt=dt?(dt.comp>0?'(今日'+dt.type+'基准 '+dt.base+' + 补近期缺口 '+dt.comp+')':dt.comp<0?'(今日'+dt.type+'基准 '+dt.base+' 回收近期盈余 '+dt.comp+')':'(今日'+dt.type+')'):'';
+      s+='。今日目标约 '+goal+' 卡'+compTxt+',这天'+(gap<-300?('缺口 '+(-gap)+' 卡、明显偏少'):gap>300?('盈余 '+gap+' 卡'):'基本达标');
       s+=';蛋白 '+tot.protein+'g('+ppk.toFixed(2)+'g/kg),目标 '+pLow+'-'+pHigh+'g '+(tot.protein>=pLow?'(达标)':('(还差 '+(pLow-tot.protein)+'g)'))+'。';
     }
     lines.push(s);
@@ -375,7 +402,11 @@ function renderCalories(){
     html+='<div class="ex"><span>当前体重</span><span class="muted">'+t.kg+' kg</span></div>';
     html+='<div class="ex"><span>BMR 基础代谢</span><span class="muted">'+t.bmr+' 卡</span></div>';
     html+='<div class="ex"><span>维持需求</span><span class="muted">'+t.maint+' 卡/天</span></div>';
-    html+='<div class="ex"><span>增肌目标</span><span class="muted">'+t.bulk+' 卡/天</span></div>';
+    const dt=dailyTarget(todayKey()), rc=c=>Math.round(t.bmr*c/10)*10;
+    if(dt){
+      html+='<div class="ex"><span>今日目标</span><span class="muted">'+dt.target+' 卡 · '+dt.type+(dt.comp?(dt.comp>0?' +'+dt.comp:' '+dt.comp):'')+'</span></div>';
+      html+='<div class="muted small" style="margin:2px 0 0">动态:训练日~'+(rc(1.55)+300)+' / 轻活动~'+(rc(1.4)+200)+' / 休息~'+(rc(1.3)+200)+' 卡,再按近 3 天盈亏 ±300 平衡</div>';
+    }else html+='<div class="ex"><span>增肌目标</span><span class="muted">'+t.bulk+' 卡/天</span></div>';
     const pr=PROFILE.proteinPerKg||[1.6,2];
     html+='<div class="ex"><span>蛋白目标</span><span class="muted">'+Math.round(t.kg*pr[0])+'-'+Math.round(t.kg*pr[1])+' g/天</span></div>';
     const ws=TL.entries.filter(e=>e.category==='weight').sort((a,b)=>a.date<b.date?-1:1);
