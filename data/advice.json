@@ -54,7 +54,7 @@
       "recommend": [
         { "name": "鸡肉沙威玛卷(常规)", "nameEn": "Chicken Shawarma Wrap (Regular)", "kcal": 540, "protein": 30, "price": "CAN$12.39", "for": ["增肌", "减脂"], "why": "鸡肉卷 540 卡(含饮料);减脂可去酱。" },
         { "name": "鸡肉沙威玛卷(超大)", "nameEn": "Chicken Shawarma Wrap (Super)", "kcal": 870, "protein": 45, "price": "CAN$16.34", "for": ["增肌"], "why": "大份 870 卡,增肌堆量。" },
-        { "name": "招牌鸡肉饭/薯", "nameEn": "Chicken On The Rocks", "kcal": 600, "kcalEst": true, "kcalNote": "来源页未标该项卡路里;按鸡肉配米饭或薯 + 蒜酱常见量估 ~600 卡。", "protein": 35, "price": "CAN$9.99", "for": ["增肌"], "why": "招牌鸡肉配饭或薯,便宜量足。" }
+        { "name": "招牌薯条盖鸡肉", "nameEn": "Chicken On The Rocks", "kcal": 600, "kcalEst": true, "kcalNote": "来源页未标该项卡路里;招牌做法是鸡肉盖在薯条上 + 蒜酱,按常见量估 ~600 卡(薯条占不少热量)。", "protein": 35, "price": "CAN$9.99", "for": ["增肌"], "why": "招牌:鸡肉盖薯条 + 蒜酱。薯条底碳水/油脂高,跟麦当劳薯条同理——增肌期拿来补碳水可以,减脂别点这个,改成鸡肉沙威玛卷、或让店家把底换成米饭/沙拉。" }
       ]
     },
     {
