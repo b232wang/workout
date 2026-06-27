@@ -448,21 +448,22 @@ function renderCalories(){
 function renderAdvice(){
   if(!ADVICE.sections||!ADVICE.sections.length)return '';
   const tag=f=>'<span style="font-size:10px;padding:1px 6px;border-radius:8px;margin-left:5px;'+(f==='增肌'?'background:#e0f2fe;color:#0369a1':'background:#fef3c7;color:#b45309')+'">'+f+'</span>';
+  const row=(r,bad)=>{
+    let x='<div style="margin:9px 0 11px">';
+    x+='<div class="ex" style="align-items:baseline"><span>'+(bad?'<span style="color:#dc2626">✕ </span>':'')+'<b>'+r.name+'</b>'+(r.nameEn?' <span class="en">'+r.nameEn+'</span>':'')+'</span><span class="muted" style="flex:none;margin-left:8px">'+(r.kcal?r.kcal+' 卡':'')+'</span></div>';
+    const sub=[r.protein?'蛋白 '+r.protein+'g':'',r.price||''].filter(Boolean).join(' · ');
+    if(sub||(!bad&&r.for))x+='<div class="muted small" style="margin-top:1px">'+sub+(!bad&&r.for?' '+(r.for||[]).map(tag).join(''):'')+'</div>';
+    x+='<div class="small" style="margin-top:2px">'+r.why+'</div>';
+    return x+'</div>';
+  };
   let h='<div class="card"><div class="ctitle">③ 给我的建议库 <span class="muted small" style="font-weight:400">· 我问过的咨询</span></div>';
-  if(ADVICE.updated)h+='<div class="muted small" style="margin-bottom:6px">更新 '+ADVICE.updated+'</div>';
+  if(ADVICE.updated)h+='<div class="muted small">更新 '+ADVICE.updated+'</div>';
+  if(ADVICE.note)h+='<div class="muted small" style="margin-bottom:6px">'+ADVICE.note+'</div>';
   ADVICE.sections.forEach(s=>{
-    h+='<details class="exblock" style="margin:6px 0"><summary class="exhead"><span class="exname">'+s.title+'</span></summary>';
+    h+='<details class="exblock" style="margin:6px 0"><summary class="exhead"><span class="exname">'+s.title+(s.titleEn?' <span class="en">'+s.titleEn+'</span>':'')+'</span></summary>';
     if(s.tip)h+='<div class="muted small" style="margin:5px 0">'+s.tip+'</div>';
-    (s.recommend||[]).forEach(r=>{
-      h+='<div style="margin:7px 0"><div><span style="color:#16a34a;font-weight:600">✓ '+r.item+'</span>'+(r.for||[]).map(tag).join('')+'</div>';
-      const meta=[r.kcal?r.kcal+'卡':'',r.protein?'蛋白'+r.protein+'g':'',r.price||''].filter(Boolean).join(' · ');
-      if(meta)h+='<div class="muted small">'+meta+'</div>';
-      h+='<div class="small">'+r.why+'</div></div>';
-    });
-    (s.avoid||[]).forEach(r=>{
-      h+='<div style="margin:7px 0"><div><span style="color:#dc2626;font-weight:600">✕ '+r.item+'</span></div>';
-      h+='<div class="small muted">'+(r.kcal?r.kcal+'卡 · ':'')+r.why+'</div></div>';
-    });
+    (s.recommend||[]).forEach(r=>h+=row(r,false));
+    (s.avoid||[]).forEach(r=>h+=row(r,true));
     h+='</details>';
   });
   return h+'</div>';

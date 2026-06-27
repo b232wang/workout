@@ -1,38 +1,83 @@
 {
-  "updated": "2026-06-26",
+  "updated": "2026-06-27",
+  "note": "卡路里/蛋白为参考估算;价格为多伦多当地约值(麦当劳两款为实际订单价)。",
   "sections": [
     {
-      "id": "mcdonalds",
-      "title": "麦当劳",
-      "tip": "抓蛋白/热量比;油炸裹粉 + 蛋黄酱基底的酱是雷。汉堡选双层牛肉、可去 Big Mac 酱/塔塔酱,芥末番茄酱无所谓。",
+      "id": "mcdonalds", "title": "麦当劳", "titleEn": "McDonald's",
+      "tip": "抓蛋白/热量比;油炸裹粉 + 蛋黄酱基底的酱是雷。汉堡选双层牛肉、可去 Big Mac 酱/塔塔酱。",
       "recommend": [
-        { "item": "Double Quarter Pounder w/ Cheese", "kcal": 750, "protein": 48, "price": "$10.29", "for": ["增肌"], "why": "蛋白最高(48g),双层牛肉,增肌当主餐;同价位蛋白完胜 Double Big Mac" },
-        { "item": "McDouble", "kcal": 395, "protein": 22, "price": "$3.79", "for": ["增肌", "减脂"], "why": "蛋白密度高又便宜,性价比之王" },
-        { "item": "Quarter Pounder w/ Cheese", "kcal": 520, "protein": 30, "price": "约 $8.99", "for": ["增肌", "减脂"], "why": "单层牛肉 30g 蛋白,均衡;减脂去酱更净" },
-        { "item": "10 块麦乐鸡", "kcal": 420, "protein": 23, "price": "约 $9.49", "for": ["增肌", "减脂"], "why": "23g 蛋白,别蘸糖醋酱;减脂可点 6 块" }
+        { "name": "双层四盎司吉士堡", "nameEn": "Double Quarter Pounder w/ Cheese", "kcal": 750, "protein": 48, "price": "$10.29", "for": ["增肌"], "why": "蛋白最高(48g),双层牛肉,增肌当主餐;同价位蛋白完胜 Double Big Mac。" },
+        { "name": "麦当劳双层吉士堡", "nameEn": "McDouble", "kcal": 395, "protein": 22, "price": "$3.79", "for": ["增肌", "减脂"], "why": "蛋白密度高又便宜,性价比之王。" },
+        { "name": "四盎司吉士堡", "nameEn": "Quarter Pounder w/ Cheese", "kcal": 520, "protein": 30, "price": "约 $8.99", "for": ["增肌", "减脂"], "why": "单层牛肉 30g 蛋白,均衡;减脂去酱更净。" },
+        { "name": "10 块麦乐鸡", "nameEn": "10pc Chicken McNuggets", "kcal": 420, "protein": 23, "price": "约 $9.49", "for": ["增肌", "减脂"], "why": "23g 蛋白,别蘸糖醋酱;减脂可点 6 块。" }
       ],
       "avoid": [
-        { "item": "薯条", "kcal": 340, "for": ["减脂"], "why": "纯油 + 精制碳水,几乎 0 蛋白,减脂头号雷(增肌期可拿来补碳水)" },
-        { "item": "Filet-O-Fish", "kcal": 380, "for": ["减脂"], "why": "伪健康:鱼裹粉油炸 + 塔塔酱,蛋白才 15g、脂肪 18g,密度差" },
-        { "item": "McChicken", "kcal": 400, "price": "约 $5.39", "for": ["减脂"], "why": "炸鸡碎 + 蛋黄酱,蛋白仅 14g" },
-        { "item": "奶昔 / McFlurry / 含糖汽水", "for": ["减脂"], "why": "液体糖 500–700 卡,纯热量无蛋白" }
+        { "name": "薯条", "nameEn": "Fries", "kcal": 340, "for": ["减脂"], "why": "纯油 + 精制碳水,几乎 0 蛋白,减脂头号雷(增肌期可补碳水)。" },
+        { "name": "鱼柳堡", "nameEn": "Filet-O-Fish", "kcal": 380, "for": ["减脂"], "why": "伪健康:鱼裹粉油炸 + 塔塔酱,蛋白才 15g、脂肪 18g。" },
+        { "name": "麦香鸡", "nameEn": "McChicken", "kcal": 400, "price": "约 $5.39", "for": ["减脂"], "why": "炸鸡碎 + 蛋黄酱,蛋白仅 14g。" },
+        { "name": "奶昔 / McFlurry", "nameEn": "Shakes / McFlurry", "kcal": 600, "for": ["减脂"], "why": "液体糖 500–700 卡,纯热量无蛋白。" }
       ]
     },
     {
-      "id": "fastfood-toronto",
-      "title": "其他快餐(多伦多)",
-      "tip": "原则:可定制的碗/沙拉 > 固定套餐;烤(grilled)> 炸(fried);酱选 salsa / 芥末 / 醋,避开蛋黄酱基底。价格为多伦多当地约值。",
+      "id": "chipotle", "title": "Chipotle", "titleEn": "Chipotle Mexican Grill",
+      "tip": "点 bowl 不要卷饼皮省碳水;减脂少米饭/芝士/酸奶油;酱选 salsa。",
       "recommend": [
-        { "item": "Chipotle / Mucho Burrito — burrito BOWL 双份肉", "kcal": 700, "protein": 50, "price": "约 C$13–17", "for": ["增肌", "减脂"], "why": "双肉碗 50g+ 蛋白;减脂少米饭/芝士/酸奶油、不要卷饼皮" },
-        { "item": "Subway — 双肉 sub 或沙拉(烤鸡/火鸡)", "kcal": 500, "protein": 35, "price": "约 C$9–12", "for": ["增肌", "减脂"], "why": "double meat,芥末/醋不要 mayo;减脂做成 salad" },
-        { "item": "Nando's — 1/4 炭烤鸡 + 沙拉", "kcal": 400, "protein": 35, "price": "约 C$11–14", "for": ["增肌", "减脂"], "why": "葡式炭烤(非炸),干净高蛋白" },
-        { "item": "Osmow's — 鸡肉 shawarma bowl(配饭)", "kcal": 650, "protein": 40, "price": "约 C$12.8", "for": ["增肌"], "why": "高蛋白,garlic sauce 适量;减脂换沙拉底" },
-        { "item": "Wendy's Chili 辣肉酱", "kcal": 250, "protein": 20, "price": "约 C$4–5", "for": ["减脂"], "why": "低卡高蛋白有饱腹感,减脂神器" },
-        { "item": "Freshii — 健康碗 + 鸡肉", "kcal": 450, "protein": 30, "price": "约 C$10.5–13.5", "for": ["减脂"], "why": "低卡高蛋白,多伦多本地连锁" }
-      ],
+        { "name": "双份鸡肉碗", "nameEn": "Double Chicken Burrito Bowl", "kcal": 700, "protein": 50, "price": "约 C$15", "for": ["增肌", "减脂"], "why": "双份鸡肉 + 黑豆 + 生菜,50g+ 蛋白;减脂少米饭/芝士。" },
+        { "name": "牛排碗", "nameEn": "Steak Burrito Bowl", "kcal": 650, "protein": 40, "price": "约 C$16", "for": ["增肌", "减脂"], "why": "瘦牛排高蛋白,fajita 蔬菜垫底。" },
+        { "name": "鸡肉沙拉碗", "nameEn": "Chicken Salad Bowl", "kcal": 500, "protein": 40, "price": "约 C$14", "for": ["减脂"], "why": "生菜底不要米饭,蛋白密度高、热量低。" }
+      ]
+    },
+    {
+      "id": "subway", "title": "Subway", "titleEn": "Subway",
+      "tip": "选烤鸡/火鸡/牛排,double meat,芥末/醋不要 mayo;减脂做成 salad。",
+      "recommend": [
+        { "name": "烤鸡双肉一尺", "nameEn": "Rotisserie Chicken Footlong (double meat)", "kcal": 600, "protein": 48, "price": "约 C$12", "for": ["增肌"], "why": "双份鸡肉 48g 蛋白,全麦面包。" },
+        { "name": "火鸡胸六寸", "nameEn": "Turkey Breast 6-inch", "kcal": 280, "protein": 18, "price": "约 C$7", "for": ["减脂"], "why": "瘦火鸡、低卡,减脂轻食。" },
+        { "name": "牛排芝士沙拉", "nameEn": "Steak & Cheese Salad", "kcal": 400, "protein": 30, "price": "约 C$11", "for": ["减脂"], "why": "做成沙拉去面包,30g 蛋白。" }
+      ]
+    },
+    {
+      "id": "nandos", "title": "Nando's", "titleEn": "Nando's PERi-PERi",
+      "tip": "葡式炭烤(非炸),干净高蛋白;辣度自选,配沙拉/米饭。",
+      "recommend": [
+        { "name": "1/4 炭烤鸡(腿)+ 沙拉", "nameEn": "Quarter Chicken (Leg) + Salad", "kcal": 400, "protein": 35, "price": "约 C$14", "for": ["增肌", "减脂"], "why": "炭烤鸡腿 + 蔬菜,均衡。" },
+        { "name": "半只炭烤鸡", "nameEn": "Half Chicken", "kcal": 600, "protein": 60, "price": "约 C$16", "for": ["增肌"], "why": "半只鸡 60g 蛋白,增肌主餐。" },
+        { "name": "鸡胸堡(去酱)", "nameEn": "Chicken Breast Burger", "kcal": 450, "protein": 35, "price": "约 C$13", "for": ["增肌", "减脂"], "why": "烤鸡胸,去蛋黄酱更净。" }
+      ]
+    },
+    {
+      "id": "osmows", "title": "Osmow's", "titleEn": "Osmow's Shawarma",
+      "tip": "高蛋白,garlic sauce 适量;减脂换沙拉底、酱减半。",
+      "recommend": [
+        { "name": "鸡肉沙威玛配饭", "nameEn": "Chicken Shawarma Rice Bowl", "kcal": 650, "protein": 40, "price": "约 C$12.8", "for": ["增肌"], "why": "鸡肉 + 米饭,增肌热量蛋白都够。" },
+        { "name": "鸡肉沙威玛沙拉碗", "nameEn": "Chicken Shawarma Salad Bowl", "kcal": 450, "protein": 38, "price": "约 C$13", "for": ["减脂"], "why": "沙拉底换掉米饭/薯条,蛋白照样高。" },
+        { "name": "鸡肉卷", "nameEn": "Chicken Shawarma Wrap", "kcal": 550, "protein": 30, "price": "约 C$11", "for": ["增肌"], "why": "方便带走,酱减半更可控。" }
+      ]
+    },
+    {
+      "id": "wendys", "title": "Wendy's", "titleEn": "Wendy's",
+      "tip": "Chili 是隐藏神器;烤鸡(grilled)优先,别碰炸的和薯条。",
+      "recommend": [
+        { "name": "大份辣肉酱", "nameEn": "Large Chili", "kcal": 330, "protein": 28, "price": "约 C$5", "for": ["增肌", "减脂"], "why": "低卡高蛋白有饱腹感,便宜,减脂神器。" },
+        { "name": "烤鸡三明治", "nameEn": "Grilled Chicken Sandwich", "kcal": 370, "protein": 34, "price": "约 C$8", "for": ["增肌", "减脂"], "why": "烤鸡胸非油炸,34g 蛋白。" },
+        { "name": "小份辣肉酱", "nameEn": "Small Chili", "kcal": 250, "protein": 20, "price": "约 C$4", "for": ["减脂"], "why": "加餐级别,20g 蛋白 250 卡。" }
+      ]
+    },
+    {
+      "id": "freshii", "title": "Freshii", "titleEn": "Freshii",
+      "tip": "多伦多本地连锁,主打健康碗,可加 chicken 堆蛋白。",
+      "recommend": [
+        { "name": "玛雅鸡肉碗", "nameEn": "Maya Bowl (Chicken)", "kcal": 500, "protein": 30, "price": "约 C$12", "for": ["增肌", "减脂"], "why": "糙米 + 鸡肉 + 蔬菜,均衡。" },
+        { "name": "青柠鸡肉碗", "nameEn": "Cilantro Lime Chicken Bowl", "kcal": 450, "protein": 32, "price": "约 C$12.5", "for": ["减脂"], "why": "低卡高蛋白,清爽。" },
+        { "name": "蛋白能量碗", "nameEn": "Protein Bowl", "kcal": 480, "protein": 35, "price": "约 C$13", "for": ["增肌"], "why": "主打蛋白,35g。" }
+      ]
+    },
+    {
+      "id": "avoid-general", "title": "尽量避开", "titleEn": "Avoid",
+      "tip": "减脂期尤其避开;增肌也别当主力。",
       "avoid": [
-        { "item": "Popeyes / KFC 炸鸡(带饼皮配薯)", "for": ["减脂"], "why": "油炸为主;非吃不可就选去皮/grilled、别碰饼皮和配菜" },
-        { "item": "Tim Hortons 甜点 / 贝果套餐", "for": ["减脂"], "why": "偏碳水甜点,高蛋白选择少" }
+        { "name": "Popeyes / KFC 炸鸡(带饼皮配薯)", "nameEn": "Fried Chicken w/ biscuit & sides", "kcal": 900, "for": ["减脂"], "why": "油炸为主;非吃不可就选去皮/grilled、别碰饼皮和配菜。" },
+        { "name": "Tim Hortons 甜点 / 贝果套餐", "nameEn": "Donuts / Bagel combos", "kcal": 500, "for": ["减脂"], "why": "偏碳水甜点,高蛋白选择少。" }
       ]
     }
   ]
