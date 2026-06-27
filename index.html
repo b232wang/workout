@@ -142,10 +142,11 @@ function nutritionHtml(o){
 
 // 体重 & TDEE
 function latestWeight(asOf){const ws=TL.entries.filter(e=>e.category==='weight').sort(byDateDesc);if(!ws.length)return null;if(asOf){const m=ws.find(e=>e.date<=asOf);return m?m.data.kg:ws[ws.length-1].data.kg}return ws[0].data.kg}
+function calcBmr(kg){return 10*kg+6.25*PROFILE.heightCm-5*PROFILE.age+(PROFILE.sex==='male'?5:-161)}
 function tdee(asOf){
   const kg=latestWeight(asOf);
   if(!kg||!PROFILE.age||!PROFILE.heightCm)return null;
-  const bmr=10*kg+6.25*PROFILE.heightCm-5*PROFILE.age+(PROFILE.sex==='male'?5:-161);
+  const bmr=calcBmr(kg);
   const maint=Math.round(bmr*(PROFILE.activityLevel||1.55)/10)*10;
   return {kg,bmr:Math.round(bmr),maint,bulk:maint+250};
 }
@@ -159,9 +160,8 @@ function dayActivity(date){
 function dayBaseTarget(date){
   const kg=latestWeight(date);
   if(!kg||!PROFILE.age||!PROFILE.heightCm)return null;
-  const bmr=10*kg+6.25*PROFILE.heightCm-5*PROFILE.age+(PROFILE.sex==='male'?5:-161);
   const a=dayActivity(date);
-  return Math.round(bmr*a.coef/10)*10+a.surplus;
+  return Math.round(calcBmr(kg)*a.coef/10)*10+a.surplus;
 }
 function dayIntake(date){const d=TL.entries.find(e=>e.date===date&&e.category==='diet');return d&&d.data.totals?d.data.totals.kcal:null}
 function dailyTarget(date){
@@ -398,6 +398,7 @@ function renderCalendar(){
 let wchart;
 function renderCalories(){
   const el=document.getElementById('calories'),t=tdee();
+  const ws=TL.entries.filter(e=>e.category==='weight').sort((a,b)=>a.date<b.date?-1:1);
   let html='<div class="wrap">';
   if(t){
     const pr=PROFILE.proteinPerKg||[1.8,2], carbPct=PROFILE.carbPct||55;
@@ -424,7 +425,6 @@ function renderCalories(){
     html+='<div class="ex"><span>蛋白目标</span><span class="muted">'+pLow+'–'+pHigh+' g('+pct(pMid,4)+'%)</span></div>';
     html+='<div class="ex"><span>碳水目标</span><span class="muted">'+carbG+' g('+carbPct+'%)</span></div>';
     html+='<div class="ex"><span>脂肪目标</span><span class="muted">'+fatG+' g('+pct(fatG,9)+'%)</span></div>';
-    const ws=TL.entries.filter(e=>e.category==='weight').sort((a,b)=>a.date<b.date?-1:1);
     if(ws.length>1)html+='<canvas id="wchart" height="150" style="margin-top:10px"></canvas>';
     else html+='<div class="muted small" style="margin-top:8px">再记几次体重就能看变化趋势。</div>';
     html+='</div>';
@@ -437,10 +437,9 @@ function renderCalories(){
     html+='</div>';
   }
   html+=renderAdvice();
+  if(wchart){wchart.destroy();wchart=null;}
   el.innerHTML=html+'</div>';
-  const ws=TL.entries.filter(e=>e.category==='weight').sort((a,b)=>a.date<b.date?-1:1);
   if(t&&ws.length>1){
-    if(wchart)wchart.destroy();
     wchart=new Chart(document.getElementById('wchart'),{type:'line',data:{labels:ws.map(e=>e.date.slice(5)),datasets:[{label:'体重(kg)',data:ws.map(e=>e.data.kg),borderColor:'#06b6d4',backgroundColor:'#06b6d4',tension:.3}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}}},scales:{y:{beginAtZero:false}}}});
   }
 }
