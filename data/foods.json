@@ -57,6 +57,16 @@
       "kcal": 140, "protein": 24, "fat": 3.5, "saturatedFat": 2, "carb": 3, "sugar": 2,
       "sodiumMg": 125, "potassiumMg": 250, "calciumMg": 150,
       "note": "Leanfit Whey 香草味,2kg/60 勺;每勺 33g,用户提供营养标签。常配 3% 牛奶冲(牛奶单独按量算)"
+    },
+    {
+      "id": "chipotle-hp-hf-bowl",
+      "name": "Chipotle 高蛋白高纤碗",
+      "nameEn": "Chipotle High Protein-High Fiber Bowl",
+      "aliases": ["chipotle 碗", "高蛋白高纤碗", "high protein high fiber bowl"],
+      "serving": "1 碗",
+      "components": ["Adobo 鸡", "糙米(light)", "黑豆", "fajita 蔬菜", "玉米莎莎", "番茄莎莎", "生菜"],
+      "kcal": 540, "protein": 46, "fat": 15, "carb": 55, "fiber": 14,
+      "note": "Chipotle 官方截图:540卡 / 46g 蛋白 / 14g 纤维,$12.70;脂肪/碳水按宏量倒推估算(截图未给)"
     }
   ]
 }

@@ -18,10 +18,18 @@
                 { "name": "坚果 mix", "nameEn": "Nut Mix", "qty": "30g", "kcal": 180, "protein": 6, "fat": 15, "carb": 6, "note": "混合坚果 ~600卡/100g 估算" }
               ] }
             ]
+          },
+          {
+            "slot": "午餐",
+            "dishes": [
+              { "name": "Chipotle 高蛋白高纤碗", "ref": "chipotle-hp-hf-bowl", "kcal": 540, "items": [
+                { "name": "Chipotle 高蛋白高纤碗", "nameEn": "High Protein-High Fiber Bowl", "qty": "1 碗", "kcal": 540, "protein": 46, "fat": 15, "carb": 55, "note": "官方 540卡/46g蛋白/14g纤维(截图);脂肪/碳水估算" }
+              ] }
+            ]
           }
         ],
-        "totals": { "kcal": 410, "protein": 15, "carb": 31, "fat": 25 },
-        "note": "早餐;咖啡套自制库,希腊酸奶按库比例,蓝莓/坚果mix为估算"
+        "totals": { "kcal": 950, "protein": 61, "carb": 86, "fat": 40 },
+        "note": "早餐 + 午餐;午餐 Chipotle 高蛋白高纤碗(官方营养,脂肪/碳水估算)"
       }
     },
     {
