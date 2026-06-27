@@ -452,7 +452,7 @@ function renderAdvice(){
     const cal=(r.kcal!=null?r.kcal+' 卡':'')+(r.kcalEst?' 估':'');
     x+='<div class="ex" style="align-items:baseline"><span>'+(bad?'<span style="color:#dc2626">✕ </span>':'')+'<b>'+r.name+'</b>'+(r.nameEn?' <span class="en">'+r.nameEn+'</span>':'')+'</span><span class="muted" style="flex:none;margin-left:8px">'+cal+'</span></div>';
     if(r.kcalNote)x+='<details style="margin:1px 0"><summary class="muted small" style="cursor:pointer;list-style:none">卡路里估算依据 ⓘ</summary><div class="small" style="padding:2px 0;color:var(--sub)">'+r.kcalNote+'</div></details>';
-    let sub=[r.protein?'蛋白 '+r.protein+'g 估':'',r.price||''].filter(Boolean).join(' · ');
+    let sub=[r.protein?'蛋白 '+r.protein+'g'+(r.proteinEst===false?'':' 估'):'',r.price||''].filter(Boolean).join(' · ');
     if(sref)sub+=(sub?' · ':'')+'<a href="'+sref+'" target="_blank" rel="noopener" style="color:#0369a1">菜单·价格 ↗</a>';
     if(sub||(!bad&&r.for))x+='<div class="muted small" style="margin-top:1px">'+sub+(!bad&&r.for?' '+(r.for||[]).map(tag).join(''):'')+'</div>';
     x+='<div class="small" style="margin-top:2px">'+r.why+'</div>';

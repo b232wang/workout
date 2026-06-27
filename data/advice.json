@@ -1,6 +1,6 @@
 {
   "updated": "2026-06-27",
-  "note": "菜名 / 价格 / 卡路里取自各餐厅来源页(每条「菜单·价格 ↗」可打开核对、可搜到该菜名)。卡路里:来源有标注的直接用;无标注或区间则标「估」并可点开看依据。蛋白来源页均无数据,一律估算(标「估」)。「减脂」标签 = 默认份就减脂友好;需改造才友好的只标「增肌」、why 写怎么改。每家(除麦当劳)有 1–10 评分,综合健康 / 增肌减脂 / 抗炎,促炎(油炸为主 / 加工肉 / 含糖饮料)硬扣分;评分经两个独立 agent 交叉打分 + 第三个 agent 复核。麦当劳为通用官方值 + 实际订单价,不附外链、不评分。",
+  "note": "菜名 / 价格 / 卡路里取自各餐厅来源页(每条「菜单·价格 ↗」可打开核对、可搜到该菜名)。卡路里:来源有标注的直接用;无标注或区间则标「估」并可点开看依据。蛋白多为估算(标「估」);Chipotle 高蛋白菜单的蛋白/卡路里为官方数据(chipotle.com,不标估)。来源优先级:官方菜单 + 你的实际下单平台(DoorDash)> SEO 聚合站(后者可能过期/不符)——除 Chipotle 外其余餐厅价格仍来自聚合站,以 DoorDash 为准。「减脂」标签 = 默认份就减脂友好;需改造才友好的只标「增肌」、why 写怎么改。每家(除麦当劳)有 1–10 评分,综合健康 / 增肌减脂 / 抗炎,促炎(油炸为主 / 加工肉 / 含糖饮料)硬扣分;评分经两个独立 agent 交叉打分 + 第三个 agent 复核。麦当劳为通用官方值 + 实际订单价,不附外链、不评分。",
   "sections": [
     {
       "id": "mcdonalds", "title": "麦当劳", "titleEn": "McDonald's",
@@ -41,16 +41,14 @@
     },
     {
       "id": "chipotle", "title": "Chipotle", "titleEn": "Chipotle Mexican Grill",
-      "tip": "点 bowl 省卷饼皮碳水;减脂少米饭/芝士/酸奶油,酱选 salsa。Lifestyle Bowls(Wholesome/Keto 等)是预设好的低卡配方。",
-      "rating": { "score": 8, "reason": "炭烤鸡/牛排 + 黑豆蔬菜非油炸、无加工肉,抗炎底子好;但默认含白米、芝士/酸奶油等促炎项,纯净度要靠主动挑(去米饭、酱选莎莎),故 8 而非更高。" },
-      "ref": "https://menupricesincanada.com/chipotle-menu-with-prices-in-canada/",
+      "tip": "2025 年底上线的官方「高蛋白菜单」(adobo 瘦鸡 + 高纤 + GLP-1 友好预设碗)最适合你,不用再费心去米饭/酱。以下蛋白/卡路里为 Chipotle 官方数据;价格以 DoorDash 为准(我抓不了 DoorDash,仅高蛋白高纤碗经你确认)。",
+      "rating": { "score": 8.5, "reason": "新增官方高蛋白菜单:adobo 瘦鸡 + 高纤 + GLP-1 友好的预设碗,精瘦高蛋白、非油炸、高纤抗炎友好,不用再像以前那样费心避开白米/酱,故上调到 8.5。" },
+      "ref": "https://www.chipotle.com/high-protein-meals",
       "recommend": [
-        { "name": "高蛋白碗", "nameEn": "High Protein Bowl", "kcal": 850, "protein": 50, "price": "CAN$17.85", "for": ["增肌"], "why": "官方高蛋白碗,双份肉,蛋白最高,增肌首选。" },
-        { "name": "卷饼碗(选鸡肉)", "nameEn": "Burrito Bowl", "kcal": 650, "kcalEst": true, "kcalNote": "来源页未标该项卡路里;按白米 + 鸡肉 + 黑豆 + 莎莎 + 生菜的标准碗估 ~650 卡。", "protein": 40, "price": "CAN$15.35", "for": ["增肌", "减脂"], "why": "经典自选碗;减脂版去米饭/芝士、双倍生菜可降到 ~450 卡。" },
-        { "name": "均衡宏量碗", "nameEn": "Balanced Macros Bowl", "kcal": 700, "protein": 40, "price": "CAN$15.65", "for": ["增肌"], "why": "官方均衡配比碗,700 卡偏高;减脂想点就照 Burrito Bowl 那样少米饭减配料。" },
-        { "name": "健康碗(选鸡肉)", "nameEn": "Wholesome Bowl", "kcal": 470, "kcalNote": "来源标 470 卡,为官方 Lifestyle Bowl 预设配方值(糙米+fajita蔬菜+生菜+莎莎+鸡肉、无芝士酸奶油);门店实配会浮动。", "protein": 32, "price": "CAN$15.65", "for": ["增肌", "减脂"], "why": "预设低卡碗,470 卡 / 单份鸡约 32g 蛋白,非油炸、蔬菜多;减脂直接吃,增肌可加双份鸡。" },
-        { "name": "健康碗配卡尼塔斯", "nameEn": "Wholesome Bowl with Carnitas", "kcal": 490, "kcalNote": "来源标 490 卡(官方预设值)。注意 carnitas 是 Chipotle 脂肪最高的蛋白(炖猪肉),实际脂肪/热量偏高,此预设值偏乐观。", "protein": 30, "price": "CAN$15.85", "for": ["增肌"], "why": "carnitas 炖猪肉、非油炸,但脂肪是各蛋白里最高的;增肌可,减脂想吃这个碗就把肉换成鸡肉(Wholesome Bowl)。" },
-        { "name": "生酮沙拉碗(选鸡肉)", "nameEn": "Keto Salad Bowl", "kcal": 470, "kcalNote": "来源标 470 卡(官方预设值);keto 配方通常含牛油果酱 guac,门店单加 guac 约 +CAN$3,实际价/热量会上浮。", "protein": 32, "price": "CAN$12.70", "for": ["增肌", "减脂"], "why": "无米无豆、生菜+蛋白+牛油果,470 卡且最便宜;天然零精制碳水,减脂首选,选烤鸡约 32g 蛋白。" }
+        { "name": "高蛋白高纤碗", "nameEn": "High Protein-High Fiber Bowl", "kcal": 540, "protein": 46, "proteinEst": false, "price": "CAN$12.70", "for": ["增肌", "减脂"], "why": "官方主推:adobo 鸡 + 糙米 + 黑豆 + fajita 蔬菜 + 双莎莎 + 生菜,46g 蛋白 / 14g 纤维 / 540 卡,GLP-1 友好、高纤抗炎,增肌减脂都顶。价为你 DoorDash 确认。" },
+        { "name": "双倍高蛋白碗", "nameEn": "Double High Protein Bowl", "kcal": 760, "protein": 81, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "双份 adobo 鸡 + 白米 + 黑豆 + 蔬菜 + 莎莎 + 芝士 + 多生菜,81g 蛋白 / 760 卡,增肌蛋白拉满。" },
+        { "name": "高蛋白低卡碗", "nameEn": "High Protein-Low Calorie Bowl", "kcal": 450, "kcalEst": true, "kcalNote": "官方未标该项卡路里;按 adobo 鸡 + supergreens + fajita 蔬菜 + 莎莎 + 牛油果估 ~450 卡。蛋白 36g 为官方值。", "protein": 36, "proteinEst": false, "price": "见 DoorDash", "for": ["减脂"], "why": "官方 GLP-1 友好碗:adobo 鸡 + supergreens + 蔬菜 + 莎莎 + 牛油果,36g 蛋白、无米饭,减脂优选。" },
+        { "name": "高蛋白鸡肉杯", "nameEn": "High Protein Cup - Chicken", "kcal": 180, "protein": 32, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "纯烤 adobo 鸡,180 卡补 32g 蛋白;当加餐、或给任意碗加蛋白的神器。" }
       ]
     },
     {
