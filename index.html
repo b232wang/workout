@@ -448,11 +448,13 @@ function renderCalories(){
 function renderAdvice(){
   if(!ADVICE.sections||!ADVICE.sections.length)return '';
   const tag=f=>'<span style="font-size:10px;padding:1px 6px;border-radius:8px;margin-left:5px;'+(f==='增肌'?'background:#e0f2fe;color:#0369a1':'background:#fef3c7;color:#b45309')+'">'+f+'</span>';
-  const row=(r,bad)=>{
+  const row=(r,bad,sref)=>{
     let x='<div style="margin:9px 0 11px">';
-    x+='<div class="ex" style="align-items:baseline"><span>'+(bad?'<span style="color:#dc2626">✕ </span>':'')+'<b>'+r.name+'</b>'+(r.nameEn?' <span class="en">'+r.nameEn+'</span>':'')+'</span><span class="muted" style="flex:none;margin-left:8px">'+(r.kcal?r.kcal+' 卡':'')+'</span></div>';
-    let sub=[r.protein?'蛋白 '+r.protein+'g':'',r.price||''].filter(Boolean).join(' · ');
-    if(r.ref)sub+=(sub?' · ':'')+'<a href="'+r.ref+'" target="_blank" rel="noopener" style="color:#0369a1">来源 ↗</a>';
+    const cal=(r.kcal!=null?r.kcal+' 卡':'')+(r.kcalEst?' 估':'');
+    x+='<div class="ex" style="align-items:baseline"><span>'+(bad?'<span style="color:#dc2626">✕ </span>':'')+'<b>'+r.name+'</b>'+(r.nameEn?' <span class="en">'+r.nameEn+'</span>':'')+'</span><span class="muted" style="flex:none;margin-left:8px">'+cal+'</span></div>';
+    if(r.kcalNote)x+='<details style="margin:1px 0"><summary class="muted small" style="cursor:pointer;list-style:none">卡路里估算依据 ⓘ</summary><div class="small" style="padding:2px 0;color:var(--sub)">'+r.kcalNote+'</div></details>';
+    let sub=[r.protein?'蛋白 '+r.protein+'g 估':'',r.price||''].filter(Boolean).join(' · ');
+    if(sref)sub+=(sub?' · ':'')+'<a href="'+sref+'" target="_blank" rel="noopener" style="color:#0369a1">菜单·价格 ↗</a>';
     if(sub||(!bad&&r.for))x+='<div class="muted small" style="margin-top:1px">'+sub+(!bad&&r.for?' '+(r.for||[]).map(tag).join(''):'')+'</div>';
     x+='<div class="small" style="margin-top:2px">'+r.why+'</div>';
     return x+'</div>';
@@ -463,8 +465,8 @@ function renderAdvice(){
   ADVICE.sections.forEach(s=>{
     h+='<details class="exblock" style="margin:6px 0"><summary class="exhead"><span class="exname">'+s.title+(s.titleEn?' <span class="en">'+s.titleEn+'</span>':'')+'</span></summary>';
     if(s.tip)h+='<div class="muted small" style="margin:5px 0">'+s.tip+'</div>';
-    (s.recommend||[]).forEach(r=>h+=row(r,false));
-    (s.avoid||[]).forEach(r=>h+=row(r,true));
+    (s.recommend||[]).forEach(r=>h+=row(r,false,s.ref));
+    (s.avoid||[]).forEach(r=>h+=row(r,true,s.ref));
     h+='</details>';
   });
   return h+'</div>';
