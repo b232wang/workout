@@ -193,12 +193,13 @@ function gotoFood(ev,id){
 
 async function load(){
   try{
+    const v='?t='+Date.now();
     const [tl,plan,foods,profile,advice]=await Promise.all([
-      fetch('./data/timeline.json').then(r=>r.json()),
-      fetch('./data/plan.json').then(r=>r.json()),
-      fetch('./data/foods.json').then(r=>r.json()),
-      fetch('./data/profile.json').then(r=>r.ok?r.json():{}).catch(()=>({})),
-      fetch('./data/advice.json').then(r=>r.ok?r.json():{sections:[]}).catch(()=>({sections:[]})),
+      fetch('./data/timeline.json'+v).then(r=>r.json()),
+      fetch('./data/plan.json'+v).then(r=>r.json()),
+      fetch('./data/foods.json'+v).then(r=>r.json()),
+      fetch('./data/profile.json'+v).then(r=>r.ok?r.json():{}).catch(()=>({})),
+      fetch('./data/advice.json'+v).then(r=>r.ok?r.json():{sections:[]}).catch(()=>({sections:[]})),
     ]);
     TL=tl;PLAN=plan;FOODS=foods;PROFILE=profile||{};ADVICE=advice||{sections:[]};
   }catch(e){
@@ -247,7 +248,7 @@ function dietHtml(d){
       }
     });
   });
-  if(d.totals){const t=d.totals;body+='<div class="totals">全天 '+t.kcal+' 卡 · 蛋白 '+t.protein+'g · 碳水 '+t.carb+'g · 脂肪 '+t.fat+'g</div>';}
+  if(d.totals){const t=d.totals;const pp=t.kcal?Math.round((t.protein||0)*4/t.kcal*100):0,pc=t.kcal?Math.round((t.carb||0)*4/t.kcal*100):0,pf=t.kcal?Math.round((t.fat||0)*9/t.kcal*100):0;body+='<div class="totals">全天 '+t.kcal+' 卡 · 蛋白 '+t.protein+'g('+pp+'%) · 碳水 '+t.carb+'g('+pc+'%) · 脂肪 '+t.fat+'g('+pf+'%)</div>';}
   return body;
 }
 
@@ -284,8 +285,7 @@ function daySummaryHtml(date){
   lines.push('训练:'+(w?('练了 '+(sp?sp.label:w)):'无记录(休息)'));
   if(diet&&diet.data.totals){
     const tot=diet.data.totals;
-    const mP=tot.kcal?Math.round((tot.protein||0)*4/tot.kcal*100):0, mC=tot.kcal?Math.round((tot.carb||0)*4/tot.kcal*100):0, mF=tot.kcal?Math.round((tot.fat||0)*9/tot.kcal*100):0;
-    let s='饮食:摄入 '+tot.kcal+' 卡(蛋白 '+tot.protein+'g('+mP+'%) / 碳水 '+tot.carb+'g('+mC+'%) / 脂肪 '+tot.fat+'g('+mF+'%))';
+    let s='饮食:摄入 '+tot.kcal+' 卡(蛋白 '+tot.protein+'g / 碳水 '+tot.carb+'g / 脂肪 '+tot.fat+'g)';
     if(t){
       const dt=dailyTarget(date), goal=dt?dt.target:t.bulk;
       const gap=tot.kcal-goal, ppk=(tot.protein/t.kg);
