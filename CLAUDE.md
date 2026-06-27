@@ -35,7 +35,7 @@
 - `data/profile.json` — 个人信息(年龄/性别/身高/目标/活动系数/蛋白倍数 `proteinPerKg`/碳水占比 `carbPct`),用于算每日卡路里需求与宏量目标(配合最新体重)
 - `data/plan.json` — 健身计划(推/拉/腿动作安排,含组数次数/目标肌/要点/备用/超级组)
 - `data/foods.json` — **常用食物 / 罐头 / 组合的营养库**(会更新)。每项含份量 `serving` + 营养(`kcal`/`protein`/`fat`/`carb`,有详细表就全存 `sodiumMg` 等),可带 `components`(组合配料)和 `aliases`(别名/口令,如「饼干a」=Skyflakes)。用户报饮食时查库(含别名匹配)算;库里没有就网络估算或问用户,把常吃的存进来复用
-- `data/advice.json` — **饮食建议库**(把问过的咨询沉淀成数据,网页「我的」tab ③ 展示)。结构 `{ updated, sections:[{ id, title, tip?, recommend:[{ item, kcal?, protein?, price?, for:["增肌"/"减脂"], why }], avoid:[{ item, kcal?, why }] }] }`。以后用户问「某餐厅 / 某类快餐 适合我增肌减脂吗」这类咨询,答完把结论补进对应 section(没有就新建)
+- `data/advice.json` — **饮食建议库**(把问过的咨询沉淀成数据,网页「我的」tab ③ 展示)。结构 `{ updated, note?, sections:[{ id, title, titleEn?, tip?, recommend:[{ name, nameEn, kcal?, protein?, price?, ref?, for:["增肌"/"减脂"], why }], avoid:[{ name, nameEn, kcal?, why }] }] }`。**每餐厅一个 section、可多个具体餐;菜品中英文双名;非麦当劳的每条 recommend 带 `ref` 来源链接(能看到菜单+价格的页,同餐厅可重复)**。以后用户问「某餐厅 / 某类快餐 适合我增肌减脂吗」这类咨询,答完把结论补进对应 section(没有就新建),非麦当劳的餐附 `ref` 来源
 - `动作库.md` — 健身动作详细文字要领
 - `拉伸方案.md` — 练前热身 / 练后拉伸
 

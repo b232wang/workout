@@ -451,7 +451,8 @@ function renderAdvice(){
   const row=(r,bad)=>{
     let x='<div style="margin:9px 0 11px">';
     x+='<div class="ex" style="align-items:baseline"><span>'+(bad?'<span style="color:#dc2626">✕ </span>':'')+'<b>'+r.name+'</b>'+(r.nameEn?' <span class="en">'+r.nameEn+'</span>':'')+'</span><span class="muted" style="flex:none;margin-left:8px">'+(r.kcal?r.kcal+' 卡':'')+'</span></div>';
-    const sub=[r.protein?'蛋白 '+r.protein+'g':'',r.price||''].filter(Boolean).join(' · ');
+    let sub=[r.protein?'蛋白 '+r.protein+'g':'',r.price||''].filter(Boolean).join(' · ');
+    if(r.ref)sub+=(sub?' · ':'')+'<a href="'+r.ref+'" target="_blank" rel="noopener" style="color:#0369a1">来源 ↗</a>';
     if(sub||(!bad&&r.for))x+='<div class="muted small" style="margin-top:1px">'+sub+(!bad&&r.for?' '+(r.for||[]).map(tag).join(''):'')+'</div>';
     x+='<div class="small" style="margin-top:2px">'+r.why+'</div>';
     return x+'</div>';
