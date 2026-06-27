@@ -22,45 +22,45 @@
       "id": "chipotle", "title": "Chipotle", "titleEn": "Chipotle Mexican Grill",
       "tip": "点 bowl 不要卷饼皮省碳水;减脂少米饭/芝士/酸奶油;酱选 salsa。",
       "recommend": [
-        { "name": "双份鸡肉碗", "nameEn": "Double Chicken Burrito Bowl", "kcal": 700, "protein": 50, "price": "约 C$15", "for": ["增肌", "减脂"], "why": "双份鸡肉 + 黑豆 + 生菜,50g+ 蛋白;减脂少米饭/芝士。", "ref": "https://ca.pricelisto.com/menu-prices/chipotle-ca" },
-        { "name": "牛排碗", "nameEn": "Steak Burrito Bowl", "kcal": 650, "protein": 40, "price": "约 C$16", "for": ["增肌", "减脂"], "why": "瘦牛排高蛋白,fajita 蔬菜垫底。", "ref": "https://ca.pricelisto.com/menu-prices/chipotle-ca" },
-        { "name": "鸡肉沙拉碗", "nameEn": "Chicken Salad Bowl", "kcal": 500, "protein": 40, "price": "约 C$14", "for": ["减脂"], "why": "生菜底不要米饭,蛋白密度高、热量低。", "ref": "https://ca.pricelisto.com/menu-prices/chipotle-ca" }
+        { "name": "双份鸡肉碗", "nameEn": "Double Chicken Burrito Bowl", "kcal": 700, "protein": 50, "price": "约 C$15", "for": ["增肌", "减脂"], "why": "双份鸡肉 + 黑豆 + 生菜,50g+ 蛋白;减脂少米饭/芝士。", "ref": "https://menupricesincanada.com/chipotle-menu-with-prices-in-canada/" },
+        { "name": "牛排碗", "nameEn": "Steak Burrito Bowl", "kcal": 650, "protein": 40, "price": "约 C$16", "for": ["增肌", "减脂"], "why": "瘦牛排高蛋白,fajita 蔬菜垫底。", "ref": "https://menupricesincanada.com/chipotle-menu-with-prices-in-canada/" },
+        { "name": "鸡肉沙拉碗", "nameEn": "Chicken Salad Bowl", "kcal": 500, "protein": 40, "price": "约 C$14", "for": ["减脂"], "why": "生菜底不要米饭,蛋白密度高、热量低。", "ref": "https://menupricesincanada.com/chipotle-menu-with-prices-in-canada/" }
       ]
     },
     {
       "id": "subway", "title": "Subway", "titleEn": "Subway",
       "tip": "选烤鸡/火鸡/牛排,double meat,芥末/醋不要 mayo;减脂做成 salad。",
       "recommend": [
-        { "name": "烤鸡双肉一尺", "nameEn": "Rotisserie Chicken Footlong (double meat)", "kcal": 600, "protein": 48, "price": "约 C$12", "for": ["增肌"], "why": "双份鸡肉 48g 蛋白,全麦面包。", "ref": "https://ca.pricelisto.com/menu-prices/subway-ca" },
-        { "name": "火鸡胸六寸", "nameEn": "Turkey Breast 6-inch", "kcal": 280, "protein": 18, "price": "约 C$7", "for": ["减脂"], "why": "瘦火鸡、低卡,减脂轻食。", "ref": "https://ca.pricelisto.com/menu-prices/subway-ca" },
-        { "name": "牛排芝士沙拉", "nameEn": "Steak & Cheese Salad", "kcal": 400, "protein": 30, "price": "约 C$11", "for": ["减脂"], "why": "做成沙拉去面包,30g 蛋白。", "ref": "https://ca.pricelisto.com/menu-prices/subway-ca" }
+        { "name": "烤鸡双肉一尺", "nameEn": "Rotisserie Chicken Footlong (double meat)", "kcal": 600, "protein": 48, "price": "约 C$12", "for": ["增肌"], "why": "双份鸡肉 48g 蛋白,全麦面包。", "ref": "https://menupricesincanada.com/subway-menu-prices-in-canada/" },
+        { "name": "火鸡胸六寸", "nameEn": "Turkey Breast 6-inch", "kcal": 280, "protein": 18, "price": "约 C$7", "for": ["减脂"], "why": "瘦火鸡、低卡,减脂轻食。", "ref": "https://menupricesincanada.com/subway-menu-prices-in-canada/" },
+        { "name": "牛排芝士沙拉", "nameEn": "Steak & Cheese Salad", "kcal": 400, "protein": 30, "price": "约 C$11", "for": ["减脂"], "why": "做成沙拉去面包,30g 蛋白。", "ref": "https://menupricesincanada.com/subway-menu-prices-in-canada/" }
       ]
     },
     {
       "id": "nandos", "title": "Nando's", "titleEn": "Nando's PERi-PERi",
       "tip": "葡式炭烤(非炸),干净高蛋白;辣度自选,配沙拉/米饭。",
       "recommend": [
-        { "name": "1/4 炭烤鸡(腿)+ 沙拉", "nameEn": "Quarter Chicken (Leg) + Salad", "kcal": 400, "protein": 35, "price": "约 C$14", "for": ["增肌", "减脂"], "why": "炭烤鸡腿 + 蔬菜,均衡。", "ref": "https://ca.pricelisto.com/menu-prices/nandos-ca" },
-        { "name": "半只炭烤鸡", "nameEn": "Half Chicken", "kcal": 600, "protein": 60, "price": "约 C$16", "for": ["增肌"], "why": "半只鸡 60g 蛋白,增肌主餐。", "ref": "https://ca.pricelisto.com/menu-prices/nandos-ca" },
-        { "name": "鸡胸堡(去酱)", "nameEn": "Chicken Breast Burger", "kcal": 450, "protein": 35, "price": "约 C$13", "for": ["增肌", "减脂"], "why": "烤鸡胸,去蛋黄酱更净。", "ref": "https://ca.pricelisto.com/menu-prices/nandos-ca" }
+        { "name": "1/4 炭烤鸡(腿)+ 沙拉", "nameEn": "Quarter Chicken (Leg) + Salad", "kcal": 400, "protein": 35, "price": "约 C$14", "for": ["增肌", "减脂"], "why": "炭烤鸡腿 + 蔬菜,均衡。", "ref": "https://menupricesincanada.com/nandos-menu-with-prices-in-canada/" },
+        { "name": "半只炭烤鸡", "nameEn": "Half Chicken", "kcal": 600, "protein": 60, "price": "约 C$16", "for": ["增肌"], "why": "半只鸡 60g 蛋白,增肌主餐。", "ref": "https://menupricesincanada.com/nandos-menu-with-prices-in-canada/" },
+        { "name": "鸡胸堡(去酱)", "nameEn": "Chicken Breast Burger", "kcal": 450, "protein": 35, "price": "约 C$13", "for": ["增肌", "减脂"], "why": "烤鸡胸,去蛋黄酱更净。", "ref": "https://menupricesincanada.com/nandos-menu-with-prices-in-canada/" }
       ]
     },
     {
       "id": "osmows", "title": "Osmow's", "titleEn": "Osmow's Shawarma",
       "tip": "高蛋白,garlic sauce 适量;减脂换沙拉底、酱减半。",
       "recommend": [
-        { "name": "鸡肉沙威玛配饭", "nameEn": "Chicken Shawarma Rice Bowl", "kcal": 650, "protein": 40, "price": "约 C$12.8", "for": ["增肌"], "why": "鸡肉 + 米饭,增肌热量蛋白都够。", "ref": "https://ca.pricelisto.com/menu-prices/osmows-ca" },
-        { "name": "鸡肉沙威玛沙拉碗", "nameEn": "Chicken Shawarma Salad Bowl", "kcal": 450, "protein": 38, "price": "约 C$13", "for": ["减脂"], "why": "沙拉底换掉米饭/薯条,蛋白照样高。", "ref": "https://ca.pricelisto.com/menu-prices/osmows-ca" },
-        { "name": "鸡肉卷", "nameEn": "Chicken Shawarma Wrap", "kcal": 550, "protein": 30, "price": "约 C$11", "for": ["增肌"], "why": "方便带走,酱减半更可控。", "ref": "https://ca.pricelisto.com/menu-prices/osmows-ca" }
+        { "name": "鸡肉沙威玛配饭", "nameEn": "Chicken Shawarma Rice Bowl", "kcal": 650, "protein": 40, "price": "约 C$12.8", "for": ["增肌"], "why": "鸡肉 + 米饭,增肌热量蛋白都够。", "ref": "https://menupricesincanada.com/osmows-shawarma-menu-with-prices-in-canada/" },
+        { "name": "鸡肉沙威玛沙拉碗", "nameEn": "Chicken Shawarma Salad Bowl", "kcal": 450, "protein": 38, "price": "约 C$13", "for": ["减脂"], "why": "沙拉底换掉米饭/薯条,蛋白照样高。", "ref": "https://menupricesincanada.com/osmows-shawarma-menu-with-prices-in-canada/" },
+        { "name": "鸡肉卷", "nameEn": "Chicken Shawarma Wrap", "kcal": 550, "protein": 30, "price": "约 C$11", "for": ["增肌"], "why": "方便带走,酱减半更可控。", "ref": "https://menupricesincanada.com/osmows-shawarma-menu-with-prices-in-canada/" }
       ]
     },
     {
       "id": "wendys", "title": "Wendy's", "titleEn": "Wendy's",
       "tip": "Chili 是隐藏神器;烤鸡(grilled)优先,别碰炸的和薯条。",
       "recommend": [
-        { "name": "大份辣肉酱", "nameEn": "Large Chili", "kcal": 330, "protein": 28, "price": "约 C$5", "for": ["增肌", "减脂"], "why": "低卡高蛋白有饱腹感,便宜,减脂神器。", "ref": "https://ca.pricelisto.com/menu-prices/wendys-ca" },
-        { "name": "烤鸡三明治", "nameEn": "Grilled Chicken Sandwich", "kcal": 370, "protein": 34, "price": "约 C$8", "for": ["增肌", "减脂"], "why": "烤鸡胸非油炸,34g 蛋白。", "ref": "https://ca.pricelisto.com/menu-prices/wendys-ca" },
-        { "name": "小份辣肉酱", "nameEn": "Small Chili", "kcal": 250, "protein": 20, "price": "约 C$4", "for": ["减脂"], "why": "加餐级别,20g 蛋白 250 卡。", "ref": "https://ca.pricelisto.com/menu-prices/wendys-ca" }
+        { "name": "大份辣肉酱", "nameEn": "Large Chili", "kcal": 330, "protein": 28, "price": "约 C$5", "for": ["增肌", "减脂"], "why": "低卡高蛋白有饱腹感,便宜,减脂神器。", "ref": "https://menupricesincanada.com/wendys-menu-prices-in-canada/" },
+        { "name": "烤鸡三明治", "nameEn": "Grilled Chicken Sandwich", "kcal": 370, "protein": 34, "price": "约 C$8", "for": ["增肌", "减脂"], "why": "烤鸡胸非油炸,34g 蛋白。", "ref": "https://menupricesincanada.com/wendys-menu-prices-in-canada/" },
+        { "name": "小份辣肉酱", "nameEn": "Small Chili", "kcal": 250, "protein": 20, "price": "约 C$4", "for": ["减脂"], "why": "加餐级别,20g 蛋白 250 卡。", "ref": "https://menupricesincanada.com/wendys-menu-prices-in-canada/" }
       ]
     },
     {
