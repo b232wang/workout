@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "id": "2026-06-27-diet-1",
+      "date": "2026-06-27",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "早餐",
+            "dishes": [
+              { "name": "咖啡", "ref": "coffee-latte", "kcal": 95, "items": [
+                { "name": "咖啡(自制)", "nameEn": "Homemade Latte", "qty": "150g 牛奶 + espresso", "kcal": 95, "protein": 5, "fat": 5, "carb": 7 }
+              ] },
+              { "name": "希腊酸奶配蓝莓坚果", "ref": "greek-yogurt", "kcal": 315, "items": [
+                { "name": "希腊酸奶", "nameEn": "Greek Yogurt", "qty": "100g", "kcal": 78, "protein": 3.5, "fat": 5, "carb": 4, "note": "按食物库 115g=90卡 比例" },
+                { "name": "蓝莓", "nameEn": "Blueberries", "qty": "100g", "kcal": 57, "protein": 0.7, "fat": 0.3, "carb": 14, "note": "USDA 通用值估算" },
+                { "name": "坚果 mix", "nameEn": "Nut Mix", "qty": "30g", "kcal": 180, "protein": 6, "fat": 15, "carb": 6, "note": "混合坚果 ~600卡/100g 估算" }
+              ] }
+            ]
+          }
+        ],
+        "totals": { "kcal": 410, "protein": 15, "carb": 31, "fat": 25 },
+        "note": "早餐;咖啡套自制库,希腊酸奶按库比例,蓝莓/坚果mix为估算"
+      }
+    },
+    {
       "id": "2026-06-26-workout-1",
       "date": "2026-06-26",
       "category": "workout",
