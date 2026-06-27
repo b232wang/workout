@@ -70,10 +70,21 @@
                 { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
               ] }
             ]
+          },
+          {
+            "slot": "晚餐",
+            "dishes": [
+              { "name": "Double Quarter Pounder with Cheese", "kcal": 750, "items": [
+                { "name": "双层四盎司吉士堡(加洋葱)", "nameEn": "Double Quarter Pounder with Cheese", "qty": "1 个", "kcal": 750, "protein": 48, "fat": 43, "carb": 41, "note": "麦当劳;含 3 份洋葱(热量忽略)" }
+              ] },
+              { "name": "McDouble", "kcal": 395, "items": [
+                { "name": "麦当劳双层吉士堡", "nameEn": "McDouble", "qty": "1 个", "kcal": 395, "protein": 22, "fat": 17, "carb": 34, "note": "麦当劳" }
+              ] }
+            ]
           }
         ],
-        "totals": { "kcal": 805, "protein": 35, "carb": 104, "fat": 28 },
-        "note": "麦片/咖啡按食物库估算;香蕉为常见食物估算"
+        "totals": { "kcal": 1950, "protein": 105, "carb": 179, "fat": 88 },
+        "note": "麦片/咖啡按食物库估算;香蕉为常见食物估算;晚餐麦当劳按官方营养估算(7600 Kennedy Rd 取餐)"
       }
     },
     {
