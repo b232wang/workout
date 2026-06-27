@@ -462,8 +462,12 @@ function renderAdvice(){
   let h='<div class="card"><div class="ctitle">③ 给我的建议库 <span class="muted small" style="font-weight:400">· 我问过的咨询</span></div>';
   if(ADVICE.updated)h+='<div class="muted small">更新 '+ADVICE.updated+'</div>';
   if(ADVICE.note)h+='<div class="muted small" style="margin-bottom:6px">'+ADVICE.note+'</div>';
-  ADVICE.sections.forEach(s=>{
-    h+='<details class="exblock" style="margin:6px 0"><summary class="exhead"><span class="exname">'+s.title+(s.titleEn?' <span class="en">'+s.titleEn+'</span>':'')+'</span></summary>';
+  const rc=v=>v>=8?'#16a34a':v>=6?'#0369a1':v>=4?'#b45309':'#dc2626';
+  const ordered=ADVICE.sections.slice().sort((a,b)=>a.id==='avoid-general'?1:b.id==='avoid-general'?-1:(b.rating?b.rating.score:-1)-(a.rating?a.rating.score:-1));
+  ordered.forEach(s=>{
+    const badge=s.rating?' <b style="color:'+rc(s.rating.score)+';flex:none">'+s.rating.score+'/10</b>':'';
+    h+='<details class="exblock" style="margin:6px 0"><summary class="exhead"><span class="exname">'+s.title+(s.titleEn?' <span class="en">'+s.titleEn+'</span>':'')+badge+'</span></summary>';
+    if(s.rating)h+='<div class="muted small" style="margin:5px 0"><b style="color:'+rc(s.rating.score)+'">评分 '+s.rating.score+'/10</b> · '+s.rating.reason+'</div>';
     if(s.tip)h+='<div class="muted small" style="margin:5px 0">'+s.tip+'</div>';
     (s.recommend||[]).forEach(r=>h+=row(r,false,s.ref));
     (s.avoid||[]).forEach(r=>h+=row(r,true,s.ref));
