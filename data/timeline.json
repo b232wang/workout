@@ -81,10 +81,19 @@
                 { "name": "麦当劳双层吉士堡", "nameEn": "McDouble", "qty": "1 个", "kcal": 395, "protein": 22, "fat": 17, "carb": 34, "note": "麦当劳" }
               ] }
             ]
+          },
+          {
+            "slot": "其他",
+            "dishes": [
+              { "name": "蛋白粉 + 牛奶(睡前)", "ref": "whey-leanfit-vanilla", "kcal": 329, "items": [
+                { "name": "Leanfit 乳清蛋白粉", "nameEn": "Leanfit Whey", "qty": "1 勺 33g", "kcal": 140, "protein": 24, "fat": 3.5, "carb": 3 },
+                { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "300ml", "kcal": 189, "protein": 10, "fat": 9, "carb": 14 }
+              ] }
+            ]
           }
         ],
-        "totals": { "kcal": 1950, "protein": 105, "carb": 179, "fat": 88 },
-        "note": "麦片/咖啡按食物库估算;香蕉为常见食物估算;晚餐麦当劳按官方营养估算(7600 Kennedy Rd 取餐)"
+        "totals": { "kcal": 2279, "protein": 139, "carb": 196, "fat": 101 },
+        "note": "麦片/咖啡按食物库估算;香蕉为常见食物估算;晚餐麦当劳按官方营养估算(7600 Kennedy Rd 取餐);睡前蛋白粉+牛奶"
       }
     },
     {
