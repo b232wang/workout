@@ -47,6 +47,16 @@
       "components": ["150g 3% 牛奶", "Nespresso espresso 胶囊"],
       "kcal": 95, "protein": 5, "fat": 5, "carb": 7,
       "note": "用户早上自制的标准杯(150g 牛奶 ~90卡 + espresso ~5卡)。仅当用户单说「咖啡」=自制这杯时套用;外面买的咖啡(带店名/品牌,如 %、星巴克)不套此条目,按实际单独估算"
+    },
+    {
+      "id": "whey-leanfit-vanilla",
+      "name": "Leanfit 乳清蛋白粉(香草)",
+      "nameEn": "Leanfit Whey Protein (Vanilla Bean)",
+      "aliases": ["蛋白粉", "乳清蛋白", "乳清", "whey", "protein powder"],
+      "serving": "1 勺 33g",
+      "kcal": 140, "protein": 24, "fat": 3.5, "saturatedFat": 2, "carb": 3, "sugar": 2,
+      "sodiumMg": 125, "potassiumMg": 250, "calciumMg": 150,
+      "note": "Leanfit Whey 香草味,2kg/60 勺;每勺 33g,用户提供营养标签。常配 3% 牛奶冲(牛奶单独按量算)"
     }
   ]
 }
