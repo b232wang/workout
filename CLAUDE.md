@@ -32,9 +32,10 @@
 
 ## 库文件(参考数据)
 
-- `data/profile.json` — 个人信息(年龄/性别/身高/目标/活动系数),用于算每日卡路里需求 TDEE(配合最新体重)
+- `data/profile.json` — 个人信息(年龄/性别/身高/目标/活动系数/蛋白倍数 `proteinPerKg`/碳水占比 `carbPct`),用于算每日卡路里需求与宏量目标(配合最新体重)
 - `data/plan.json` — 健身计划(推/拉/腿动作安排,含组数次数/目标肌/要点/备用/超级组)
 - `data/foods.json` — **常用食物 / 罐头 / 组合的营养库**(会更新)。每项含份量 `serving` + 营养(`kcal`/`protein`/`fat`/`carb`,有详细表就全存 `sodiumMg` 等),可带 `components`(组合配料)和 `aliases`(别名/口令,如「饼干a」=Skyflakes)。用户报饮食时查库(含别名匹配)算;库里没有就网络估算或问用户,把常吃的存进来复用
+- `data/advice.json` — **饮食建议库**(把问过的咨询沉淀成数据,网页「我的」tab ③ 展示)。结构 `{ updated, sections:[{ id, title, tip?, recommend:[{ item, kcal?, protein?, price?, for:["增肌"/"减脂"], why }], avoid:[{ item, kcal?, why }] }] }`。以后用户问「某餐厅 / 某类快餐 适合我增肌减脂吗」这类咨询,答完把结论补进对应 section(没有就新建)
 - `动作库.md` — 健身动作详细文字要领
 - `拉伸方案.md` — 练前热身 / 练后拉伸
 
@@ -42,7 +43,7 @@
 
 1. **记录任何事** → 追加一条 entry 到 `timeline.json`(date 用当天,选或新定 category,填 data)。同一天同类可多条。
 2. **报健身数据**(如「卧推 60 做了 10/10/8」)→ 当天有 workout entry 就往其 `exercises` 加,否则新建 workout entry。重量 kg、哑铃单只,各组 `{weight,reps}`。
-3. **报饮食** → 优先查 `foods.json`(含 `aliases` 别名)算每项 kcal/蛋白,记 diet entry(算 `totalKcal` + `totalProtein`);库里没有就网络估算或问用户,常吃的存进库复用。估算的在 `note` 标注。**咖啡特例:只有单说「咖啡」=自制那杯(150g 牛奶+espresso,95卡)才套 `coffee-latte`;带店名/品牌(%、星巴克等)按外购单独估,不套库。**
+3. **报饮食** → 优先查 `foods.json`(含 `aliases` 别名)算每项 kcal/蛋白,记 diet entry(算 `totalKcal` + `totalProtein`);库里没有就网络估算或问用户,常吃的存进库复用。估算的在 `note` 标注。**咖啡特例:只有单说「咖啡」=自制那杯(150g 牛奶+espresso,95卡)才套 `coffee-latte`;带店名/品牌(%、星巴克等)按外购单独估,不套库。** **报告/小结饮食(口头回复和网页小结都要)时,蛋白/碳水/脂肪各自后面用括号标占总热量百分比**(蛋白×4、碳水×4、脂肪×9 ÷ 总卡;如「蛋白 139g(24%) / 碳水 196g(34%) / 脂肪 101g(40%)」)。
 4. **「今天练什么 / 该练什么」** → 训练循环**自动顺延**:看 `timeline.json` 里**最近一次 workout 的 type**,按 `plan.json` 的 `cycleOrder`(当前 **推→腿→拉**)取下一个;从没练过就从 cycleOrder 第一个开始。然后读对应 split + `动作库.md` 要领,从 timeline 找各动作上次成绩提醒。**休息日不用记任何东西——循环只认「上次练的下一个」,不认日历。注意:用户顺序是 推→腿→拉,不是标准 PPL 的推拉腿。**
 5. **「换动作 / 不喜欢」** → 改 `plan.json` 对应动作的 `alternates`。
 6. **回看 / 趋势**(「卧推进步」「今天吃了多少卡」「这周练几次」)→ 从 `timeline.json` 过滤聚合后回答。

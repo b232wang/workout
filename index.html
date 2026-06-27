@@ -104,7 +104,7 @@ section{display:none}section.active{display:block}
   <button data-tab="today" class="active"><span class="ico">📆</span>今天</button>
   <button data-tab="fitness"><span class="ico">🏋️</span>健身</button>
   <button data-tab="calendar"><span class="ico">📅</span>日历</button>
-  <button data-tab="calories"><span class="ico">🔥</span>营养</button>
+  <button data-tab="calories"><span class="ico">👤</span>我的</button>
   <button data-tab="foods"><span class="ico">🥫</span>食物库</button>
 </nav>
 <script>
@@ -118,7 +118,7 @@ const CATEGORIES={
 };
 function cat(k){return CATEGORIES[k]||{label:k,emoji:'•',color:'var(--note)'}}
 
-let TL={entries:[]},PLAN={splits:[]},FOODS={foods:[]},PROFILE={};
+let TL={entries:[]},PLAN={splits:[]},FOODS={foods:[]},PROFILE={},ADVICE={sections:[]};
 function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 let selDate=iso(new Date());
 
@@ -193,13 +193,14 @@ function gotoFood(ev,id){
 
 async function load(){
   try{
-    const [tl,plan,foods,profile]=await Promise.all([
+    const [tl,plan,foods,profile,advice]=await Promise.all([
       fetch('./data/timeline.json').then(r=>r.json()),
       fetch('./data/plan.json').then(r=>r.json()),
       fetch('./data/foods.json').then(r=>r.json()),
       fetch('./data/profile.json').then(r=>r.ok?r.json():{}).catch(()=>({})),
+      fetch('./data/advice.json').then(r=>r.ok?r.json():{sections:[]}).catch(()=>({sections:[]})),
     ]);
-    TL=tl;PLAN=plan;FOODS=foods;PROFILE=profile||{};
+    TL=tl;PLAN=plan;FOODS=foods;PROFILE=profile||{};ADVICE=advice||{sections:[]};
   }catch(e){
     document.getElementById('subline').textContent='数据加载失败';
     document.getElementById('today').innerHTML='<div class="wrap"><div class="card empty">数据加载失败:'+e.message+'</div></div>';
@@ -283,7 +284,8 @@ function daySummaryHtml(date){
   lines.push('训练:'+(w?('练了 '+(sp?sp.label:w)):'无记录(休息)'));
   if(diet&&diet.data.totals){
     const tot=diet.data.totals;
-    let s='饮食:摄入 '+tot.kcal+' 卡(蛋白 '+tot.protein+'g / 碳水 '+tot.carb+'g / 脂肪 '+tot.fat+'g)';
+    const mP=tot.kcal?Math.round((tot.protein||0)*4/tot.kcal*100):0, mC=tot.kcal?Math.round((tot.carb||0)*4/tot.kcal*100):0, mF=tot.kcal?Math.round((tot.fat||0)*9/tot.kcal*100):0;
+    let s='饮食:摄入 '+tot.kcal+' 卡(蛋白 '+tot.protein+'g('+mP+'%) / 碳水 '+tot.carb+'g('+mC+'%) / 脂肪 '+tot.fat+'g('+mF+'%))';
     if(t){
       const dt=dailyTarget(date), goal=dt?dt.target:t.bulk;
       const gap=tot.kcal-goal, ppk=(tot.protein/t.kg);
@@ -398,17 +400,30 @@ function renderCalories(){
   const el=document.getElementById('calories'),t=tdee();
   let html='<div class="wrap">';
   if(t){
-    html+='<div class="card"><div class="ctitle">身体 & 每日需求</div>';
+    const pr=PROFILE.proteinPerKg||[1.8,2], carbPct=PROFILE.carbPct||55;
+    const dt=dailyTarget(todayKey()), goal=dt?dt.target:t.bulk;
+    // ① 我的设定(写死的输入)
+    html+='<div class="card"><div class="ctitle">① 我的设定 <span class="muted small" style="font-weight:400">· 写死的输入</span></div>';
+    html+='<div class="ex"><span>身高</span><span class="muted">'+(PROFILE.heightCm||'-')+' cm</span></div>';
+    html+='<div class="ex"><span>年龄 / 性别</span><span class="muted">'+(PROFILE.age||'-')+' · '+(PROFILE.sex==='male'?'男':PROFILE.sex==='female'?'女':'-')+'</span></div>';
     html+='<div class="ex"><span>当前体重</span><span class="muted">'+t.kg+' kg</span></div>';
+    html+='<div class="ex"><span>目标</span><span class="muted">'+(PROFILE.goal||'-')+'</span></div>';
+    html+='<div class="ex"><span>蛋白倍数</span><span class="muted">'+pr[0]+'–'+pr[1]+' ×体重</span></div>';
+    html+='<div class="ex"><span>碳水占比</span><span class="muted">'+carbPct+'%</span></div>';
+    html+='<div class="ex"><span>活动系数</span><span class="muted">'+(PROFILE.activityLevel||1.55)+'</span></div>';
+    html+='</div>';
+    // ② 推算(自动算出)
+    const pLow=Math.round(t.kg*pr[0]), pHigh=Math.round(t.kg*pr[1]), pMid=Math.round((pLow+pHigh)/2);
+    const carbG=Math.round(goal*carbPct/100/4), fatG=Math.max(0,Math.round((goal-pMid*4-carbG*4)/9));
+    const pct=(g,k)=>Math.round(g*k/goal*100);
+    html+='<div class="card"><div class="ctitle">② 推算 <span class="muted small" style="font-weight:400">· 自动算出</span></div>';
     html+='<div class="ex"><span>BMR 基础代谢</span><span class="muted">'+t.bmr+' 卡</span></div>';
     html+='<div class="ex"><span>维持需求</span><span class="muted">'+t.maint+' 卡/天</span></div>';
-    const dt=dailyTarget(todayKey()), rc=c=>Math.round(t.bmr*c/10)*10;
-    if(dt){
-      html+='<div class="ex"><span>今日目标</span><span class="muted">'+dt.target+' 卡 · '+dt.type+(dt.comp?(dt.comp>0?' +'+dt.comp:' '+dt.comp):'')+'</span></div>';
-      html+='<div class="muted small" style="margin:2px 0 0">动态:训练日~'+(rc(1.55)+300)+' / 轻活动~'+(rc(1.4)+200)+' / 休息~'+(rc(1.3)+200)+' 卡,再按近 3 天盈亏 ±300 平衡</div>';
-    }else html+='<div class="ex"><span>增肌目标</span><span class="muted">'+t.bulk+' 卡/天</span></div>';
-    const pr=PROFILE.proteinPerKg||[1.6,2];
-    html+='<div class="ex"><span>蛋白目标</span><span class="muted">'+Math.round(t.kg*pr[0])+'-'+Math.round(t.kg*pr[1])+' g/天</span></div>';
+    html+='<div class="ex"><span>今日目标</span><span class="muted">'+goal+' 卡'+(dt?' · '+dt.type+(dt.comp?(dt.comp>0?' +'+dt.comp:' '+dt.comp):''):'')+'</span></div>';
+    if(dt){const rc=c=>Math.round(t.bmr*c/10)*10;html+='<div class="muted small" style="margin:2px 0 6px">训练日~'+(rc(1.55)+300)+' / 轻活动~'+(rc(1.4)+200)+' / 休息~'+(rc(1.3)+200)+' 卡,再按近 3 天盈亏 ±300 平衡</div>';}
+    html+='<div class="ex"><span>蛋白目标</span><span class="muted">'+pLow+'–'+pHigh+' g('+pct(pMid,4)+'%)</span></div>';
+    html+='<div class="ex"><span>碳水目标</span><span class="muted">'+carbG+' g('+carbPct+'%)</span></div>';
+    html+='<div class="ex"><span>脂肪目标</span><span class="muted">'+fatG+' g('+pct(fatG,9)+'%)</span></div>';
     const ws=TL.entries.filter(e=>e.category==='weight').sort((a,b)=>a.date<b.date?-1:1);
     if(ws.length>1)html+='<canvas id="wchart" height="150" style="margin-top:10px"></canvas>';
     else html+='<div class="muted small" style="margin-top:8px">再记几次体重就能看变化趋势。</div>';
@@ -418,15 +433,39 @@ function renderCalories(){
   if(diet.length){
     const by={};diet.forEach(e=>{const tt=e.data.totals||{};const b=by[e.date]=by[e.date]||{kcal:0,protein:0};b.kcal+=(tt.kcal||0);b.protein+=(tt.protein||0)});
     html+='<div class="card"><div class="ctitle">每日摄入(估算)</div>';
-    Object.keys(by).sort().reverse().forEach(d=>{const g=t?(by[d].kcal-t.bulk):null;html+='<div class="ex"><span>'+d+' <span class="muted small">'+daysAgo(d)+'</span></span><span class="muted">'+by[d].kcal+' 卡'+(by[d].protein?' · '+by[d].protein+'g 蛋白':'')+(g!=null?' <span class="small">('+(g>=0?'+':'')+g+' vs 增肌)</span>':'')+'</span></div>'});
+    Object.keys(by).sort().reverse().forEach(d=>{const dg=dailyTarget(d),goal2=dg?dg.target:(t?t.bulk:null);const g=goal2!=null?(by[d].kcal-goal2):null;html+='<div class="ex"><span>'+d+' <span class="muted small">'+daysAgo(d)+'</span></span><span class="muted">'+by[d].kcal+' 卡'+(by[d].protein?' · '+by[d].protein+'g 蛋白':'')+(g!=null?' <span class="small">('+(g>=0?'+':'')+g+' vs 目标)</span>':'')+'</span></div>'});
     html+='</div>';
   }
+  html+=renderAdvice();
   el.innerHTML=html+'</div>';
   const ws=TL.entries.filter(e=>e.category==='weight').sort((a,b)=>a.date<b.date?-1:1);
   if(t&&ws.length>1){
     if(wchart)wchart.destroy();
     wchart=new Chart(document.getElementById('wchart'),{type:'line',data:{labels:ws.map(e=>e.date.slice(5)),datasets:[{label:'体重(kg)',data:ws.map(e=>e.data.kg),borderColor:'#06b6d4',backgroundColor:'#06b6d4',tension:.3}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}}},scales:{y:{beginAtZero:false}}}});
   }
+}
+// ③ 建议库:把问过的咨询沉淀成数据
+function renderAdvice(){
+  if(!ADVICE.sections||!ADVICE.sections.length)return '';
+  const tag=f=>'<span style="font-size:10px;padding:1px 6px;border-radius:8px;margin-left:5px;'+(f==='增肌'?'background:#e0f2fe;color:#0369a1':'background:#fef3c7;color:#b45309')+'">'+f+'</span>';
+  let h='<div class="card"><div class="ctitle">③ 给我的建议库 <span class="muted small" style="font-weight:400">· 我问过的咨询</span></div>';
+  if(ADVICE.updated)h+='<div class="muted small" style="margin-bottom:6px">更新 '+ADVICE.updated+'</div>';
+  ADVICE.sections.forEach(s=>{
+    h+='<details class="exblock" style="margin:6px 0"><summary class="exhead"><span class="exname">'+s.title+'</span></summary>';
+    if(s.tip)h+='<div class="muted small" style="margin:5px 0">'+s.tip+'</div>';
+    (s.recommend||[]).forEach(r=>{
+      h+='<div style="margin:7px 0"><div><span style="color:#16a34a;font-weight:600">✓ '+r.item+'</span>'+(r.for||[]).map(tag).join('')+'</div>';
+      const meta=[r.kcal?r.kcal+'卡':'',r.protein?'蛋白'+r.protein+'g':'',r.price||''].filter(Boolean).join(' · ');
+      if(meta)h+='<div class="muted small">'+meta+'</div>';
+      h+='<div class="small">'+r.why+'</div></div>';
+    });
+    (s.avoid||[]).forEach(r=>{
+      h+='<div style="margin:7px 0"><div><span style="color:#dc2626;font-weight:600">✕ '+r.item+'</span></div>';
+      h+='<div class="small muted">'+(r.kcal?r.kcal+'卡 · ':'')+r.why+'</div></div>';
+    });
+    h+='</details>';
+  });
+  return h+'</div>';
 }
 
 function renderFoods(){

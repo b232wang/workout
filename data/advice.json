@@ -1,0 +1,39 @@
+{
+  "updated": "2026-06-26",
+  "sections": [
+    {
+      "id": "mcdonalds",
+      "title": "麦当劳",
+      "tip": "抓蛋白/热量比;油炸裹粉 + 蛋黄酱基底的酱是雷。汉堡选双层牛肉、可去 Big Mac 酱/塔塔酱,芥末番茄酱无所谓。",
+      "recommend": [
+        { "item": "Double Quarter Pounder w/ Cheese", "kcal": 750, "protein": 48, "price": "$10.29", "for": ["增肌"], "why": "蛋白最高(48g),双层牛肉,增肌当主餐;同价位蛋白完胜 Double Big Mac" },
+        { "item": "McDouble", "kcal": 395, "protein": 22, "price": "$3.79", "for": ["增肌", "减脂"], "why": "蛋白密度高又便宜,性价比之王" },
+        { "item": "Quarter Pounder w/ Cheese", "kcal": 520, "protein": 30, "price": "约 $8.99", "for": ["增肌", "减脂"], "why": "单层牛肉 30g 蛋白,均衡;减脂去酱更净" },
+        { "item": "10 块麦乐鸡", "kcal": 420, "protein": 23, "price": "约 $9.49", "for": ["增肌", "减脂"], "why": "23g 蛋白,别蘸糖醋酱;减脂可点 6 块" }
+      ],
+      "avoid": [
+        { "item": "薯条", "kcal": 340, "for": ["减脂"], "why": "纯油 + 精制碳水,几乎 0 蛋白,减脂头号雷(增肌期可拿来补碳水)" },
+        { "item": "Filet-O-Fish", "kcal": 380, "for": ["减脂"], "why": "伪健康:鱼裹粉油炸 + 塔塔酱,蛋白才 15g、脂肪 18g,密度差" },
+        { "item": "McChicken", "kcal": 400, "price": "约 $5.39", "for": ["减脂"], "why": "炸鸡碎 + 蛋黄酱,蛋白仅 14g" },
+        { "item": "奶昔 / McFlurry / 含糖汽水", "for": ["减脂"], "why": "液体糖 500–700 卡,纯热量无蛋白" }
+      ]
+    },
+    {
+      "id": "fastfood-toronto",
+      "title": "其他快餐(多伦多)",
+      "tip": "原则:可定制的碗/沙拉 > 固定套餐;烤(grilled)> 炸(fried);酱选 salsa / 芥末 / 醋,避开蛋黄酱基底。价格为多伦多当地约值。",
+      "recommend": [
+        { "item": "Chipotle / Mucho Burrito — burrito BOWL 双份肉", "kcal": 700, "protein": 50, "price": "约 C$13–17", "for": ["增肌", "减脂"], "why": "双肉碗 50g+ 蛋白;减脂少米饭/芝士/酸奶油、不要卷饼皮" },
+        { "item": "Subway — 双肉 sub 或沙拉(烤鸡/火鸡)", "kcal": 500, "protein": 35, "price": "约 C$9–12", "for": ["增肌", "减脂"], "why": "double meat,芥末/醋不要 mayo;减脂做成 salad" },
+        { "item": "Nando's — 1/4 炭烤鸡 + 沙拉", "kcal": 400, "protein": 35, "price": "约 C$11–14", "for": ["增肌", "减脂"], "why": "葡式炭烤(非炸),干净高蛋白" },
+        { "item": "Osmow's — 鸡肉 shawarma bowl(配饭)", "kcal": 650, "protein": 40, "price": "约 C$12.8", "for": ["增肌"], "why": "高蛋白,garlic sauce 适量;减脂换沙拉底" },
+        { "item": "Wendy's Chili 辣肉酱", "kcal": 250, "protein": 20, "price": "约 C$4–5", "for": ["减脂"], "why": "低卡高蛋白有饱腹感,减脂神器" },
+        { "item": "Freshii — 健康碗 + 鸡肉", "kcal": 450, "protein": 30, "price": "约 C$10.5–13.5", "for": ["减脂"], "why": "低卡高蛋白,多伦多本地连锁" }
+      ],
+      "avoid": [
+        { "item": "Popeyes / KFC 炸鸡(带饼皮配薯)", "for": ["减脂"], "why": "油炸为主;非吃不可就选去皮/grilled、别碰饼皮和配菜" },
+        { "item": "Tim Hortons 甜点 / 贝果套餐", "for": ["减脂"], "why": "偏碳水甜点,高蛋白选择少" }
+      ]
+    }
+  ]
+}
