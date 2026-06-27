@@ -1,6 +1,6 @@
 {
   "updated": "2026-06-27",
-  "note": "菜名 / 价格 / 卡路里取自各餐厅来源页(每条「菜单·价格 ↗」可打开核对、可搜到该菜名)。卡路里:来源有标注的直接用;无标注或区间则标「估」并可点开看依据。蛋白多为估算(标「估」);Chipotle 高蛋白菜单的蛋白/卡路里为官方数据(chipotle.com,不标估)。来源优先级:官方菜单 + 你的实际下单平台(DoorDash)> SEO 聚合站(后者可能过期/不符)——除 Chipotle 外其余餐厅价格仍来自聚合站,以 DoorDash 为准。「减脂」标签 = 默认份就减脂友好;需改造才友好的只标「增肌」、why 写怎么改。每家(除麦当劳)有 1–10 评分,综合健康 / 增肌减脂 / 抗炎,促炎(油炸为主 / 加工肉 / 含糖饮料)硬扣分;评分经两个独立 agent 交叉打分 + 第三个 agent 复核。麦当劳为通用官方值 + 实际订单价,不附外链、不评分。",
+  "note": "全部菜品来自各品牌官方营养来源,每家「来源 ↗」可点开自己核对(数字随门店配置/份量浮动,以官方源为准)。蛋白:官方直接公布的不标「估」;Five Guys(官方只列配料、蛋白为加总)、Pita Pit(自选餐、按官方配料估)标「估」。价格无官方数据、以 DoorDash 为准。Osmow's 因官方未公开营养已移除。麦当劳为通用官方值 + 你的订单价。每家(除麦当劳)1–10 评分综合健康/增肌减脂/抗炎。",
   "sections": [
     {
       "id": "mcdonalds", "title": "麦当劳", "titleEn": "McDonald's",
@@ -9,143 +9,130 @@
         { "name": "双层四盎司吉士堡", "nameEn": "Double Quarter Pounder w/ Cheese", "kcal": 750, "protein": 48, "price": "$10.29", "for": ["增肌"], "why": "蛋白最高(48g),双层牛肉,增肌当主餐。" },
         { "name": "麦当劳双层吉士堡", "nameEn": "McDouble", "kcal": 395, "protein": 22, "price": "$3.79", "for": ["增肌", "减脂"], "why": "395 卡 / 22g 蛋白,密度高又便宜,减脂也扛得住。" },
         { "name": "四盎司吉士堡", "nameEn": "Quarter Pounder w/ Cheese", "kcal": 520, "protein": 30, "price": "约 $8.99", "for": ["增肌", "减脂"], "why": "单层牛肉 30g 蛋白;减脂去酱约 480 卡,可控。" },
-        { "name": "10 块麦乐鸡", "nameEn": "10pc Chicken McNuggets", "kcal": 420, "protein": 23, "price": "约 $9.49", "for": ["增肌"], "why": "23g 蛋白,但毕竟油炸裹粉;增肌可、减脂少碰(要吃点 6 块、别蘸糖醋酱)。" }
+        { "name": "10 块麦乐鸡", "nameEn": "10pc Chicken McNuggets", "kcal": 420, "protein": 23, "price": "约 $9.49", "for": ["增肌"], "why": "23g 蛋白,但毕竟油炸裹粉;增肌可、减脂少碰。" }
       ],
       "avoid": [
         { "name": "薯条", "nameEn": "Fries", "kcal": 340, "for": ["减脂"], "why": "纯油 + 精制碳水,几乎 0 蛋白,减脂头号雷。" },
-        { "name": "鱼柳堡", "nameEn": "Filet-O-Fish", "kcal": 380, "for": ["减脂"], "why": "伪健康:鱼裹粉油炸 + 塔塔酱,蛋白才 15g。" },
-        { "name": "麦香鸡", "nameEn": "McChicken", "kcal": 400, "for": ["减脂"], "why": "炸鸡碎 + 蛋黄酱,蛋白仅 14g。" }
-      ]
-    },
-    {
-      "id": "freshii", "title": "Freshii", "titleEn": "Freshii",
-      "tip": "多伦多本地健康连锁,主打健康碗/沙拉,鸡肉款蛋白足。",
-      "rating": { "score": 9, "reason": "健康连锁,炭烤鸡 + 大量蔬菜/全谷碗,非油炸、几乎不促炎,抗炎食材丰富,基本不用费心挑(避开含糖思慕雪即可)。" },
-      "ref": "https://menupricesincanada.com/freshii-menu-prices-in-canada/",
-      "recommend": [
-        { "name": "蜂蜜芥末鸡", "nameEn": "Hot Honey Mustard Chicken", "kcal": 310, "protein": 30, "price": "CAN$15.99", "for": ["减脂"], "why": "鸡肉 310 卡,低卡高蛋白,减脂优选。" },
-        { "name": "香蒜帕玛森鸡", "nameEn": "Chicken Pesto Parmesan", "kcal": 520, "protein": 35, "price": "CAN$15.99", "for": ["增肌", "减脂"], "why": "鸡肉 520 卡,蛋白足,减脂也可。" },
-        { "name": "佛陀沙嗲碗", "nameEn": "Buddha Satay Bowl", "kcal": 500, "kcalEst": true, "kcalNote": "来源页未标该项卡路里;按糙米 + 蔬菜 + 花生酱碗估 ~500 卡。", "protein": 20, "price": "CAN$12.49", "for": ["增肌"], "why": "花生酱脂肪高、蛋白偏低(~20g);增肌可,减脂选上面两款鸡肉款更好。" }
-      ]
-    },
-    {
-      "id": "nandos", "title": "Nando's", "titleEn": "Nando's PERi-PERi",
-      "tip": "葡式炭烤(非炸),干净高蛋白;辣度自选,配沙拉/米饭。",
-      "rating": { "score": 8.5, "reason": "葡式炭烤鸡明火非油炸、是抗炎瘦蛋白,辣椒香料本身抗炎;菜单干净,配菜选烤蔬菜而非薯条即可,几乎不促炎。" },
-      "ref": "https://menupricesincanada.com/nandos-menu-with-prices-in-canada/",
-      "recommend": [
-        { "name": "1/4 鸡(腿)+ 1 配菜", "nameEn": "1/4 Chicken (Leg + Thigh) + 1 Side", "kcal": 340, "protein": 30, "price": "CAN$14.29", "for": ["增肌", "减脂"], "why": "炭烤鸡腿 340 卡,均衡;配菜选沙拉别选薯条。" },
-        { "name": "半只鸡 + 1 配菜", "nameEn": "1/2 Chicken + 1 Side", "kcal": 760, "protein": 60, "price": "CAN$17.89", "for": ["增肌"], "why": "半只炭烤鸡,蛋白爆表,增肌主餐。" },
-        { "name": "去骨鸡胸 + 1 配菜", "nameEn": "Boneless Butterfly Chicken Breast + 1 Side", "kcal": 240, "kcalNote": "来源页对该项标 240 卡,应为炭烤鸡胸主体的热量(很瘦);配菜选沙拉/蔬菜才接近此值,选薯条会明显更高。", "protein": 35, "price": "CAN$17.89", "for": ["增肌", "减脂"], "why": "纯炭烤鸡胸,蛋白密度极高,减脂神器(配菜选沙拉)。" }
+        { "name": "鱼柳堡", "nameEn": "Filet-O-Fish", "kcal": 380, "for": ["减脂"], "why": "伪健康:鱼裹粉油炸 + 塔塔酱,蛋白才 15g。" }
       ]
     },
     {
       "id": "chipotle", "title": "Chipotle", "titleEn": "Chipotle Mexican Grill",
-      "tip": "2025 年底上线的官方「高蛋白菜单」(adobo 瘦鸡 + 高纤 + GLP-1 友好预设碗)最适合你,不用再费心去米饭/酱。以下蛋白/卡路里为 Chipotle 官方数据;价格以 DoorDash 为准(我抓不了 DoorDash,仅高蛋白高纤碗经你确认)。",
-      "rating": { "score": 8.5, "reason": "新增官方高蛋白菜单:adobo 瘦鸡 + 高纤 + GLP-1 友好的预设碗,精瘦高蛋白、非油炸、高纤抗炎友好,不用再像以前那样费心避开白米/酱,故上调到 8.5。" },
+      "tip": "2025 年底官方「高蛋白菜单」(adobo 瘦鸡 + 高纤 + GLP-1 友好)最适合你。蛋白/卡路里为官方数据;价格以 DoorDash 为准。",
+      "rating": { "score": 8.5, "reason": "官方高蛋白菜单:adobo 瘦鸡 + 高纤 + GLP-1 友好的预设碗,精瘦高蛋白、非油炸、高纤抗炎,不用再费心避开白米/酱。" },
       "ref": "https://www.chipotle.com/high-protein-meals",
       "recommend": [
-        { "name": "高蛋白高纤碗", "nameEn": "High Protein-High Fiber Bowl", "kcal": 540, "protein": 46, "proteinEst": false, "price": "CAN$12.70", "for": ["增肌", "减脂"], "why": "官方主推:adobo 鸡 + 糙米 + 黑豆 + fajita 蔬菜 + 双莎莎 + 生菜,46g 蛋白 / 14g 纤维 / 540 卡,GLP-1 友好、高纤抗炎,增肌减脂都顶。价为你 DoorDash 确认。" },
-        { "name": "双倍高蛋白碗", "nameEn": "Double High Protein Bowl", "kcal": 760, "protein": 81, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "双份 adobo 鸡 + 白米 + 黑豆 + 蔬菜 + 莎莎 + 芝士 + 多生菜,81g 蛋白 / 760 卡,增肌蛋白拉满。" },
-        { "name": "高蛋白低卡碗", "nameEn": "High Protein-Low Calorie Bowl", "kcal": 450, "kcalEst": true, "kcalNote": "官方未标该项卡路里;按 adobo 鸡 + supergreens + fajita 蔬菜 + 莎莎 + 牛油果估 ~450 卡。蛋白 36g 为官方值。", "protein": 36, "proteinEst": false, "price": "见 DoorDash", "for": ["减脂"], "why": "官方 GLP-1 友好碗:adobo 鸡 + supergreens + 蔬菜 + 莎莎 + 牛油果,36g 蛋白、无米饭,减脂优选。" },
-        { "name": "高蛋白鸡肉杯", "nameEn": "High Protein Cup - Chicken", "kcal": 180, "protein": 32, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "纯烤 adobo 鸡,180 卡补 32g 蛋白;当加餐、或给任意碗加蛋白的神器。" }
+        { "name": "高蛋白高纤碗", "nameEn": "High Protein-High Fiber Bowl", "kcal": 540, "protein": 46, "proteinEst": false, "price": "CAN$12.70", "for": ["增肌", "减脂"], "why": "官方主推:adobo 鸡 + 糙米 + 黑豆 + 蔬菜 + 双莎莎 + 生菜,46g 蛋白 / 14g 纤维 / 540 卡,GLP-1 友好、高纤抗炎。价为你 DoorDash 确认。" },
+        { "name": "双倍高蛋白碗", "nameEn": "Double High Protein Bowl", "kcal": 760, "protein": 81, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "双份 adobo 鸡 + 白米 + 黑豆 + 蔬菜 + 莎莎 + 芝士,81g 蛋白 / 760 卡,增肌拉满。" },
+        { "name": "高蛋白低卡碗", "nameEn": "High Protein-Low Calorie Bowl", "kcal": 450, "kcalEst": true, "kcalNote": "官方未标卡路里;按 adobo 鸡 + supergreens + 蔬菜 + 莎莎 + 牛油果估 ~450 卡。蛋白 36g 为官方值。", "protein": 36, "proteinEst": false, "price": "见 DoorDash", "for": ["减脂"], "why": "官方 GLP-1 碗:adobo 鸡 + supergreens + 蔬菜 + 牛油果,36g 蛋白、无米饭,减脂优选。" },
+        { "name": "高蛋白鸡肉杯", "nameEn": "High Protein Cup - Chicken", "kcal": 180, "protein": 32, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "纯烤 adobo 鸡,180 卡补 32g 蛋白,加餐神器。" }
+      ]
+    },
+    {
+      "id": "freshii", "title": "Freshii", "titleEn": "Freshii",
+      "tip": "多伦多本地健康连锁;碗类默认蛋白偏低,可加 chicken(约 +110 卡 / +23g)。以下为 2025 官方菜单(旧菜单已改版)。",
+      "rating": { "score": 9, "reason": "健康连锁,鸡肉 + 大量蔬菜/全谷的碗与卷,非油炸、几乎不促炎,抗炎食材丰富。" },
+      "ref": "https://freshii.com/wp-content/uploads/2025/08/Freshii-N_A-Guide-2025-V2.2-EN.pdf",
+      "recommend": [
+        { "name": "科布卷", "nameEn": "Cobb Wrap", "kcal": 710, "protein": 33, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "官方全菜单蛋白最高之一(33g),鸡蛋+鸡肉。" },
+        { "name": "凯撒羽衣甘蓝卷", "nameEn": "Kale Caesar Wrap", "kcal": 720, "protein": 27, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "27g 蛋白,羽衣甘蓝抗炎。" },
+        { "name": "佛陀沙嗲碗", "nameEn": "Buddha's Satay", "kcal": 540, "protein": 23, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "招牌花生酱碗 540 卡/23g;想更高蛋白加 chicken。" }
+      ]
+    },
+    {
+      "id": "nandos", "title": "Nando's", "titleEn": "Nando's PERi-PERi",
+      "tip": "葡式炭烤(非炸),干净高蛋白。官方营养是纯鸡肉数据,配菜另计;配沙拉别配薯条。",
+      "rating": { "score": 8.5, "reason": "葡式炭烤鸡明火非油炸、瘦蛋白,辣椒香料本身抗炎,菜单干净,几乎不促炎。" },
+      "ref": "https://assets.ctfassets.net/xlzobf9ybr6d/34m2ceMGw0LW39GfvBIS7i/507f1b19ddb264b2c4cc2f0b9f3fbad4/Canada-NutritionalsAllergens-Spring2022.pdf",
+      "recommend": [
+        { "name": "1/4 炭烤鸡(腿+大腿)", "nameEn": "1/4 Chicken (Leg + Thigh)", "kcal": 340, "protein": 30, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "炭烤鸡腿 340 卡 / 30g(纯鸡);配沙拉,减脂友好。" },
+        { "name": "半只炭烤鸡", "nameEn": "1/2 Chicken", "kcal": 760, "protein": 68, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "半只炭烤鸡 68g 蛋白(纯鸡),增肌主餐。" }
       ]
     },
     {
       "id": "swisschalet", "title": "Swiss Chalet", "titleEn": "Swiss Chalet",
-      "tip": "加拿大炭烤鸡连锁,白肉(鸡胸)去皮最瘦;配菜选沙拉别选薯条。",
-      "rating": { "score": 8, "reason": "炭烤 rotisserie 鸡去皮白肉很瘦、非油炸,属抗炎瘦蛋白;但正餐默认配薯条/白面包卷、酱汁,需主动换沙拉去皮才纯净,挑的程度比 Nando's 高,故 8。" },
-      "ref": "https://menupricesincanada.com/swiss-chalet-menu-prices-in-canada/",
+      "tip": "炭烤 rotisserie 鸡,白肉去皮最瘦、蛋白极高;配菜选沙拉别选薯条。",
+      "rating": { "score": 8, "reason": "炭烤鸡胸非油炸、蛋白密度极高(白肉 56–63g),抗炎瘦蛋白;但正餐默认配薯条/白面包卷,需主动换沙拉。" },
+      "ref": "https://www.swisschalet.com/en/nutritional.html",
       "recommend": [
-        { "name": "1/4 烤鸡正餐(白肉)", "nameEn": "Quarter Chicken Dinner – White Meat", "kcal": 560, "kcalEst": true, "kcalNote": "来源标 560–1200 卡(随配菜);取低端 ~560(配菜选沙拉、去皮),薯条/酱会拉高。", "protein": 35, "price": "CAN$18.99", "for": ["增肌", "减脂"], "why": "炭烤鸡胸,去皮高蛋白;减脂配菜选沙拉别选薯条。" },
-        { "name": "1/4 烤鸡 + 蒜蓉虾", "nameEn": "Quarter Chicken & Garlic Shrimp", "kcal": 740, "protein": 45, "price": "CAN$17.99", "for": ["增肌"], "why": "鸡 + 蒜蓉虾双重高蛋白,但 740 卡偏高;减脂选 1/4 白肉鸡(去皮配沙拉)。" },
-        { "name": "烤鸡胸三明治(白肉)", "nameEn": "Rotisserie Chicken on a Bun (White Meat)", "kcal": 520, "kcalEst": true, "kcalNote": "来源标 520–1160 卡(随配菜);取低端 ~520。", "protein": 35, "price": "CAN$18.09", "for": ["增肌"], "why": "炭烤鸡胸三明治。" }
+        { "name": "1/4 烤鸡正餐(白肉)", "nameEn": "Quarter Chicken Dinner – White Meat", "kcal": 540, "protein": 63, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "炭烤鸡胸 540 卡 / 63g 蛋白,密度极高;配沙拉别配薯条。" },
+        { "name": "烤鸡胸三明治(白肉)", "nameEn": "Rotisserie Chicken on a Bun (White Meat)", "kcal": 470, "protein": 56, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "炭烤鸡胸三明治 470 卡 / 56g 蛋白。" }
       ]
     },
     {
       "id": "pitapit", "title": "Pita Pit", "titleEn": "Pita Pit",
-      "tip": "可定制瘦肉 + 蔬菜;减脂做成 salad、酱选醋/芥末。来源页未标卡路里,以下为估算。",
-      "rating": { "score": 7.5, "reason": "瘦肉(鸡/火鸡)可定制、蔬菜多、非油炸,做成碗/沙拉很干净;扣分因白皮塔是精制碳水、部分含糖酱,选全麦或碗底、跳过甜酱即可提升。" },
-      "ref": "https://menupricesincanada.com/pita-pit-menu-with-prices-in-canada/",
+      "tip": "自选瘦肉 + 蔬菜;官方只列配料、不给整份合计,以下为按官方配料估算的总数(标估)。减脂做 salad、酱选醋/芥末。",
+      "rating": { "score": 7.5, "reason": "瘦肉(鸡/火鸡)可定制、蔬菜多、非油炸,做成碗/沙拉很干净;白皮塔是精制碳水,选全麦或碗底即可。" },
+      "ref": "https://pitapit.ca/wp-content/uploads/2025/04/Pita-Pit-nutritional-guide-042025.pdf",
       "recommend": [
-        { "name": "鸡胸 Pita", "nameEn": "QP Chicken Breast", "kcal": 450, "kcalEst": true, "kcalNote": "来源页未标卡路里;按全麦 pita + 烤鸡胸 + 蔬菜估 ~450 卡。", "protein": 35, "price": "CAN$13.67", "for": ["增肌", "减脂"], "why": "烤鸡胸 pita,瘦肉;减脂可做成 salad。" },
-        { "name": "鸡肉饭碗", "nameEn": "Regular Rice Bowl", "kcal": 600, "kcalEst": true, "kcalNote": "来源页未标卡路里;按米饭 + 鸡肉 + 蔬菜碗估 ~600 卡。", "protein": 35, "price": "CAN$16.54", "for": ["增肌"], "why": "选鸡肉的米饭碗,增肌。" },
-        { "name": "鸡肉沙拉", "nameEn": "Regular Salad", "kcal": 350, "kcalEst": true, "kcalNote": "来源页未标卡路里;按蔬菜 + 烤鸡 + 轻酱估 ~350 卡。", "protein": 30, "price": "CAN$13.67", "for": ["减脂"], "why": "选鸡肉的沙拉,减脂;酱选醋/芥末别选 ranch/凯撒。" }
+        { "name": "鸡胸 Pita", "nameEn": "QP Chicken Breast Pita", "kcal": 450, "kcalEst": true, "kcalNote": "官方只列配料;按全麦 pita + 双份鸡胸 + 蔬菜估 ~450 卡 / ~35g 蛋白(配料数据见来源 PDF)。", "protein": 35, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "烤鸡胸 pita,瘦肉;减脂做成 salad。" },
+        { "name": "鸡肉饭碗", "nameEn": "Chicken Rice Bowl", "kcal": 600, "kcalEst": true, "kcalNote": "官方只列配料;按大份饭 + 双份鸡胸 + 蔬菜估 ~600 卡 / ~35g。", "protein": 35, "price": "见 DoorDash", "for": ["增肌"], "why": "鸡肉饭碗,增肌。" },
+        { "name": "鸡肉沙拉", "nameEn": "Chicken Salad", "kcal": 350, "kcalEst": true, "kcalNote": "官方只列配料;按生菜底 + 双份鸡胸 + 轻酱估 ~350 卡 / ~30g。", "protein": 30, "price": "见 DoorDash", "for": ["减脂"], "why": "鸡肉沙拉,减脂;酱选醋/芥末。" }
       ]
     },
     {
       "id": "subway", "title": "Subway", "titleEn": "Subway",
-      "tip": "double meat,芥末/醋不要 mayo;减脂点 6 寸或做成 salad。",
-      "rating": { "score": 6, "reason": "火鸡/鸡胸 + 蔬菜可做得很瘦,但火腿培根属加工肉(促炎硬扣分)、白面包是精制碳水、甜酱含糖;选全麦 + 瘦肉 + 不加加工肉才健康。" },
-      "ref": "https://menupricesincanada.com/subway-menu-prices-in-canada/",
+      "tip": "官方营养只列 6 寸,Footlong = 6 寸 ×2、默认含芝士+酱;减脂点 6 寸减半。double meat 堆蛋白。",
+      "rating": { "score": 6, "reason": "瘦肉(火鸡/烤鸡)+ 蔬菜可做得很瘦,但火腿培根属加工肉、白面包是精制碳水、甜酱含糖,均促炎;选全麦 + 瘦肉 + 不加加工肉才健康。" },
+      "ref": "https://media.subway.com/dam/urn:aaid:aem:c0ee4b37-9376-42de-b2d6-2a3ffaadecb1/original/as/CAN_Nutrition_ENG_6_11_26.pdf",
       "recommend": [
-        { "name": "火鸡胸一尺", "nameEn": "Turkey Breast Footlong", "kcal": 560, "protein": 30, "price": "CAN$10.59", "for": ["增肌", "减脂"], "why": "瘦火鸡;减脂点 6 寸(280 卡)正合适。" },
-        { "name": "牛排芝士一尺", "nameEn": "Steak & Cheese Footlong", "kcal": 720, "protein": 40, "price": "CAN$11.99", "for": ["增肌"], "why": "牛排高蛋白;芥末不要 mayo。" },
-        { "name": "甜葱照烧鸡一尺", "nameEn": "Sweet Onion Chicken Teriyaki Footlong", "kcal": 730, "protein": 38, "price": "CAN$11.49", "for": ["增肌"], "why": "鸡肉,蛋白足;照烧酱含糖,减脂选火鸡胸更好。" }
-      ]
-    },
-    {
-      "id": "osmows", "title": "Osmow's", "titleEn": "Osmow's Shawarma",
-      "tip": "高蛋白,garlic sauce 适量;套餐常含薯条/汽水,减脂要去掉。",
-      "rating": { "score": 5, "reason": "沙威玛烤鸡本身是不错的瘦蛋白,但招牌默认配油炸薯条 + 蒜酱、套餐含糖汽水,促炎组合明显;只点烤鸡卷/碗、去薯条和汽水才勉强健康。" },
-      "ref": "https://menupricesincanada.com/osmows-shawarma-menu-with-prices-in-canada/",
-      "recommend": [
-        { "name": "鸡肉沙威玛卷(常规)", "nameEn": "Chicken Shawarma Wrap (Regular)", "kcal": 540, "protein": 30, "price": "CAN$12.39", "for": ["增肌"], "why": "540 卡是含汽水(w/Pop)的套餐,默认含糖汽水不算减脂友好,故只标增肌。减脂版去掉汽水 + 蒜酱减半,鸡肉卷本身约 400 卡。" },
-        { "name": "鸡肉沙威玛卷(超大)", "nameEn": "Chicken Shawarma Wrap (Super)", "kcal": 870, "protein": 45, "price": "CAN$16.34", "for": ["增肌"], "why": "大份 870 卡(含汽水),增肌堆量。" },
-        { "name": "招牌薯条盖鸡肉", "nameEn": "Chicken On The Rocks", "kcal": 600, "kcalEst": true, "kcalNote": "来源页未标该项卡路里;招牌做法是鸡肉盖在薯条上 + 蒜酱,按常见量估 ~600 卡(薯条占不少热量)。", "protein": 35, "price": "CAN$9.99", "for": ["增肌"], "why": "招牌:鸡肉盖薯条 + 蒜酱。薯条底碳水/油脂高,跟麦当劳薯条同理——增肌期补碳水可以,减脂别点这个,改鸡肉沙威玛卷、或让店家换米饭/沙拉底。" }
+        { "name": "Rotisserie 风味鸡一尺", "nameEn": "Rotisserie-Style Chicken Footlong", "kcal": 900, "protein": 60, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "官方蛋白最高的一尺(60g)、低糖,增肌首选;减脂点 6 寸减半。" },
+        { "name": "火鸡胸一尺", "nameEn": "Turkey Breast Footlong", "kcal": 860, "protein": 40, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "瘦火鸡;减脂点 6 寸(约 430 卡)。" },
+        { "name": "牛排芝士一尺", "nameEn": "Steak & Cheese Footlong", "kcal": 940, "protein": 50, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "牛排高蛋白(50g);芥末不要 mayo。" }
       ]
     },
     {
       "id": "harveys", "title": "Harvey's", "titleEn": "Harvey's",
-      "tip": "可定制;选 grilled chicken(烤)别选 crispy(炸),减脂友好。",
-      "rating": { "score": 4.5, "reason": "可定制且有烤鸡 BLT(330 卡)这种很干净的项算亮点,但主打炸鸡 + 牛肉堡 + 薯条,促炎面比 Osmow's 更宽;只有刻意点烤鸡、加蔬菜、去薯条才健康。" },
-      "ref": "https://menupricesincanada.com/harveys-menu-prices-in-canada/",
+      "tip": "可定制;选 grilled(烤)别选 crispy(炸)。以下为现行官方菜单(旧的 BLT 系列已下架)。",
+      "rating": { "score": 4.5, "reason": "有烤鸡(grilled)这条很干净的线(烤鸡沙拉 180 卡/26g),但全店主打炸鸡 + 牛肉堡 + 薯条,促炎面宽;只有刻意点 grilled 才健康。" },
+      "ref": "https://www.harveys.ca/en/nutrition.html",
       "recommend": [
-        { "name": "烤鸡 BLT", "nameEn": "Grilled Chicken BLT", "kcal": 330, "protein": 30, "price": "CAN$9.29", "for": ["增肌", "减脂"], "why": "烤鸡(非炸)330 卡,减脂优选。" },
-        { "name": "烤鸡 BLT 卷", "nameEn": "Grilled Chicken BLT Wrap", "kcal": 470, "protein": 28, "price": "CAN$9.59", "for": ["增肌", "减脂"], "why": "烤鸡卷 470 卡,蛋白足。" },
-        { "name": "双层安格斯牛肉堡", "nameEn": "Double Angus Burger", "kcal": 650, "protein": 40, "price": "CAN$9.49", "for": ["增肌"], "why": "双层安格斯牛肉,增肌。" }
+        { "name": "烤鸡沙拉", "nameEn": "Grilled Chicken Salad", "kcal": 180, "protein": 26, "proteinEst": false, "price": "见 DoorDash", "for": ["减脂"], "why": "180 卡 / 26g,最低卡高蛋白,减脂优选。" },
+        { "name": "烤鸡三明治", "nameEn": "Grilled Chicken Sandwich", "kcal": 270, "protein": 28, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "烤鸡(非炸)270 卡 / 28g,蛋白卡比最高,强推。" },
+        { "name": "烤鸡卷", "nameEn": "Grilled Chicken Wrap", "kcal": 420, "protein": 30, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "烤鸡卷 30g 蛋白。" }
       ]
     },
     {
       "id": "wendys", "title": "Wendy's", "titleEn": "Wendy's",
-      "tip": "烤鸡(grilled)优先,别碰薯条;炸鸡增肌期可、减脂少碰。",
-      "rating": { "score": 3.5, "reason": "主力是炸鸡、牛肉堡和薯条(油炸 + 高脂 + 含糖饮料,多重促炎),仅烤鸡卷一个非油炸干净选项,健康项太少故压低。" },
-      "ref": "https://menupricesincanada.com/wendys-menu-prices-in-canada/",
+      "tip": "多炸鸡/牛肉堡;烤鸡(grilled)和 Chili 是干净选项。以下为加拿大官方值。",
+      "rating": { "score": 3.5, "reason": "主力炸鸡/牛肉堡/薯条(油炸+高脂),仅烤鸡卷和辣肉酱(Chili)两个非油炸干净项,健康项少。" },
+      "ref": "https://order.wendys.com/ca/en/national/menu",
       "recommend": [
-        { "name": "烤鸡卷套餐", "nameEn": "Grilled Chicken Wrap Duo", "kcal": 980, "kcalEst": true, "kcalNote": "来源标 870–1100 卡(两个卷),取中值 ~980;单个卷约 490 卡。", "protein": 40, "price": "CAN$11.79", "for": ["增肌", "减脂"], "why": "烤鸡(非炸);标价是两个卷 980 卡,减脂只吃一个(~490)。" },
-        { "name": "香辣鸡腿堡", "nameEn": "Spicy Chicken Sandwich", "kcal": 840, "kcalEst": true, "kcalNote": "来源标 720–960 卡,取中值 ~840。", "protein": 35, "price": "CAN$12.29", "for": ["增肌"], "why": "鸡胸蛋白足(炸的,增肌可、减脂少碰)。" },
-        { "name": "经典鸡腿堡", "nameEn": "Classic Chicken Sandwich", "kcal": 850, "kcalEst": true, "kcalNote": "来源标 730–970 卡,取中值 ~850。", "protein": 34, "price": "CAN$12.29", "for": ["增肌"], "why": "同上,经典款(炸的)。" }
+        { "name": "辣肉酱(小)", "nameEn": "Chili (Small)", "kcal": 240, "protein": 15, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "低卡高蛋白高纤,减脂神器(加拿大官方 240 卡/15g)。" },
+        { "name": "烤鸡卷套餐", "nameEn": "Grilled Chicken Wrap Duo", "kcal": 600, "protein": 33, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "烤鸡(非炸)两个卷 600 卡/33g;减脂吃一个(~300)。" },
+        { "name": "香辣鸡腿堡", "nameEn": "Spicy Chicken Sandwich", "kcal": 450, "protein": 24, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "炸鸡胸堡,加拿大官方 450 卡/24g。" }
       ]
     },
     {
       "id": "popeyes", "title": "Popeyes", "titleEn": "Popeyes",
-      "tip": "整体油炸;唯一减脂友好是 Blackened(烤,非炸)系列。",
-      "rating": { "score": 3, "reason": "主打裹粉油炸鸡(精炼油高温强促炎)+ 含糖饮料;仅 Blackened 炙烤系列是非油炸瘦蛋白,可选项极少故低分。" },
-      "ref": "https://menupricesincanada.com/popeyes-menu-prices-in-canada/",
+      "tip": "整体裹粉油炸;Blackened(炙烤非裹粉)是唯一干净选项。以下为官方在售项(旧的 Ghost Pepper 三明治/Blackened 卷是限时品、无官方数据,已移除)。",
+      "rating": { "score": 3, "reason": "主打裹粉油炸鸡(精炼油高温强促炎)+ 含糖饮料;仅 Blackened 炙烤系列是非油炸瘦蛋白,可选项极少。" },
+      "ref": "https://www.popeyeschicken.ca/nutrition",
       "recommend": [
-        { "name": "炙烤鸡肉卷", "nameEn": "Blackened Chicken Wrap", "kcal": 350, "kcalEst": true, "kcalNote": "来源页未标该项卡路里;blackened(炙烤非油炸)鸡肉卷估 ~350 卡。", "protein": 25, "price": "CAN$8.59", "for": ["增肌", "减脂"], "why": "Blackened = 炙烤非炸,Popeyes 里少有的减脂友好选择。" },
-        { "name": "鬼椒鸡腿堡", "nameEn": "Ghost Pepper Chicken Sandwich", "kcal": 730, "protein": 30, "price": "CAN$8.99", "for": ["增肌"], "why": "炸鸡胸堡 730 卡,增肌可、减脂少碰。" }
+        { "name": "炙烤鸡肉三明治", "nameEn": "Blackened Chicken Sandwich", "kcal": 530, "protein": 29, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "Blackened = 炙烤非裹粉,Popeyes 里最干净,官方 530 卡 / 29g。" },
+        { "name": "鸡柳 3 块", "nameEn": "3pc Chicken Tenders", "kcal": 350, "protein": 31, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "官方 350 卡 / 31g(炸的,增肌可)。" }
       ]
     },
     {
       "id": "fiveguys", "title": "Five Guys", "titleEn": "Five Guys",
-      "tip": "全是高脂牛肉堡,蛋白高但热量也高;没有真正减脂的选项,减脂别来这家。",
-      "rating": { "score": 2.5, "reason": "全是高脂牛肉堡 + 花生油炸薯条,无瘦蛋白选项;牛肉堡是煎非油炸(故略高于全油炸的炸鸡店),但饱和脂肪高、整体仍偏促炎。" },
-      "ref": "https://menupricesincanada.com/five-guys-menu-with-prices-in-canada/",
+      "tip": "全是高脂牛肉堡;卡路里为官方、蛋白为官方配料加总(标估)。减脂别来,薯条更别碰(常规薯条官方 953 卡)。",
+      "rating": { "score": 2.5, "reason": "全是高脂牛肉堡 + 花生油炸薯条,无瘦蛋白选项;牛肉堡是煎非油炸(略高于全油炸炸鸡店),但饱和脂肪高、整体促炎。" },
+      "ref": "https://www.fiveguys.ca/media/canada_en-ca/-/media/public-site/files/allergen-ingredients-and-nutrition-info/five-guys-canada-ingredient--allergen-guide-english.pdf",
       "recommend": [
-        { "name": "小芝士堡", "nameEn": "Little Cheeseburger", "kcal": 610, "protein": 30, "price": "CAN$9.59", "for": ["增肌"], "why": "单层牛肉芝士 610 卡;增肌可,减脂别来 Five Guys。" },
-        { "name": "培根芝士堡", "nameEn": "Bacon Cheeseburger", "kcal": 1060, "protein": 50, "price": "CAN$12.99", "for": ["增肌"], "why": "双层牛肉 + 培根芝士,增肌堆量。" },
-        { "name": "小汉堡", "nameEn": "Little Hamburger", "kcal": 540, "protein": 25, "price": "CAN$7.99", "for": ["增肌"], "why": "单层牛肉无芝士,这家里最克制的,但仍 540 卡高脂。" }
+        { "name": "小汉堡", "nameEn": "Little Hamburger", "kcal": 540, "protein": 23, "price": "见 DoorDash", "for": ["增肌"], "why": "单层牛肉无芝士,这家最克制;540 卡官方,蛋白为配料加总。" },
+        { "name": "小芝士堡", "nameEn": "Little Cheeseburger", "kcal": 610, "protein": 27, "price": "见 DoorDash", "for": ["增肌"], "why": "单层牛肉芝士 610 卡(官方)。" },
+        { "name": "培根芝士堡", "nameEn": "Bacon Cheeseburger", "kcal": 1060, "protein": 52, "price": "见 DoorDash", "for": ["增肌"], "why": "双层牛肉 + 培根芝士 1060 卡(官方),增肌堆量。" }
       ]
     },
     {
       "id": "marybrowns", "title": "Mary Brown's", "titleEn": "Mary Brown's",
-      "tip": "加拿大炸鸡连锁;整体是炸的,增肌期可、减脂少碰。",
-      "rating": { "score": 2, "reason": "几乎全是裹粉油炸鸡和炸物 + 薯条 + 含糖饮料,油炸促炎突出,无非油炸瘦蛋白选项,最低区间。" },
-      "ref": "https://menupricesincanada.com/mary-browns-menu-prices-in-canada/",
+      "tip": "加拿大炸鸡;鸡柳热量比想象高。中段炸鸡胸(Centre Breast)蛋白密度远高于鸡柳。以下为官方值。",
+      "rating": { "score": 2, "reason": "几乎全是裹粉油炸鸡和炸物 + 薯条,油炸促炎突出,无非油炸瘦蛋白选项。" },
+      "ref": "https://marybrowns.com/wp-content/uploads/Mary-Browns-Nutritionals.pdf",
       "recommend": [
-        { "name": "3 条鸡柳", "nameEn": "3 Chicken Tenders", "kcal": 350, "kcalEst": true, "kcalNote": "来源标 230–350 卡,取高端 ~350。", "protein": 25, "price": "CAN$11.59", "for": ["增肌"], "why": "炸鸡柳,蛋白不错但毕竟油炸;增肌可、减脂少碰(别配薯)。" },
-        { "name": "5 条鸡柳", "nameEn": "5 Chicken Tenders", "kcal": 480, "protein": 40, "price": "CAN$16.09", "for": ["增肌"], "why": "5 条鸡柳,增肌堆蛋白(油炸)。" }
+        { "name": "中段炸鸡胸(1 块)", "nameEn": "Centre Breast (1 pc)", "kcal": 330, "protein": 39, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "官方 330 卡 / 39g,蛋白密度远高于鸡柳,这家最优(仍是炸的)。" },
+        { "name": "鸡柳 3 块", "nameEn": "3 Chicken Tenders", "kcal": 394, "protein": 21, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "官方 394 卡 / 21g(炸)。" },
+        { "name": "鸡柳 5 块", "nameEn": "5 Chicken Tenders", "kcal": 657, "protein": 35, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "官方 657 卡 / 35g(炸,热量比想象高)。" }
       ]
     },
     {
