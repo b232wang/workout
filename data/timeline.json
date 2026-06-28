@@ -22,26 +22,95 @@
         "type": "推",
         "round": 2,
         "exercises": [
-          { "name": "坐姿哑铃肩上推", "nameEn": "Seated Dumbbell Shoulder Press", "equipment": "哑铃 + 直角凳", "equipmentEn": "Dumbbells + Upright Bench", "target": "肩前束", "targetEn": "Front Deltoids", "sets": [
-            { "weight": 22.5, "reps": 8 },
-            { "weight": 22.5, "reps": 8 },
-            { "weight": 25, "reps": 8 },
-            { "weight": 25, "reps": 8 },
-            { "weight": 25, "reps": 8 }
-          ], "note": "重量为磅、哑铃单只" },
-          { "name": "侧平举", "nameEn": "Lateral Raise", "equipment": "哑铃", "equipmentEn": "Dumbbells", "target": "肩中束", "targetEn": "Side Deltoids", "sets": [
-            { "weight": 3, "reps": 13 },
-            { "weight": 8, "reps": 13 },
-            { "weight": 8, "reps": 13 },
-            { "weight": 8, "reps": 13 }
-          ], "note": "重量为磅、哑铃单只;首组 3磅热身" },
-          { "name": "器械推胸", "nameEn": "Machine Chest Press", "equipment": "坐姿推胸器械", "equipmentEn": "Seated Chest Press Machine", "target": "胸大肌", "targetEn": "Pectorals", "sets": [
-            { "weight": 60, "reps": 8 },
-            { "weight": 80, "reps": 10 },
-            { "weight": 80, "reps": 10 },
-            { "weight": 80, "reps": 10 },
-            { "weight": 90, "reps": 10 }
-          ], "note": "重量为磅(器械刻度);座椅略超 90°、双手前推" }
+          {
+            "name": "坐姿哑铃肩上推",
+            "nameEn": "Seated Dumbbell Shoulder Press",
+            "equipment": "哑铃 + 直角凳",
+            "equipmentEn": "Dumbbells + Upright Bench",
+            "target": "肩前束",
+            "targetEn": "Front Deltoids",
+            "sets": [
+              {
+                "weight": 22.5,
+                "reps": 8
+              },
+              {
+                "weight": 22.5,
+                "reps": 8
+              },
+              {
+                "weight": 25,
+                "reps": 8
+              },
+              {
+                "weight": 25,
+                "reps": 8
+              },
+              {
+                "weight": 25,
+                "reps": 8
+              }
+            ],
+            "note": "重量为磅、哑铃单只"
+          },
+          {
+            "name": "侧平举",
+            "nameEn": "Lateral Raise",
+            "equipment": "哑铃",
+            "equipmentEn": "Dumbbells",
+            "target": "肩中束",
+            "targetEn": "Side Deltoids",
+            "sets": [
+              {
+                "weight": 3,
+                "reps": 13
+              },
+              {
+                "weight": 8,
+                "reps": 13
+              },
+              {
+                "weight": 8,
+                "reps": 13
+              },
+              {
+                "weight": 8,
+                "reps": 13
+              }
+            ],
+            "note": "重量为磅、哑铃单只;首组 3磅热身"
+          },
+          {
+            "name": "器械推胸",
+            "nameEn": "Machine Chest Press",
+            "equipment": "坐姿推胸器械",
+            "equipmentEn": "Seated Chest Press Machine",
+            "target": "胸大肌",
+            "targetEn": "Pectorals",
+            "sets": [
+              {
+                "weight": 60,
+                "reps": 8
+              },
+              {
+                "weight": 80,
+                "reps": 10
+              },
+              {
+                "weight": 80,
+                "reps": 10
+              },
+              {
+                "weight": 80,
+                "reps": 10
+              },
+              {
+                "weight": 90,
+                "reps": 10
+              }
+            ],
+            "note": "重量为磅(器械刻度);座椅略超 90°、双手前推"
+          }
         ],
         "comment": "时间/状态都不够,还是把推日两个大复合(哑铃肩推 + 器械推胸)加侧平举做完了,前束、中束、胸都顾到——而且这俩推都重练三头,间接量够,没单独练三头不亏。器械推胸 80磅×10×3 已到次数上限、最后一组 90×10 也拿下,下次直接从 90 起;哑铃肩推 25磅×8 稳,下次冲 27.5磅或做到 10 次;侧平举 8磅×13 可升 10磅。缺的只有三头孤立和第二个胸角度(上斜),下轮推日有时间补。"
       },
@@ -56,47 +125,205 @@
           {
             "slot": "早餐",
             "dishes": [
-              { "name": "咖啡", "ref": "coffee-latte", "kcal": 95, "items": [
-                { "name": "咖啡(自制)", "nameEn": "Homemade Latte", "qty": "150g 牛奶 + espresso", "kcal": 95, "protein": 5, "fat": 5, "carb": 7 }
-              ] },
-              { "name": "希腊酸奶配蓝莓坚果", "ref": "greek-yogurt", "kcal": 315, "items": [
-                { "name": "希腊酸奶", "nameEn": "Greek Yogurt", "qty": "100g", "kcal": 78, "protein": 3.5, "fat": 5, "carb": 4, "note": "按食物库 115g=90卡 比例" },
-                { "name": "蓝莓", "nameEn": "Blueberries", "qty": "100g", "kcal": 57, "protein": 0.7, "fat": 0.3, "carb": 14, "note": "USDA 通用值估算" },
-                { "name": "坚果 mix", "nameEn": "Nut Mix", "qty": "30g", "kcal": 180, "protein": 6, "fat": 15, "carb": 6, "note": "混合坚果 ~600卡/100g 估算" }
-              ] }
+              {
+                "name": "咖啡",
+                "ref": "coffee-latte",
+                "kcal": 95,
+                "items": [
+                  {
+                    "name": "咖啡(自制)",
+                    "nameEn": "Homemade Latte",
+                    "qty": "150g 牛奶 + espresso",
+                    "kcal": 95,
+                    "protein": 5,
+                    "fat": 5,
+                    "carb": 7
+                  }
+                ]
+              },
+              {
+                "name": "希腊酸奶配蓝莓坚果",
+                "ref": "greek-yogurt",
+                "kcal": 315,
+                "items": [
+                  {
+                    "name": "希腊酸奶",
+                    "nameEn": "Greek Yogurt",
+                    "qty": "100g",
+                    "kcal": 78,
+                    "protein": 3.5,
+                    "fat": 5,
+                    "carb": 4,
+                    "note": "按食物库 115g=90卡 比例"
+                  },
+                  {
+                    "name": "蓝莓",
+                    "nameEn": "Blueberries",
+                    "qty": "100g",
+                    "kcal": 57,
+                    "protein": 0.7,
+                    "fat": 0.3,
+                    "carb": 14,
+                    "note": "USDA 通用值估算"
+                  },
+                  {
+                    "name": "坚果 mix",
+                    "nameEn": "Nut Mix",
+                    "qty": "30g",
+                    "kcal": 180,
+                    "protein": 6,
+                    "fat": 15,
+                    "carb": 6,
+                    "note": "混合坚果 ~600卡/100g 估算"
+                  }
+                ]
+              }
             ]
           },
           {
             "slot": "午餐",
             "dishes": [
-              { "name": "Chipotle 高蛋白高纤碗", "ref": "chipotle-hp-hf-bowl", "kcal": 540, "items": [
-                { "name": "Chipotle 高蛋白高纤碗", "nameEn": "High Protein-High Fiber Bowl", "qty": "1 碗", "kcal": 540, "protein": 46, "fat": 15, "carb": 55, "note": "官方 540卡/46g蛋白/14g纤维(截图);脂肪/碳水估算" }
-              ] }
+              {
+                "name": "Chipotle 高蛋白高纤碗",
+                "ref": "chipotle-hp-hf-bowl",
+                "kcal": 540,
+                "items": [
+                  {
+                    "name": "Chipotle 高蛋白高纤碗",
+                    "nameEn": "High Protein-High Fiber Bowl",
+                    "qty": "1 碗",
+                    "kcal": 540,
+                    "protein": 46,
+                    "fat": 15,
+                    "carb": 55,
+                    "note": "官方 540卡/46g蛋白/14g纤维(截图);脂肪/碳水估算"
+                  }
+                ]
+              }
             ]
           },
           {
             "slot": "晚餐",
             "dishes": [
-              { "name": "蒜蓉炒青菜", "kcal": 120, "items": [
-                { "name": "蒜蓉炒青菜", "nameEn": "Garlic Stir-fried Greens", "qty": "一份", "kcal": 120, "protein": 3, "fat": 10, "carb": 6, "note": "油炒,油是主要热量" }
-              ] },
-              { "name": "尖椒豆皮", "kcal": 190, "items": [
-                { "name": "尖椒豆皮", "nameEn": "Tofu Skin w/ Green Peppers", "qty": "一份", "kcal": 190, "protein": 15, "fat": 11, "carb": 9, "note": "豆皮蛋白不错" }
-              ] },
-              { "name": "炖豆角", "kcal": 80, "items": [
-                { "name": "炖豆角(扁豆角)", "nameEn": "Braised Flat Beans", "qty": "一份", "kcal": 80, "protein": 3, "fat": 5, "carb": 7 }
-              ] },
-              { "name": "排骨(小块)", "kcal": 130, "items": [
-                { "name": "排骨", "nameEn": "Pork Rib", "qty": "一小块 ~50g", "kcal": 130, "protein": 9, "fat": 11, "carb": 0 }
-              ] },
-              { "name": "牛尾(一块)", "kcal": 180, "items": [
-                { "name": "牛尾", "nameEn": "Oxtail", "qty": "一块(肉较多)~70g", "kcal": 180, "protein": 15, "fat": 13, "carb": 0 }
-              ] }
+              {
+                "name": "蒜蓉炒青菜",
+                "kcal": 120,
+                "items": [
+                  {
+                    "name": "蒜蓉炒青菜",
+                    "nameEn": "Garlic Stir-fried Greens",
+                    "qty": "一份",
+                    "kcal": 120,
+                    "protein": 3,
+                    "fat": 10,
+                    "carb": 6,
+                    "note": "油炒,油是主要热量"
+                  }
+                ]
+              },
+              {
+                "name": "尖椒豆皮",
+                "kcal": 190,
+                "items": [
+                  {
+                    "name": "尖椒豆皮",
+                    "nameEn": "Tofu Skin w/ Green Peppers",
+                    "qty": "一份",
+                    "kcal": 190,
+                    "protein": 15,
+                    "fat": 11,
+                    "carb": 9,
+                    "note": "豆皮蛋白不错"
+                  }
+                ]
+              },
+              {
+                "name": "炖豆角",
+                "kcal": 80,
+                "items": [
+                  {
+                    "name": "炖豆角(扁豆角)",
+                    "nameEn": "Braised Flat Beans",
+                    "qty": "一份",
+                    "kcal": 80,
+                    "protein": 3,
+                    "fat": 5,
+                    "carb": 7
+                  }
+                ]
+              },
+              {
+                "name": "排骨(小块)",
+                "kcal": 130,
+                "items": [
+                  {
+                    "name": "排骨",
+                    "nameEn": "Pork Rib",
+                    "qty": "一小块 ~50g",
+                    "kcal": 130,
+                    "protein": 9,
+                    "fat": 11,
+                    "carb": 0
+                  }
+                ]
+              },
+              {
+                "name": "牛尾(一块)",
+                "kcal": 180,
+                "items": [
+                  {
+                    "name": "牛尾",
+                    "nameEn": "Oxtail",
+                    "qty": "一块(肉较多)~70g",
+                    "kcal": 180,
+                    "protein": 15,
+                    "fat": 13,
+                    "carb": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "slot": "加餐",
+            "dishes": [
+              {
+                "name": "蛋白粉冲牛奶",
+                "ref": "whey-leanfit-vanilla",
+                "kcal": 299,
+                "items": [
+                  {
+                    "name": "乳清蛋白粉(香草)",
+                    "nameEn": "Whey Protein (Vanilla)",
+                    "qty": "28g",
+                    "kcal": 119,
+                    "protein": 20,
+                    "fat": 3,
+                    "carb": 3,
+                    "note": "Leanfit;按库 33g/勺 缩放至 28g"
+                  },
+                  {
+                    "name": "全脂牛奶 3.25%",
+                    "nameEn": "Whole Milk 3.25%",
+                    "qty": "300g",
+                    "kcal": 180,
+                    "protein": 10,
+                    "fat": 10,
+                    "carb": 14,
+                    "note": "按 60卡/100g 估算(同库咖啡口径)"
+                  }
+                ]
+              }
             ]
           }
         ],
-        "totals": { "kcal": 1650, "protein": 106, "carb": 108, "fat": 87 },
-        "note": "早餐+午餐+晚餐;晚餐在朋友家家常菜(青菜/尖椒豆皮/豆角 + 小块排骨 + 一块牛尾、无主食),份量粗估"
+        "totals": {
+          "kcal": 1949,
+          "protein": 136,
+          "carb": 125,
+          "fat": 100
+        },
+        "note": "早餐+午餐+晚餐;晚餐在朋友家家常菜(青菜/尖椒豆皮/豆角 + 小块排骨 + 一块牛尾、无主食),份量粗估;凌晨加餐:蛋白粉 28g + 牛奶 300g"
       }
     },
     {
@@ -107,31 +334,118 @@
         "type": "拉",
         "round": 1,
         "exercises": [
-          { "name": "器械高位下拉", "nameEn": "Lat Pulldown (Machine)", "equipment": "高位下拉器械", "equipmentEn": "Lat Pulldown Machine", "target": "背阔肌", "targetEn": "Latissimus Dorsi", "sets": [
-            { "weight": 80, "reps": 12 },
-            { "weight": 90, "reps": 12 },
-            { "weight": 100, "reps": 10 },
-            { "weight": 100, "reps": 10 },
-            { "weight": 100, "reps": 10 }
-          ], "note": "重量为磅(器械刻度);首组 80磅×12 热身" },
-          { "name": "辅助引体向上", "nameEn": "Assisted Pull-up", "equipment": "辅助引体机", "equipmentEn": "Assisted Pull-up Machine", "target": "背阔肌", "targetEn": "Latissimus Dorsi", "sets": [
-            { "weight": 34, "reps": 6 },
-            { "weight": 34, "reps": 8 },
-            { "weight": 34, "reps": 8 },
-            { "weight": 34, "reps": 8 },
-            { "weight": 34, "reps": 8 }
-          ], "note": "weight 为辅助配重 34kg,越大越省力(≈ 体重−34kg),非负重" },
-          { "name": "坐姿划船", "nameEn": "Seated Row", "equipment": "坐姿划船器械", "equipmentEn": "Seated Row Machine", "target": "中背/背阔肌", "targetEn": "Mid-back & Lats", "sets": [
-            { "weight": 70, "reps": 10 },
-            { "weight": 70, "reps": 8 },
-            { "weight": 70, "reps": 10 },
-            { "weight": 70, "reps": 10 }
-          ], "note": "重量为磅;坐姿水平向后拉" },
-          { "name": "高位下拉(曲柄宽握杆)", "nameEn": "Lat Pulldown (Cambered Bar)", "equipment": "高位下拉器械 + 曲柄宽握杆", "equipmentEn": "Lat Pulldown + Cambered Bar", "target": "背阔肌(宽度)", "targetEn": "Latissimus Dorsi (width)", "sets": [
-            { "weight": 85, "reps": 6 },
-            { "weight": 85, "reps": 8 },
-            { "weight": 85, "reps": 8 }
-          ], "note": "重量为磅;中间直两边弯的宽握杆" }
+          {
+            "name": "器械高位下拉",
+            "nameEn": "Lat Pulldown (Machine)",
+            "equipment": "高位下拉器械",
+            "equipmentEn": "Lat Pulldown Machine",
+            "target": "背阔肌",
+            "targetEn": "Latissimus Dorsi",
+            "sets": [
+              {
+                "weight": 80,
+                "reps": 12
+              },
+              {
+                "weight": 90,
+                "reps": 12
+              },
+              {
+                "weight": 100,
+                "reps": 10
+              },
+              {
+                "weight": 100,
+                "reps": 10
+              },
+              {
+                "weight": 100,
+                "reps": 10
+              }
+            ],
+            "note": "重量为磅(器械刻度);首组 80磅×12 热身"
+          },
+          {
+            "name": "辅助引体向上",
+            "nameEn": "Assisted Pull-up",
+            "equipment": "辅助引体机",
+            "equipmentEn": "Assisted Pull-up Machine",
+            "target": "背阔肌",
+            "targetEn": "Latissimus Dorsi",
+            "sets": [
+              {
+                "weight": 34,
+                "reps": 6
+              },
+              {
+                "weight": 34,
+                "reps": 8
+              },
+              {
+                "weight": 34,
+                "reps": 8
+              },
+              {
+                "weight": 34,
+                "reps": 8
+              },
+              {
+                "weight": 34,
+                "reps": 8
+              }
+            ],
+            "note": "weight 为辅助配重 34kg,越大越省力(≈ 体重−34kg),非负重"
+          },
+          {
+            "name": "坐姿划船",
+            "nameEn": "Seated Row",
+            "equipment": "坐姿划船器械",
+            "equipmentEn": "Seated Row Machine",
+            "target": "中背/背阔肌",
+            "targetEn": "Mid-back & Lats",
+            "sets": [
+              {
+                "weight": 70,
+                "reps": 10
+              },
+              {
+                "weight": 70,
+                "reps": 8
+              },
+              {
+                "weight": 70,
+                "reps": 10
+              },
+              {
+                "weight": 70,
+                "reps": 10
+              }
+            ],
+            "note": "重量为磅;坐姿水平向后拉"
+          },
+          {
+            "name": "高位下拉(曲柄宽握杆)",
+            "nameEn": "Lat Pulldown (Cambered Bar)",
+            "equipment": "高位下拉器械 + 曲柄宽握杆",
+            "equipmentEn": "Lat Pulldown + Cambered Bar",
+            "target": "背阔肌(宽度)",
+            "targetEn": "Latissimus Dorsi (width)",
+            "sets": [
+              {
+                "weight": 85,
+                "reps": 6
+              },
+              {
+                "weight": 85,
+                "reps": 8
+              },
+              {
+                "weight": 85,
+                "reps": 8
+              }
+            ],
+            "note": "重量为磅;中间直两边弯的宽握杆"
+          }
         ],
         "comment": "拉伤没好还能把背练得挺全,而且全挑器械和辅助引体、轨迹可控、没碰自由重量,这点很稳。两个高位下拉(机器 100磅×10×3 + 曲柄杆 85磅)宽度厚度都顾到了;坐姿划船 70磅中间掉到 8 次说明真到力竭、重量合适;引体辅助 34kg 能做 8 次,等拉伤好了可减到 30kg 进阶。恢复优先:拉伤期间下拉/划船拉到末端有牵扯感就别拉到底、收一点幅度,宁可降重也别代偿发力;练后轻拉伸+热敷,蛋白和睡眠务必跟上。只要不是关节痛或刺痛,48–72h 轻量活动促血流反而帮恢复,但别再往上加量。"
       },
@@ -146,52 +460,183 @@
           {
             "slot": "早餐",
             "dishes": [
-              { "name": "一碗钢切麦片", "ref": "steel-cut-oats-bowl", "kcal": 350, "items": [
-                { "name": "钢切燕麦", "nameEn": "Steel-cut Oats", "qty": "60g", "kcal": 227, "protein": 8, "fat": 4, "carb": 40 },
-                { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
-                { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
-              ] },
-              { "name": "咖啡", "ref": "coffee-latte", "kcal": 95, "items": [
-                { "name": "咖啡(自制)", "nameEn": "Homemade Latte", "qty": "150g 牛奶 + espresso", "kcal": 95, "protein": 5, "fat": 5, "carb": 7 }
-              ] }
+              {
+                "name": "一碗钢切麦片",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 350,
+                "items": [
+                  {
+                    "name": "钢切燕麦",
+                    "nameEn": "Steel-cut Oats",
+                    "qty": "60g",
+                    "kcal": 227,
+                    "protein": 8,
+                    "fat": 4,
+                    "carb": 40
+                  },
+                  {
+                    "name": "3% 牛奶",
+                    "nameEn": "3% Milk",
+                    "qty": "200g",
+                    "kcal": 120,
+                    "protein": 7,
+                    "fat": 6,
+                    "carb": 10
+                  },
+                  {
+                    "name": "肌酸",
+                    "nameEn": "Creatine",
+                    "qty": "5g",
+                    "kcal": 0,
+                    "protein": 0,
+                    "fat": 0,
+                    "carb": 0
+                  }
+                ]
+              },
+              {
+                "name": "咖啡",
+                "ref": "coffee-latte",
+                "kcal": 95,
+                "items": [
+                  {
+                    "name": "咖啡(自制)",
+                    "nameEn": "Homemade Latte",
+                    "qty": "150g 牛奶 + espresso",
+                    "kcal": 95,
+                    "protein": 5,
+                    "fat": 5,
+                    "carb": 7
+                  }
+                ]
+              }
             ]
           },
           {
             "slot": "午餐",
             "dishes": [
-              { "name": "饼干a", "ref": "biscuit-a", "kcal": 115, "items": [
-                { "name": "Skyflakes 空中霸王", "nameEn": "Skyflakes", "qty": "1 包 25g", "kcal": 115, "protein": 2.4, "fat": 3, "carb": 19 }
-              ] },
-              { "name": "香蕉", "kcal": 105, "items": [
-                { "name": "香蕉", "nameEn": "Banana", "qty": "1 根", "kcal": 105, "protein": 1, "fat": 0, "carb": 27 }
-              ] },
-              { "name": "鸡蛋", "kcal": 140, "items": [
-                { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
-              ] }
+              {
+                "name": "饼干a",
+                "ref": "biscuit-a",
+                "kcal": 115,
+                "items": [
+                  {
+                    "name": "Skyflakes 空中霸王",
+                    "nameEn": "Skyflakes",
+                    "qty": "1 包 25g",
+                    "kcal": 115,
+                    "protein": 2.4,
+                    "fat": 3,
+                    "carb": 19
+                  }
+                ]
+              },
+              {
+                "name": "香蕉",
+                "kcal": 105,
+                "items": [
+                  {
+                    "name": "香蕉",
+                    "nameEn": "Banana",
+                    "qty": "1 根",
+                    "kcal": 105,
+                    "protein": 1,
+                    "fat": 0,
+                    "carb": 27
+                  }
+                ]
+              },
+              {
+                "name": "鸡蛋",
+                "kcal": 140,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Egg",
+                    "qty": "2 个",
+                    "kcal": 140,
+                    "protein": 12,
+                    "fat": 10,
+                    "carb": 1
+                  }
+                ]
+              }
             ]
           },
           {
             "slot": "晚餐",
             "dishes": [
-              { "name": "Double Quarter Pounder with Cheese", "kcal": 750, "items": [
-                { "name": "双层四盎司吉士堡(加洋葱)", "nameEn": "Double Quarter Pounder with Cheese", "qty": "1 个", "kcal": 750, "protein": 48, "fat": 43, "carb": 41, "note": "麦当劳;含 3 份洋葱(热量忽略)" }
-              ] },
-              { "name": "McDouble", "kcal": 395, "items": [
-                { "name": "麦当劳双层吉士堡", "nameEn": "McDouble", "qty": "1 个", "kcal": 395, "protein": 22, "fat": 17, "carb": 34, "note": "麦当劳" }
-              ] }
+              {
+                "name": "Double Quarter Pounder with Cheese",
+                "kcal": 750,
+                "items": [
+                  {
+                    "name": "双层四盎司吉士堡(加洋葱)",
+                    "nameEn": "Double Quarter Pounder with Cheese",
+                    "qty": "1 个",
+                    "kcal": 750,
+                    "protein": 48,
+                    "fat": 43,
+                    "carb": 41,
+                    "note": "麦当劳;含 3 份洋葱(热量忽略)"
+                  }
+                ]
+              },
+              {
+                "name": "McDouble",
+                "kcal": 395,
+                "items": [
+                  {
+                    "name": "麦当劳双层吉士堡",
+                    "nameEn": "McDouble",
+                    "qty": "1 个",
+                    "kcal": 395,
+                    "protein": 22,
+                    "fat": 17,
+                    "carb": 34,
+                    "note": "麦当劳"
+                  }
+                ]
+              }
             ]
           },
           {
             "slot": "其他",
             "dishes": [
-              { "name": "蛋白粉 + 牛奶(睡前)", "ref": "whey-leanfit-vanilla", "kcal": 329, "items": [
-                { "name": "Leanfit 乳清蛋白粉", "nameEn": "Leanfit Whey", "qty": "1 勺 33g", "kcal": 140, "protein": 24, "fat": 3.5, "carb": 3 },
-                { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "300ml", "kcal": 189, "protein": 10, "fat": 9, "carb": 14 }
-              ] }
+              {
+                "name": "蛋白粉 + 牛奶(睡前)",
+                "ref": "whey-leanfit-vanilla",
+                "kcal": 329,
+                "items": [
+                  {
+                    "name": "Leanfit 乳清蛋白粉",
+                    "nameEn": "Leanfit Whey",
+                    "qty": "1 勺 33g",
+                    "kcal": 140,
+                    "protein": 24,
+                    "fat": 3.5,
+                    "carb": 3
+                  },
+                  {
+                    "name": "3% 牛奶",
+                    "nameEn": "3% Milk",
+                    "qty": "300ml",
+                    "kcal": 189,
+                    "protein": 10,
+                    "fat": 9,
+                    "carb": 14
+                  }
+                ]
+              }
             ]
           }
         ],
-        "totals": { "kcal": 2279, "protein": 139, "carb": 196, "fat": 101 },
+        "totals": {
+          "kcal": 2279,
+          "protein": 139,
+          "carb": 196,
+          "fat": 101
+        },
         "note": "麦片/咖啡按食物库估算;香蕉为常见食物估算;晚餐麦当劳按官方营养估算(7600 Kennedy Rd 取餐);睡前蛋白粉+牛奶"
       }
     },
@@ -199,7 +644,9 @@
       "id": "2026-06-25-weight-1",
       "date": "2026-06-25",
       "category": "weight",
-      "data": { "kg": 78 }
+      "data": {
+        "kg": 78
+      }
     },
     {
       "id": "2026-06-25-diet-1",
@@ -210,51 +657,208 @@
           {
             "slot": "早餐",
             "dishes": [
-              { "name": "一碗钢切麦片", "ref": "steel-cut-oats-bowl", "kcal": 350, "items": [
-                { "name": "钢切燕麦", "nameEn": "Steel-cut Oats", "qty": "60g", "kcal": 227, "protein": 8, "fat": 4, "carb": 40 },
-                { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
-                { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
-              ] },
-              { "name": "咖啡", "ref": "coffee-latte", "kcal": 95, "items": [
-                { "name": "咖啡(自制)", "nameEn": "Homemade Latte", "qty": "150g 牛奶 + espresso", "kcal": 95, "protein": 5, "fat": 5, "carb": 7 }
-              ] }
+              {
+                "name": "一碗钢切麦片",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 350,
+                "items": [
+                  {
+                    "name": "钢切燕麦",
+                    "nameEn": "Steel-cut Oats",
+                    "qty": "60g",
+                    "kcal": 227,
+                    "protein": 8,
+                    "fat": 4,
+                    "carb": 40
+                  },
+                  {
+                    "name": "3% 牛奶",
+                    "nameEn": "3% Milk",
+                    "qty": "200g",
+                    "kcal": 120,
+                    "protein": 7,
+                    "fat": 6,
+                    "carb": 10
+                  },
+                  {
+                    "name": "肌酸",
+                    "nameEn": "Creatine",
+                    "qty": "5g",
+                    "kcal": 0,
+                    "protein": 0,
+                    "fat": 0,
+                    "carb": 0
+                  }
+                ]
+              },
+              {
+                "name": "咖啡",
+                "ref": "coffee-latte",
+                "kcal": 95,
+                "items": [
+                  {
+                    "name": "咖啡(自制)",
+                    "nameEn": "Homemade Latte",
+                    "qty": "150g 牛奶 + espresso",
+                    "kcal": 95,
+                    "protein": 5,
+                    "fat": 5,
+                    "carb": 7
+                  }
+                ]
+              }
             ]
           },
           {
             "slot": "午餐",
             "dishes": [
-              { "name": "饼干a", "ref": "biscuit-a", "kcal": 345, "items": [
-                { "name": "Skyflakes 空中霸王", "nameEn": "Skyflakes", "qty": "3 包(75g)", "kcal": 345, "protein": 7.2, "fat": 9, "carb": 57 }
-              ] },
-              { "name": "鸡蛋", "kcal": 140, "items": [
-                { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
-              ] }
+              {
+                "name": "饼干a",
+                "ref": "biscuit-a",
+                "kcal": 345,
+                "items": [
+                  {
+                    "name": "Skyflakes 空中霸王",
+                    "nameEn": "Skyflakes",
+                    "qty": "3 包(75g)",
+                    "kcal": 345,
+                    "protein": 7.2,
+                    "fat": 9,
+                    "carb": 57
+                  }
+                ]
+              },
+              {
+                "name": "鸡蛋",
+                "kcal": 140,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Egg",
+                    "qty": "2 个",
+                    "kcal": 140,
+                    "protein": 12,
+                    "fat": 10,
+                    "carb": 1
+                  }
+                ]
+              }
             ]
           },
           {
             "slot": "晚餐",
             "dishes": [
-              { "name": "土豆", "kcal": 268, "items": [
-                { "name": "土豆", "nameEn": "Potato", "qty": "350g", "kcal": 268, "protein": 7, "fat": 0, "carb": 60, "note": "按水煮估" }
-              ] },
-              { "name": "虾", "kcal": 134, "items": [
-                { "name": "虾", "nameEn": "Shrimp", "qty": "134g", "kcal": 134, "protein": 32, "fat": 1, "carb": 0, "note": "通用值估算" }
-              ] },
-              { "name": "蓝莓桑葚 + 希腊酸奶 + 坚果", "ref": "greek-yogurt", "kcal": 317, "items": [
-                { "name": "蓝莓桑葚", "nameEn": "Blueberry & Mulberry", "qty": "~120g", "kcal": 60, "protein": 1, "fat": 0, "carb": 15, "note": "估算" },
-                { "name": "希腊酸奶", "nameEn": "Greek Yogurt", "qty": "2 勺 ~60g", "kcal": 47, "protein": 2, "fat": 3, "carb": 3, "note": "份量粗估" },
-                { "name": "坚果 mix", "nameEn": "Nut Mix", "qty": "35g", "kcal": 210, "protein": 7, "fat": 18, "carb": 7, "note": "混合坚果 ~600卡/100g" }
-              ] },
-              { "name": "鸡蛋", "kcal": 140, "items": [
-                { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
-              ] },
-              { "name": "辣吞拿", "ref": "hot-pepper-tuna", "kcal": 200, "items": [
-                { "name": "Hot Pepper Tuna", "nameEn": "Hot Pepper Tuna", "qty": "1 罐 150g", "kcal": 200, "protein": 21, "fat": 7, "saturatedFat": 2, "carb": 14, "sodiumMg": 920 }
-              ] }
+              {
+                "name": "土豆",
+                "kcal": 268,
+                "items": [
+                  {
+                    "name": "土豆",
+                    "nameEn": "Potato",
+                    "qty": "350g",
+                    "kcal": 268,
+                    "protein": 7,
+                    "fat": 0,
+                    "carb": 60,
+                    "note": "按水煮估"
+                  }
+                ]
+              },
+              {
+                "name": "虾",
+                "kcal": 134,
+                "items": [
+                  {
+                    "name": "虾",
+                    "nameEn": "Shrimp",
+                    "qty": "134g",
+                    "kcal": 134,
+                    "protein": 32,
+                    "fat": 1,
+                    "carb": 0,
+                    "note": "通用值估算"
+                  }
+                ]
+              },
+              {
+                "name": "蓝莓桑葚 + 希腊酸奶 + 坚果",
+                "ref": "greek-yogurt",
+                "kcal": 317,
+                "items": [
+                  {
+                    "name": "蓝莓桑葚",
+                    "nameEn": "Blueberry & Mulberry",
+                    "qty": "~120g",
+                    "kcal": 60,
+                    "protein": 1,
+                    "fat": 0,
+                    "carb": 15,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "希腊酸奶",
+                    "nameEn": "Greek Yogurt",
+                    "qty": "2 勺 ~60g",
+                    "kcal": 47,
+                    "protein": 2,
+                    "fat": 3,
+                    "carb": 3,
+                    "note": "份量粗估"
+                  },
+                  {
+                    "name": "坚果 mix",
+                    "nameEn": "Nut Mix",
+                    "qty": "35g",
+                    "kcal": 210,
+                    "protein": 7,
+                    "fat": 18,
+                    "carb": 7,
+                    "note": "混合坚果 ~600卡/100g"
+                  }
+                ]
+              },
+              {
+                "name": "鸡蛋",
+                "kcal": 140,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Egg",
+                    "qty": "2 个",
+                    "kcal": 140,
+                    "protein": 12,
+                    "fat": 10,
+                    "carb": 1
+                  }
+                ]
+              },
+              {
+                "name": "辣吞拿",
+                "ref": "hot-pepper-tuna",
+                "kcal": 200,
+                "items": [
+                  {
+                    "name": "Hot Pepper Tuna",
+                    "nameEn": "Hot Pepper Tuna",
+                    "qty": "1 罐 150g",
+                    "kcal": 200,
+                    "protein": 21,
+                    "fat": 7,
+                    "saturatedFat": 2,
+                    "carb": 14,
+                    "sodiumMg": 920
+                  }
+                ]
+              }
             ]
           }
         ],
-        "totals": { "kcal": 1989, "protein": 120, "carb": 215, "fat": 73 },
+        "totals": {
+          "kcal": 1989,
+          "protein": 120,
+          "carb": 215,
+          "fat": 73
+        },
         "note": "部分份量/做法为估算;坚果 mix 按通用 ~600卡/100g"
       }
     },
@@ -266,12 +870,90 @@
         "type": "腿",
         "round": 1,
         "exercises": [
-          { "name": "倒蹬(腿举)", "nameEn": "Leg Press", "equipment": "倒蹬机", "equipmentEn": "Leg Press Machine", "target": "股四头+臀", "targetEn": "Quads & Glutes", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "腿屈伸", "nameEn": "Leg Extension", "equipment": "腿屈伸机", "equipmentEn": "Leg Extension Machine", "target": "股四头肌", "targetEn": "Quadriceps", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "坐姿腿弯举", "nameEn": "Seated Leg Curl", "equipment": "腿弯举机", "equipmentEn": "Leg Curl Machine", "target": "腘绳肌", "targetEn": "Hamstrings", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "坐姿夹腿(大腿内收)", "nameEn": "Hip Adduction", "equipment": "大腿内收机", "equipmentEn": "Hip Adduction Machine", "target": "大腿内侧内收肌", "targetEn": "Adductors", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "坐姿分腿(大腿外展)", "nameEn": "Hip Abduction", "equipment": "大腿外展机", "equipmentEn": "Hip Abduction Machine", "target": "臀中肌/大腿外侧", "targetEn": "Gluteus Medius", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "垂直举腿(悬垂举腿)", "nameEn": "Captain's Chair Leg Raise", "equipment": "罗马椅", "equipmentEn": "Captain's Chair", "target": "下腹+髂腰肌", "targetEn": "Lower Abs & Hip Flexors", "sets": [{ "weight": null, "reps": null }] }
+          {
+            "name": "倒蹬(腿举)",
+            "nameEn": "Leg Press",
+            "equipment": "倒蹬机",
+            "equipmentEn": "Leg Press Machine",
+            "target": "股四头+臀",
+            "targetEn": "Quads & Glutes",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "腿屈伸",
+            "nameEn": "Leg Extension",
+            "equipment": "腿屈伸机",
+            "equipmentEn": "Leg Extension Machine",
+            "target": "股四头肌",
+            "targetEn": "Quadriceps",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "坐姿腿弯举",
+            "nameEn": "Seated Leg Curl",
+            "equipment": "腿弯举机",
+            "equipmentEn": "Leg Curl Machine",
+            "target": "腘绳肌",
+            "targetEn": "Hamstrings",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "坐姿夹腿(大腿内收)",
+            "nameEn": "Hip Adduction",
+            "equipment": "大腿内收机",
+            "equipmentEn": "Hip Adduction Machine",
+            "target": "大腿内侧内收肌",
+            "targetEn": "Adductors",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "坐姿分腿(大腿外展)",
+            "nameEn": "Hip Abduction",
+            "equipment": "大腿外展机",
+            "equipmentEn": "Hip Abduction Machine",
+            "target": "臀中肌/大腿外侧",
+            "targetEn": "Gluteus Medius",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "垂直举腿(悬垂举腿)",
+            "nameEn": "Captain's Chair Leg Raise",
+            "equipment": "罗马椅",
+            "equipmentEn": "Captain's Chair",
+            "target": "下腹+髂腰肌",
+            "targetEn": "Lower Abs & Hip Flexors",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          }
         ],
         "comment": "这套腿练得很全:倒蹬主攻股四+臀,腿屈伸、腿弯举分别孤立股四和腘绳,内收外展补齐大腿内外侧,悬垂举腿收个核心。唯一没练到小腿(提踵),下次腿日补个站姿提踵就齐了。重量这次没记,下次报给我就能看趋势。"
       },
@@ -286,41 +968,198 @@
           {
             "slot": "其他",
             "dishes": [
-              { "name": "一碗钢切麦片", "ref": "steel-cut-oats-bowl", "kcal": 350, "items": [
-                { "name": "钢切燕麦", "nameEn": "Steel-cut Oats", "qty": "60g", "kcal": 227, "protein": 8, "fat": 4, "carb": 40 },
-                { "name": "3% 牛奶", "nameEn": "3% Milk", "qty": "200g", "kcal": 120, "protein": 7, "fat": 6, "carb": 10 },
-                { "name": "肌酸", "nameEn": "Creatine", "qty": "5g", "kcal": 0, "protein": 0, "fat": 0, "carb": 0 }
-              ] },
-              { "name": "咖啡", "ref": "coffee-latte", "kcal": 95, "items": [
-                { "name": "咖啡(自制)", "nameEn": "Homemade Latte", "qty": "150g 牛奶 + espresso", "kcal": 95, "protein": 5, "fat": 5, "carb": 7 }
-              ] },
-              { "name": "饼干a", "ref": "biscuit-a", "kcal": 115, "items": [
-                { "name": "Skyflakes 空中霸王", "nameEn": "Skyflakes", "qty": "1 包 25g", "kcal": 115, "protein": 2.4, "fat": 3, "carb": 19 }
-              ] },
-              { "name": "鸡蛋", "kcal": 140, "items": [
-                { "name": "鸡蛋", "nameEn": "Egg", "qty": "2 个", "kcal": 140, "protein": 12, "fat": 10, "carb": 1 }
-              ] },
-              { "name": "虾", "kcal": 250, "items": [
-                { "name": "虾", "nameEn": "Shrimp", "qty": "250g", "kcal": 250, "protein": 60, "fat": 2, "carb": 0, "note": "通用值估算" }
-              ] },
-              { "name": "辣味金枪鱼罐头", "ref": "hot-pepper-tuna", "kcal": 200, "items": [
-                { "name": "Hot Pepper Tuna", "nameEn": "Hot Pepper Tuna", "qty": "1 罐 150g", "kcal": 200, "protein": 21, "fat": 7, "saturatedFat": 2, "carb": 14, "sodiumMg": 920 }
-              ] },
-              { "name": "香蕉", "kcal": 105, "items": [
-                { "name": "香蕉", "nameEn": "Banana", "qty": "1 根", "kcal": 105, "protein": 1, "fat": 0, "carb": 27 }
-              ] },
-              { "name": "希腊酸奶配蓝莓坚果", "ref": "greek-yogurt", "kcal": 187, "items": [
-                { "name": "希腊酸奶", "nameEn": "Greek Yogurt", "qty": "2 勺 ~60g", "kcal": 47, "protein": 2, "fat": 3, "carb": 3, "note": "份量粗估" },
-                { "name": "蓝莓", "nameEn": "Blueberries", "qty": "一把", "kcal": 40, "protein": 0, "fat": 0, "carb": 10, "note": "估算" },
-                { "name": "坚果", "nameEn": "Nuts", "qty": "一把", "kcal": 100, "protein": 4, "fat": 9, "carb": 4, "note": "估算" }
-              ] },
-              { "name": "土豆", "kcal": 230, "items": [
-                { "name": "土豆", "nameEn": "Potato", "qty": "2 个 ~300g", "kcal": 230, "protein": 6, "fat": 0, "carb": 51, "note": "按水煮估" }
-              ] }
+              {
+                "name": "一碗钢切麦片",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 350,
+                "items": [
+                  {
+                    "name": "钢切燕麦",
+                    "nameEn": "Steel-cut Oats",
+                    "qty": "60g",
+                    "kcal": 227,
+                    "protein": 8,
+                    "fat": 4,
+                    "carb": 40
+                  },
+                  {
+                    "name": "3% 牛奶",
+                    "nameEn": "3% Milk",
+                    "qty": "200g",
+                    "kcal": 120,
+                    "protein": 7,
+                    "fat": 6,
+                    "carb": 10
+                  },
+                  {
+                    "name": "肌酸",
+                    "nameEn": "Creatine",
+                    "qty": "5g",
+                    "kcal": 0,
+                    "protein": 0,
+                    "fat": 0,
+                    "carb": 0
+                  }
+                ]
+              },
+              {
+                "name": "咖啡",
+                "ref": "coffee-latte",
+                "kcal": 95,
+                "items": [
+                  {
+                    "name": "咖啡(自制)",
+                    "nameEn": "Homemade Latte",
+                    "qty": "150g 牛奶 + espresso",
+                    "kcal": 95,
+                    "protein": 5,
+                    "fat": 5,
+                    "carb": 7
+                  }
+                ]
+              },
+              {
+                "name": "饼干a",
+                "ref": "biscuit-a",
+                "kcal": 115,
+                "items": [
+                  {
+                    "name": "Skyflakes 空中霸王",
+                    "nameEn": "Skyflakes",
+                    "qty": "1 包 25g",
+                    "kcal": 115,
+                    "protein": 2.4,
+                    "fat": 3,
+                    "carb": 19
+                  }
+                ]
+              },
+              {
+                "name": "鸡蛋",
+                "kcal": 140,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Egg",
+                    "qty": "2 个",
+                    "kcal": 140,
+                    "protein": 12,
+                    "fat": 10,
+                    "carb": 1
+                  }
+                ]
+              },
+              {
+                "name": "虾",
+                "kcal": 250,
+                "items": [
+                  {
+                    "name": "虾",
+                    "nameEn": "Shrimp",
+                    "qty": "250g",
+                    "kcal": 250,
+                    "protein": 60,
+                    "fat": 2,
+                    "carb": 0,
+                    "note": "通用值估算"
+                  }
+                ]
+              },
+              {
+                "name": "辣味金枪鱼罐头",
+                "ref": "hot-pepper-tuna",
+                "kcal": 200,
+                "items": [
+                  {
+                    "name": "Hot Pepper Tuna",
+                    "nameEn": "Hot Pepper Tuna",
+                    "qty": "1 罐 150g",
+                    "kcal": 200,
+                    "protein": 21,
+                    "fat": 7,
+                    "saturatedFat": 2,
+                    "carb": 14,
+                    "sodiumMg": 920
+                  }
+                ]
+              },
+              {
+                "name": "香蕉",
+                "kcal": 105,
+                "items": [
+                  {
+                    "name": "香蕉",
+                    "nameEn": "Banana",
+                    "qty": "1 根",
+                    "kcal": 105,
+                    "protein": 1,
+                    "fat": 0,
+                    "carb": 27
+                  }
+                ]
+              },
+              {
+                "name": "希腊酸奶配蓝莓坚果",
+                "ref": "greek-yogurt",
+                "kcal": 187,
+                "items": [
+                  {
+                    "name": "希腊酸奶",
+                    "nameEn": "Greek Yogurt",
+                    "qty": "2 勺 ~60g",
+                    "kcal": 47,
+                    "protein": 2,
+                    "fat": 3,
+                    "carb": 3,
+                    "note": "份量粗估"
+                  },
+                  {
+                    "name": "蓝莓",
+                    "nameEn": "Blueberries",
+                    "qty": "一把",
+                    "kcal": 40,
+                    "protein": 0,
+                    "fat": 0,
+                    "carb": 10,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "坚果",
+                    "nameEn": "Nuts",
+                    "qty": "一把",
+                    "kcal": 100,
+                    "protein": 4,
+                    "fat": 9,
+                    "carb": 4,
+                    "note": "估算"
+                  }
+                ]
+              },
+              {
+                "name": "土豆",
+                "kcal": 230,
+                "items": [
+                  {
+                    "name": "土豆",
+                    "nameEn": "Potato",
+                    "qty": "2 个 ~300g",
+                    "kcal": 230,
+                    "protein": 6,
+                    "fat": 0,
+                    "carb": 51,
+                    "note": "按水煮估"
+                  }
+                ]
+              }
             ]
           }
         ],
-        "totals": { "kcal": 1672, "protein": 128, "carb": 186, "fat": 49 },
+        "totals": {
+          "kcal": 1672,
+          "protein": 128,
+          "carb": 186,
+          "fat": 49
+        },
         "note": "未列出营养的项为估算"
       }
     },
@@ -332,14 +1171,78 @@
         "type": "推",
         "round": 1,
         "exercises": [
-          { "name": "上斜哑铃卧推", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "坐姿器械推胸", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "绳索夹胸", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "哑铃肩推", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "绳索侧平举", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "绳索面拉", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "过顶绳索臂屈伸", "sets": [{ "weight": null, "reps": null }] },
-          { "name": "绳索下压", "sets": [{ "weight": null, "reps": null }] }
+          {
+            "name": "上斜哑铃卧推",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "坐姿器械推胸",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "绳索夹胸",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "哑铃肩推",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "绳索侧平举",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "绳索面拉",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "过顶绳索臂屈伸",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          },
+          {
+            "name": "绳索下压",
+            "sets": [
+              {
+                "weight": null,
+                "reps": null
+              }
+            ]
+          }
         ]
       },
       "note": "基本都练了,重量没记住"
