@@ -1,36 +1,46 @@
-# health-ingest (Phase 1 backend)
+# health-ingest backend
 
-接收 iPhone 推来的 Apple Health 运动数据,存进 SQLite,供 Mac 拉取。
+接收 iPhone(HealthRelay app)推来的 Apple Health 数据(**workout / 指标 quantity / 睡眠**),存进 SQLite,供 Mac 拉取。
 
 ## 接口
 
 | 方法 | 路径 | 鉴权 | 说明 |
 |------|------|------|------|
 | GET  | `/healthz` | 无 | 存活探针,返回 `{"ok":true}` |
-| POST | `/ingest` | Bearer token | iPhone 推送 workout(批量,按 `uuid` 去重) |
-| GET  | `/workouts?since=<ISO>` | Bearer token | Mac 拉取;`since` 按 `received_at` 过滤(增量) |
+| POST | `/ingest` | Bearer | 推送 export envelope(批量,按 `uuid` 去重) |
+| GET  | `/workouts?since=<ISO>` | Bearer | 拉 workout;`since` 按 `received_at` 增量 |
+| GET  | `/quantity-samples?since=<ISO>&type=<type>` | Bearer | 拉指标;可按 `type`(如 `heartRate`)过滤 |
+| GET  | `/sleep?since=<ISO>` | Bearer | 拉睡眠 |
 
-### POST /ingest 请求体
+### POST /ingest 请求体(envelope)
 
 ```json
 {
-  "workouts": [
-    {
-      "uuid": "EFE2...必填,HealthKit 样本 UUID",
-      "activityType": "walking",
-      "startDate": "2026-06-28T10:00:00Z",
-      "endDate":   "2026-06-28T10:45:00Z",
-      "durationSec": 2700,
-      "distanceM": 3200,
-      "energyKcal": 180,
-      "source": "Apple Watch"
-    }
-  ]
+  "exportedAt": "2026-06-28T04:30:00Z",
+  "device": "iPhone15,2",
+  "appVersion": "1.0.0",
+  "data": {
+    "workouts": [
+      { "uuid": "…", "activityType": "walking", "startDate": "…", "endDate": "…",
+        "durationSec": 2700, "distanceM": 3200, "energyKcal": 180, "source": "Apple Watch" }
+    ],
+    "quantitySamples": [
+      { "uuid": "…", "type": "heartRate", "startDate": "…", "endDate": "…",
+        "value": 72, "unit": "count/min", "source": "Apple Watch" }
+    ],
+    "sleepSamples": [
+      { "uuid": "…", "startDate": "…", "endDate": "…", "stage": "asleepCore", "source": "Apple Watch" }
+    ]
+  }
 }
 ```
 
-必填:`uuid`、`activityType`、`startDate`、`endDate`。其余可选。
-响应:`{ "ok": true, "inserted": N, "skipped": M }`(`skipped` = 重复被忽略的数量)。
+- `data` 下三个分组**都可选**(app 可能只发其中一类),但至少要有一条样本。
+- 必填字段:所有类型 `uuid` / `startDate` / `endDate`;workout 还需 `activityType`;quantity 还需 `type` / `value` / `unit`;sleep 还需 `stage`。其余可选。
+- `uuid` = HealthKit 样本 UUID,据此去重(重发自动忽略)。
+- 响应:`{ "ok": true, "inserted": {workouts,quantitySamples,sleepSamples}, "skipped": {…} }`。
+
+> 格式即 HealthRelay 设计 spec §7(`~/side-project/healthrelay/docs/superpowers/specs/2026-06-28-healthrelay-design.md`)。两边以该 spec 为准。
 
 ## 环境变量
 
@@ -79,9 +89,10 @@ curl $BASE/healthz
 
 curl -X POST $BASE/ingest \
   -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-  -d '{"workouts":[{"uuid":"test-1","activityType":"walking","startDate":"2026-06-28T10:00:00Z","endDate":"2026-06-28T10:45:00Z","durationSec":2700,"distanceM":3200,"energyKcal":180,"source":"manual"}]}'
+  -d '{"data":{"workouts":[{"uuid":"test-1","activityType":"walking","startDate":"2026-06-28T10:00:00Z","endDate":"2026-06-28T10:45:00Z","durationSec":2700,"distanceM":3200,"energyKcal":180,"source":"manual"}],"quantitySamples":[{"uuid":"hr-1","type":"heartRate","startDate":"2026-06-28T10:00:00Z","endDate":"2026-06-28T10:00:00Z","value":72,"unit":"count/min"}]}}'
 
 curl "$BASE/workouts" -H "Authorization: Bearer $TOKEN"
+curl "$BASE/quantity-samples?type=heartRate" -H "Authorization: Bearer $TOKEN"
 ```
 
-第二次 POST 同一 `uuid` 应返回 `inserted:0, skipped:1`(去重生效)。
+第二次 POST 同样 `uuid` 应返回 `inserted` 全 0、`skipped` 对应 +1(去重生效)。

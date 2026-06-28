@@ -1,5 +1,11 @@
 import express from 'express';
-import { openDb, insertWorkouts, listWorkouts } from './db.js';
+import {
+  openDb,
+  insertBatch,
+  listWorkouts,
+  listQuantitySamples,
+  listSleepSamples,
+} from './db.js';
 import { requireToken } from './auth.js';
 import { validateIngest } from './validate.js';
 
@@ -16,29 +22,52 @@ const db = openDb(DB_PATH);
 const auth = requireToken(API_TOKEN);
 
 const app = express();
-app.use(express.json({ limit: '2mb' }));
+app.use(express.json({ limit: '8mb' })); // room for backfill chunks + multi-type batches
 
 // Unauthenticated liveness probe (for Docker / reverse proxy). Leaks nothing.
 app.get('/healthz', (req, res) => res.json({ ok: true }));
 
-// iPhone -> NAS: push HealthKit workouts (idempotent, dedup by uuid).
+// iPhone -> NAS: push an export envelope { data: { workouts, quantitySamples, sleepSamples } }.
+// Idempotent: dedup by uuid across re-sends.
 app.post('/ingest', auth, (req, res) => {
   const check = validateIngest(req.body);
   if (!check.ok) return res.status(400).json({ error: check.error });
 
   const receivedAt = new Date().toISOString();
-  const { inserted, skipped } = insertWorkouts(db, req.body.workouts, receivedAt);
-  console.log(`[ingest] received=${req.body.workouts.length} inserted=${inserted} skipped=${skipped}`);
-  res.json({ ok: true, inserted, skipped });
+  const result = insertBatch(db, req.body.data, receivedAt);
+  console.log(`[ingest] device=${req.body.device ?? '?'} ${JSON.stringify(result)}`);
+  res.json({
+    ok: true,
+    inserted: pick(result, 'inserted'),
+    skipped: pick(result, 'skipped'),
+  });
 });
 
-// Mac -> NAS: pull workouts, optionally only those ingested after ?since=<ISO>.
+// Mac -> NAS readers. ?since=<ISO> filters by received_at (incremental pull).
 app.get('/workouts', auth, (req, res) => {
-  const since = typeof req.query.since === 'string' ? req.query.since : null;
-  res.json({ workouts: listWorkouts(db, since).map(toApi) });
+  res.json({ workouts: listWorkouts(db, sinceOf(req)).map(workoutToApi) });
 });
 
-function toApi(r) {
+app.get('/quantity-samples', auth, (req, res) => {
+  const type = typeof req.query.type === 'string' ? req.query.type : null;
+  res.json({
+    quantitySamples: listQuantitySamples(db, { since: sinceOf(req), type }).map(quantityToApi),
+  });
+});
+
+app.get('/sleep', auth, (req, res) => {
+  res.json({ sleepSamples: listSleepSamples(db, sinceOf(req)).map(sleepToApi) });
+});
+
+function sinceOf(req) {
+  return typeof req.query.since === 'string' ? req.query.since : null;
+}
+
+function pick(result, field) {
+  return Object.fromEntries(Object.entries(result).map(([k, v]) => [k, v[field]]));
+}
+
+function workoutToApi(r) {
   return {
     uuid: r.uuid,
     activityType: r.activity_type,
@@ -47,6 +76,30 @@ function toApi(r) {
     durationSec: r.duration_sec,
     distanceM: r.distance_m,
     energyKcal: r.energy_kcal,
+    source: r.source,
+    receivedAt: r.received_at,
+  };
+}
+
+function quantityToApi(r) {
+  return {
+    uuid: r.uuid,
+    type: r.type,
+    startDate: r.start_date,
+    endDate: r.end_date,
+    value: r.value,
+    unit: r.unit,
+    source: r.source,
+    receivedAt: r.received_at,
+  };
+}
+
+function sleepToApi(r) {
+  return {
+    uuid: r.uuid,
+    startDate: r.start_date,
+    endDate: r.end_date,
+    stage: r.stage,
     source: r.source,
     receivedAt: r.received_at,
   };
