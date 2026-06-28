@@ -1,6 +1,39 @@
 {
   "entries": [
     {
+      "id": "2026-06-27-workout-1",
+      "date": "2026-06-27",
+      "category": "workout",
+      "data": {
+        "type": "推",
+        "round": 2,
+        "exercises": [
+          { "name": "坐姿哑铃肩上推", "nameEn": "Seated Dumbbell Shoulder Press", "equipment": "哑铃 + 直角凳", "equipmentEn": "Dumbbells + Upright Bench", "target": "肩前束", "targetEn": "Front Deltoids", "sets": [
+            { "weight": 22.5, "reps": 8 },
+            { "weight": 22.5, "reps": 8 },
+            { "weight": 25, "reps": 8 },
+            { "weight": 25, "reps": 8 },
+            { "weight": 25, "reps": 8 }
+          ], "note": "重量为磅、哑铃单只" },
+          { "name": "侧平举", "nameEn": "Lateral Raise", "equipment": "哑铃", "equipmentEn": "Dumbbells", "target": "肩中束", "targetEn": "Side Deltoids", "sets": [
+            { "weight": 3, "reps": 13 },
+            { "weight": 8, "reps": 13 },
+            { "weight": 8, "reps": 13 },
+            { "weight": 8, "reps": 13 }
+          ], "note": "重量为磅、哑铃单只;首组 3磅热身" },
+          { "name": "器械推胸", "nameEn": "Machine Chest Press", "equipment": "坐姿推胸器械", "equipmentEn": "Seated Chest Press Machine", "target": "胸大肌", "targetEn": "Pectorals", "sets": [
+            { "weight": 60, "reps": 8 },
+            { "weight": 80, "reps": 10 },
+            { "weight": 80, "reps": 10 },
+            { "weight": 80, "reps": 10 },
+            { "weight": 90, "reps": 10 }
+          ], "note": "重量为磅(器械刻度);座椅略超 90°、双手前推" }
+        ],
+        "comment": "时间/状态都不够,还是把推日两个大复合(哑铃肩推 + 器械推胸)加侧平举做完了,前束、中束、胸都顾到——而且这俩推都重练三头,间接量够,没单独练三头不亏。器械推胸 80磅×10×3 已到次数上限、最后一组 90×10 也拿下,下次直接从 90 起;哑铃肩推 25磅×8 稳,下次冲 27.5磅或做到 10 次;侧平举 8磅×13 可升 10磅。缺的只有三头孤立和第二个胸角度(上斜),下轮推日有时间补。"
+      },
+      "note": "时间/状态不足,只练 3 个动作;重量除标注外为磅、哑铃单只"
+    },
+    {
       "id": "2026-06-27-diet-1",
       "date": "2026-06-27",
       "category": "diet",
