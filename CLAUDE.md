@@ -27,6 +27,7 @@
 - **diet**(饮食):`data = { meals:[{ slot:"早餐/中午/晚餐/其他", dishes:[{ name, ref?, kcal, items:[{ name, nameEn, qty, kcal, protein?, fat?, carb?, ... }] }] }], totals:{kcal,protein,carb,fat} }` — 时段(没说归「其他」)> 组 `dish` > 项 `item`(带营养,用户列了按用户、没列你估)。**单品(香蕉/罐头)只放 1 个 item,网页点开直接看营养;组合(一碗麦片)放多个 item**。`ref` 关联 `foods.json` id(网页可跳转)。必须算对 `totals`。**当天小结不写进数据——网页按当天 workout+diet+TDEE 自动生成、回顾性措辞(不要"若今天…""可再加"这类穿越/假设语)**
 - **weight**(体重):`data = { kg }` — 体重记成时间线事件;网页取最新值算 TDEE、多点时画变化趋势
 - **walk**(散步等轻活动):`data = { durationMin?, distanceKm?, note? }`
+- **cardio**(有氧):`data = { type, durationMin?, distanceKm?, avgHr?, effort?, kcal?, source?, note? }` — 骑车/跑步等有氧;`kcal` 为消耗估算(可标 `source` 如 Apple Watch)。设备读数常略高,按 HR/METs 酌情保守、并在 `note` 说明
 - **screenshot**(截图,如 Apple Workout):图片存 `assets/`,`data = { image:"assets/xxx.png", source, extracted:{ 你从图里读出的数据 } }`
 - **note**(随手记):`data = { text }`
 

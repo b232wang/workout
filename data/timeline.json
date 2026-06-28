@@ -1,6 +1,20 @@
 {
   "entries": [
     {
+      "id": "2026-06-27-cardio-1",
+      "date": "2026-06-27",
+      "category": "cardio",
+      "data": {
+        "type": "骑车",
+        "durationMin": 57,
+        "avgHr": 119,
+        "effort": "4 / moderate",
+        "kcal": 370,
+        "source": "Apple Watch",
+        "note": "Apple Watch 记 404 卡;avg HR 119 属轻-中强度,按 METs(78kg × 57min × 中等)估 ~370–410,404 其实在合理范围、未必高估多少,这里取偏保守 370"
+      }
+    },
+    {
       "id": "2026-06-27-workout-1",
       "date": "2026-06-27",
       "category": "workout",
@@ -59,10 +73,30 @@
                 { "name": "Chipotle 高蛋白高纤碗", "nameEn": "High Protein-High Fiber Bowl", "qty": "1 碗", "kcal": 540, "protein": 46, "fat": 15, "carb": 55, "note": "官方 540卡/46g蛋白/14g纤维(截图);脂肪/碳水估算" }
               ] }
             ]
+          },
+          {
+            "slot": "晚餐",
+            "dishes": [
+              { "name": "蒜蓉炒青菜", "kcal": 120, "items": [
+                { "name": "蒜蓉炒青菜", "nameEn": "Garlic Stir-fried Greens", "qty": "一份", "kcal": 120, "protein": 3, "fat": 10, "carb": 6, "note": "油炒,油是主要热量" }
+              ] },
+              { "name": "尖椒豆皮", "kcal": 190, "items": [
+                { "name": "尖椒豆皮", "nameEn": "Tofu Skin w/ Green Peppers", "qty": "一份", "kcal": 190, "protein": 15, "fat": 11, "carb": 9, "note": "豆皮蛋白不错" }
+              ] },
+              { "name": "炖豆角", "kcal": 80, "items": [
+                { "name": "炖豆角(扁豆角)", "nameEn": "Braised Flat Beans", "qty": "一份", "kcal": 80, "protein": 3, "fat": 5, "carb": 7 }
+              ] },
+              { "name": "排骨(小块)", "kcal": 130, "items": [
+                { "name": "排骨", "nameEn": "Pork Rib", "qty": "一小块 ~50g", "kcal": 130, "protein": 9, "fat": 11, "carb": 0 }
+              ] },
+              { "name": "牛尾(一块)", "kcal": 180, "items": [
+                { "name": "牛尾", "nameEn": "Oxtail", "qty": "一块(肉较多)~70g", "kcal": 180, "protein": 15, "fat": 13, "carb": 0 }
+              ] }
+            ]
           }
         ],
-        "totals": { "kcal": 950, "protein": 61, "carb": 86, "fat": 40 },
-        "note": "早餐 + 午餐;午餐 Chipotle 高蛋白高纤碗(官方营养,脂肪/碳水估算)"
+        "totals": { "kcal": 1650, "protein": 106, "carb": 108, "fat": 87 },
+        "note": "早餐+午餐+晚餐;晚餐在朋友家家常菜(青菜/尖椒豆皮/豆角 + 小块排骨 + 一块牛尾、无主食),份量粗估"
       }
     },
     {
