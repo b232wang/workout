@@ -8,7 +8,7 @@
 <style>
 :root{
   --bg:#f4f5f7;--card:#fff;--ink:#1a1d21;--sub:#6b7280;--line:#e6e8eb;--accent:#3b82f6;
-  --workout:#3b82f6;--diet:#f59e0b;--walk:#10b981;--screenshot:#8b5cf6;--note:#94a3b8;--weight:#06b6d4;
+  --workout:#3b82f6;--diet:#f59e0b;--walk:#10b981;--screenshot:#8b5cf6;--note:#94a3b8;--weight:#06b6d4;--cardio:#f43f5e;
 }
 @media(prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#191c22;--ink:#e8eaed;--sub:#9aa3ad;--line:#2a2e36}}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -37,7 +37,8 @@ details summary{cursor:pointer}
 .exblock{border-bottom:1px dashed var(--line)}
 .exblock:last-child{border-bottom:none}
 .exhead{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:14px;padding:8px 0}
-.exhead .exname{flex:1;min-width:0}
+.exhead .exmain{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.exsets{font-size:13px;color:var(--sub);line-height:1.5}
 details.exblock summary.exhead{cursor:pointer;list-style:none}
 details.exblock summary.exhead::-webkit-details-marker{display:none}
 details.exblock summary.exhead::after{content:"›";color:var(--sub);font-size:17px;line-height:1;transition:transform .15s;flex:none}
@@ -115,6 +116,7 @@ const CATEGORIES={
   weight:{label:'体重',emoji:'⚖️',color:'var(--weight)'},
   screenshot:{label:'截图',emoji:'📷',color:'var(--screenshot)'},
   note:{label:'随手记',emoji:'📝',color:'var(--note)'},
+  cardio:{label:'有氧',emoji:'🏃',color:'var(--cardio)'},
 };
 function cat(k){return CATEGORIES[k]||{label:k,emoji:'•',color:'var(--note)'}}
 
@@ -213,14 +215,28 @@ async function load(){
 
 function exerciseHtml(x){
   const s=fmtSets(x.sets);
-  const nameHtml=x.name+(x.nameEn?' <span class="en">'+x.nameEn+'</span>':'');
-  const right=s?'<span class="muted">'+s+'</span>':'';
+  const nameHtml='<span class="exname">'+x.name+(x.nameEn?' <span class="en">'+x.nameEn+'</span>':'')+'</span>';
+  const setsHtml=s?'<span class="exsets">'+s+'</span>':'';
+  const main='<div class="exmain">'+nameHtml+setsHtml+'</div>';
   const meta=[];
   if(x.equipment)meta.push('<div class="exdetail">器械:'+x.equipment+(x.equipmentEn?' <span class="en">'+x.equipmentEn+'</span>':'')+'</div>');
   if(x.target)meta.push('<div class="exdetail">部位:'+x.target+(x.targetEn?' <span class="en">'+x.targetEn+'</span>':'')+'</div>');
   if(x.note)meta.push('<div class="exdetail">备注:'+x.note+'</div>');
-  if(!meta.length)return '<div class="exblock"><div class="exhead"><span class="exname">'+nameHtml+'</span>'+right+'</div></div>';
-  return '<details class="exblock"><summary class="exhead"><span class="exname">'+nameHtml+'</span>'+right+'</summary>'+meta.join('')+'</details>';
+  if(!meta.length)return '<div class="exblock"><div class="exhead">'+main+'</div></div>';
+  return '<details class="exblock"><summary class="exhead">'+main+'</summary>'+meta.join('')+'</details>';
+}
+
+function cardioHtml(d){
+  let body='<div class="ctitle">'+(d.type||'有氧')+'</div>';
+  const rows=[];
+  if(d.durationMin!=null)rows.push(['时长',d.durationMin+' 分钟']);
+  if(d.distanceKm!=null)rows.push(['距离',d.distanceKm+' km']);
+  if(d.avgHr!=null)rows.push(['平均心率',d.avgHr+' bpm']);
+  if(d.effort)rows.push(['强度',d.effort]);
+  if(d.kcal!=null)rows.push(['消耗',d.kcal+' 卡'+(d.source?' <span class="en">'+d.source+'</span>':'')]);
+  body+=rows.map(r=>'<div class="ex"><span>'+r[0]+'</span><span class="muted">'+r[1]+'</span></div>').join('');
+  if(d.note)body+='<div class="exdetail" style="padding-left:0">'+d.note+'</div>';
+  return body;
 }
 
 function dietHtml(d){
@@ -269,6 +285,8 @@ function renderCard(e){
     const d=e.data;body=(d.image?'<img class="shot" src="'+d.image+'">':'')+(d.source?'<div class="muted small">来源:'+d.source+'</div>':'');
   }else if(e.category==='note'){
     body=(e.data&&e.data.text)||'';
+  }else if(e.category==='cardio'){
+    body=cardioHtml(e.data);
   }else{
     body='<pre class="raw">'+JSON.stringify(e.data,null,2)+'</pre>';
   }
