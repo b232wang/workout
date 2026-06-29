@@ -1,6 +1,193 @@
 {
   "entries": [
     {
+      "id": "2026-06-28-workout-1",
+      "date": "2026-06-28",
+      "category": "workout",
+      "data": {
+        "type": "腿",
+        "round": 2,
+        "exercises": [
+          {
+            "name": "杠铃深蹲",
+            "nameEn": "Barbell Squat",
+            "equipment": "粗杠铃",
+            "equipmentEn": "Thick Barbell",
+            "target": "股四头/臀",
+            "targetEn": "Quads/Glutes",
+            "sets": [
+              {
+                "weight": 5,
+                "reps": 8
+              },
+              {
+                "weight": 25,
+                "reps": 10
+              },
+              {
+                "weight": 25,
+                "reps": 10
+              },
+              {
+                "weight": 25,
+                "reps": 10
+              },
+              {
+                "weight": 25,
+                "reps": 10
+              }
+            ],
+            "note": "重量为单边磅数·两边对称·另加粗杠铃自重(未计);今天用此替代 6-23 的倒蹬腿举(Leg Press)"
+          },
+          {
+            "name": "坐姿夹腿(大腿内收)",
+            "nameEn": "Hip Adduction",
+            "equipment": "大腿内收机",
+            "equipmentEn": "Hip Adduction Machine",
+            "target": "大腿内收肌",
+            "targetEn": "Adductors",
+            "sets": [
+              {
+                "weight": 50,
+                "reps": 10
+              },
+              {
+                "weight": 65,
+                "reps": 13
+              },
+              {
+                "weight": 80,
+                "reps": 8
+              },
+              {
+                "weight": 80,
+                "reps": 8
+              },
+              {
+                "weight": 80,
+                "reps": 8
+              }
+            ]
+          },
+          {
+            "name": "坐姿分腿(大腿外展)",
+            "nameEn": "Hip Abduction",
+            "equipment": "大腿外展机",
+            "equipmentEn": "Hip Abduction Machine",
+            "target": "臀中肌/外展肌",
+            "targetEn": "Glute Medius/Abductors",
+            "sets": [
+              {
+                "weight": 80,
+                "reps": 13
+              },
+              {
+                "weight": 110,
+                "reps": 10
+              },
+              {
+                "weight": 125,
+                "reps": 10
+              },
+              {
+                "weight": 125,
+                "reps": 10
+              },
+              {
+                "weight": 125,
+                "reps": 10
+              }
+            ]
+          },
+          {
+            "name": "坐姿腿弯举",
+            "nameEn": "Seated Leg Curl",
+            "equipment": "腿弯举机",
+            "equipmentEn": "Leg Curl Machine",
+            "target": "腘绳肌",
+            "targetEn": "Hamstrings",
+            "note": "脚跟向下压勾",
+            "sets": [
+              {
+                "weight": 60,
+                "reps": 10
+              },
+              {
+                "weight": 70,
+                "reps": 8
+              },
+              {
+                "weight": 70,
+                "reps": 8
+              },
+              {
+                "weight": 70,
+                "reps": 8
+              }
+            ]
+          },
+          {
+            "name": "斜式提踵机",
+            "nameEn": "Incline Calf Raise Machine",
+            "equipment": "斜式提踵机",
+            "equipmentEn": "Incline Calf Raise Machine",
+            "target": "小腿(腓肠肌)",
+            "targetEn": "Calves",
+            "note": "脚踩踏板、屁股靠斜座、腿约45°、踮脚尖把仪器往斜上推",
+            "sets": [
+              {
+                "weight": 100,
+                "reps": 10
+              },
+              {
+                "weight": 120,
+                "reps": 13
+              },
+              {
+                "weight": 120,
+                "reps": 13
+              },
+              {
+                "weight": 140,
+                "reps": 13
+              },
+              {
+                "weight": 140,
+                "reps": 13
+              }
+            ]
+          },
+          {
+            "name": "腿屈伸",
+            "nameEn": "Leg Extension",
+            "equipment": "腿屈伸机",
+            "equipmentEn": "Leg Extension Machine",
+            "target": "股四头",
+            "targetEn": "Quads",
+            "sets": [
+              {
+                "weight": 60,
+                "reps": 8
+              },
+              {
+                "weight": 70,
+                "reps": 12
+              },
+              {
+                "weight": 80,
+                "reps": 12
+              },
+              {
+                "weight": 80,
+                "reps": 12
+              }
+            ]
+          }
+        ],
+        "comment": "第 2 轮腿日,6 动作覆盖股四/腘绳/内收外展/小腿,很全面。杠铃深蹲替代倒蹬,单边 25 磅×10 连做 4 组很稳;分腿 125 磅、斜式提踵 140 磅、腿屈伸 80 磅都能稳定多组,下次可各加一档试进阶。坐姿夹腿到 80 磅时掉到 8 次、相对偏重,先把次数做上去再加。重量均为器械读数(磅)。"
+      }
+    },
+    {
       "id": "2026-06-27-cardio-1",
       "date": "2026-06-27",
       "category": "cardio",
