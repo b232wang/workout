@@ -1695,6 +1695,78 @@
         },
         "note": "朋友家烧烤局;foods 库无此类,营养均为估算(份量按图+常识假设)"
       }
+    },
+    {
+      "id": "2026-06-29-diet-1",
+      "date": "2026-06-29",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "早餐",
+            "dishes": [
+              {
+                "name": "饼干a",
+                "ref": "biscuit-a",
+                "kcal": 115,
+                "items": [
+                  {
+                    "name": "饼干a",
+                    "nameEn": "Skyflakes Crackers (blue)",
+                    "qty": "1 包 25g",
+                    "kcal": 115,
+                    "protein": 2.4,
+                    "fat": 3,
+                    "carb": 19,
+                    "ref": "biscuit-a"
+                  }
+                ]
+              },
+              {
+                "name": "一碗钢切麦片",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 350,
+                "items": [
+                  {
+                    "name": "一碗钢切麦片",
+                    "nameEn": "Steel-cut Oats Bowl",
+                    "qty": "1 碗",
+                    "kcal": 350,
+                    "protein": 14,
+                    "fat": 10,
+                    "carb": 50,
+                    "ref": "steel-cut-oats-bowl"
+                  }
+                ]
+              },
+              {
+                "name": "咖啡",
+                "ref": "coffee-latte",
+                "kcal": 95,
+                "items": [
+                  {
+                    "name": "咖啡",
+                    "nameEn": "Homemade Latte (milk + espresso)",
+                    "qty": "1 杯",
+                    "kcal": 95,
+                    "protein": 5,
+                    "fat": 5,
+                    "carb": 7,
+                    "ref": "coffee-latte"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": {
+          "kcal": 560,
+          "protein": 21,
+          "carb": 76,
+          "fat": 18
+        },
+        "note": "均用 foods 库标准值"
+      }
     }
   ]
 }
