@@ -1757,13 +1757,51 @@
                 ]
               }
             ]
+          },
+          {
+            "slot": "中午",
+            "dishes": [
+              {
+                "name": "饼干a",
+                "ref": "biscuit-a",
+                "kcal": 115,
+                "items": [
+                  {
+                    "name": "饼干a",
+                    "nameEn": "Skyflakes Crackers (blue)",
+                    "qty": "1 包 25g",
+                    "kcal": 115,
+                    "protein": 2.4,
+                    "fat": 3,
+                    "carb": 19,
+                    "ref": "biscuit-a"
+                  }
+                ]
+              },
+              {
+                "name": "鸡蛋",
+                "kcal": 140,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Egg",
+                    "qty": "2 个",
+                    "kcal": 140,
+                    "protein": 12,
+                    "fat": 10,
+                    "carb": 1,
+                    "note": "通用值估算(2 个全蛋)"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "totals": {
-          "kcal": 560,
-          "protein": 21,
-          "carb": 76,
-          "fat": 18
+          "kcal": 815,
+          "protein": 36,
+          "carb": 96,
+          "fat": 31
         },
         "note": "均用 foods 库标准值"
       }
