@@ -1605,12 +1605,33 @@
                 ]
               }
             ]
+          },
+          {
+            "slot": "其他",
+            "dishes": [
+              {
+                "name": "香蕉",
+                "kcal": 52,
+                "items": [
+                  {
+                    "name": "香蕉",
+                    "nameEn": "Banana",
+                    "qty": "半根",
+                    "kcal": 52,
+                    "protein": 0.5,
+                    "fat": 0,
+                    "carb": 14,
+                    "note": "练后回家加餐,估算(整根 105 卡的一半)"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "totals": {
-          "kcal": 1995,
-          "protein": 124,
-          "carb": 75,
+          "kcal": 2047,
+          "protein": 125,
+          "carb": 89,
           "fat": 132
         },
         "note": "朋友家烧烤局;foods 库无此类,营养均为估算(份量按图+常识假设)"
