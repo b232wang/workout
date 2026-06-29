@@ -1470,6 +1470,151 @@
         ]
       },
       "note": "基本都练了,重量没记住"
+    },
+    {
+      "id": "2026-06-28-diet-1",
+      "date": "2026-06-28",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "晚餐",
+            "dishes": [
+              {
+                "name": "卤味拼盘",
+                "kcal": 475,
+                "items": [
+                  {
+                    "name": "卤鸭舌",
+                    "nameEn": "Braised Duck Tongues",
+                    "qty": "15–20个 ~130g",
+                    "kcal": 300,
+                    "protein": 28,
+                    "fat": 19,
+                    "carb": 3,
+                    "note": "估算,卤味脂肪/钠偏高"
+                  },
+                  {
+                    "name": "卤藕片",
+                    "nameEn": "Braised Lotus Root",
+                    "qty": "~80g",
+                    "kcal": 75,
+                    "protein": 1.5,
+                    "fat": 1.5,
+                    "carb": 14,
+                    "note": "份量估算"
+                  },
+                  {
+                    "name": "卤豆制品",
+                    "nameEn": "Braised Tofu/Beancurd",
+                    "qty": "~60g",
+                    "kcal": 100,
+                    "protein": 10,
+                    "fat": 5,
+                    "carb": 4,
+                    "note": "份量估算"
+                  }
+                ]
+              },
+              {
+                "name": "大拌菜",
+                "kcal": 140,
+                "items": [
+                  {
+                    "name": "大拌菜",
+                    "nameEn": "Mixed Cold Salad",
+                    "qty": "小半碗 ~120g",
+                    "kcal": 140,
+                    "protein": 6,
+                    "fat": 7,
+                    "carb": 14,
+                    "note": "豆皮丝+粉丝+黄瓜+洋葱+木耳,估算"
+                  }
+                ]
+              },
+              {
+                "name": "烧烤",
+                "kcal": 1160,
+                "items": [
+                  {
+                    "name": "烤鸡翅中",
+                    "nameEn": "Grilled Chicken Wings",
+                    "qty": "2个",
+                    "kcal": 190,
+                    "protein": 14,
+                    "fat": 14,
+                    "carb": 2,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "牛羊肉串",
+                    "nameEn": "Beef & Lamb Skewers",
+                    "qty": "8串(总共) ~220g",
+                    "kcal": 560,
+                    "protein": 42,
+                    "fat": 42,
+                    "carb": 3,
+                    "note": "按带肥估,误差大头"
+                  },
+                  {
+                    "name": "蒜蓉粉丝烤扇贝",
+                    "nameEn": "Grilled Scallop w/ Garlic Vermicelli",
+                    "qty": "1个",
+                    "kcal": 80,
+                    "protein": 7,
+                    "fat": 4,
+                    "carb": 4,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "王中王火腿肠",
+                    "nameEn": "Shuanghui Ham Sausage",
+                    "qty": "1根 ~40g",
+                    "kcal": 110,
+                    "protein": 4,
+                    "fat": 8,
+                    "carb": 5,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "大香肠",
+                    "nameEn": "Grilled Pork Sausage",
+                    "qty": "1根 ~70g",
+                    "kcal": 220,
+                    "protein": 9,
+                    "fat": 18,
+                    "carb": 5,
+                    "note": "估算"
+                  }
+                ]
+              },
+              {
+                "name": "蛋糕",
+                "kcal": 220,
+                "items": [
+                  {
+                    "name": "鲜奶油蛋糕",
+                    "nameEn": "Fresh Cream Cake",
+                    "qty": "一小块 ~70g",
+                    "kcal": 220,
+                    "protein": 3,
+                    "fat": 14,
+                    "carb": 21,
+                    "note": "估算"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": {
+          "kcal": 1995,
+          "protein": 124,
+          "carb": 75,
+          "fat": 132
+        },
+        "note": "朋友家烧烤局;foods 库无此类,营养均为估算(份量按图+常识假设)"
+      }
     }
   ]
 }
