@@ -1624,15 +1624,74 @@
                     "note": "练后回家加餐,估算(整根 105 卡的一半)"
                   }
                 ]
+              },
+              {
+                "name": "酸奶碗",
+                "kcal": 777,
+                "items": [
+                  {
+                    "name": "希腊酸奶",
+                    "nameEn": "Greek Yogurt",
+                    "qty": "100g",
+                    "kcal": 78,
+                    "protein": 3.5,
+                    "fat": 5.2,
+                    "carb": 4.3,
+                    "note": "库值每115g×(100/115);库标蛋白偏低待核对",
+                    "ref": "greek-yogurt"
+                  },
+                  {
+                    "name": "蓝莓",
+                    "nameEn": "Blueberries",
+                    "qty": "100g",
+                    "kcal": 57,
+                    "protein": 0.7,
+                    "fat": 0.3,
+                    "carb": 14.0,
+                    "note": "通用值估算(每100g)"
+                  },
+                  {
+                    "name": "混合坚果",
+                    "nameEn": "Mixed Nuts",
+                    "qty": "50g",
+                    "kcal": 320,
+                    "protein": 9.0,
+                    "fat": 28.0,
+                    "carb": 11.0,
+                    "note": "标签每50g整份",
+                    "ref": "mixed-nuts"
+                  },
+                  {
+                    "name": "乳清蛋白粉",
+                    "nameEn": "Whey Protein",
+                    "qty": "31g",
+                    "kcal": 132,
+                    "protein": 22.5,
+                    "fat": 3.3,
+                    "carb": 2.8,
+                    "note": "库值每33g×(31/33)",
+                    "ref": "whey-leanfit-vanilla"
+                  },
+                  {
+                    "name": "牛奶",
+                    "nameEn": "Milk 3.25%",
+                    "qty": "312g",
+                    "kcal": 190,
+                    "protein": 10.0,
+                    "fat": 10.3,
+                    "carb": 15.0,
+                    "note": "按3.25%全脂估,未指定种类"
+                  }
+                ]
               }
             ]
           }
         ],
         "totals": {
-          "kcal": 2047,
-          "protein": 125,
-          "carb": 89,
-          "fat": 132
+          "kcal": 2824,
+          "protein": 171,
+          "carb": 136,
+          "fat": 180
         },
         "note": "朋友家烧烤局;foods 库无此类,营养均为估算(份量按图+常识假设)"
       }
