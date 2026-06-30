@@ -1795,13 +1795,56 @@
                 ]
               }
             ]
+          },
+          {
+            "slot": "其他",
+            "dishes": [
+              {
+                "name": "酸奶碗",
+                "kcal": 509,
+                "items": [
+                  {
+                    "name": "蓝莓",
+                    "nameEn": "Blueberries",
+                    "qty": "100g",
+                    "kcal": 57,
+                    "protein": 0.7,
+                    "fat": 0.3,
+                    "carb": 14,
+                    "note": "通用值估算(每100g)"
+                  },
+                  {
+                    "name": "混合坚果",
+                    "nameEn": "Mixed Nuts",
+                    "qty": "62g",
+                    "kcal": 397,
+                    "protein": 11.2,
+                    "fat": 34.7,
+                    "carb": 13.6,
+                    "ref": "mixed-nuts",
+                    "note": "库值每50g×(62/50)"
+                  },
+                  {
+                    "name": "希腊酸奶",
+                    "nameEn": "Greek Yogurt",
+                    "qty": "70g",
+                    "kcal": 55,
+                    "protein": 2.4,
+                    "fat": 3.7,
+                    "carb": 3.0,
+                    "ref": "greek-yogurt",
+                    "note": "用户只说'酸奶',按昨天同款希腊奶估;库每115g×(70/115)"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "totals": {
-          "kcal": 815,
-          "protein": 36,
-          "carb": 96,
-          "fat": 31
+          "kcal": 1324,
+          "protein": 50,
+          "carb": 127,
+          "fat": 70
         },
         "note": "均用 foods 库标准值"
       }
