@@ -1725,34 +1725,18 @@
               {
                 "name": "一碗钢切麦片",
                 "ref": "steel-cut-oats-bowl",
-                "kcal": 350,
+                "kcal": 441,
                 "items": [
                   {
                     "name": "一碗钢切麦片",
                     "nameEn": "Steel-cut Oats Bowl",
                     "qty": "1 碗",
-                    "kcal": 350,
-                    "protein": 14,
-                    "fat": 10,
-                    "carb": 50,
-                    "ref": "steel-cut-oats-bowl"
-                  }
-                ]
-              },
-              {
-                "name": "咖啡",
-                "ref": "coffee-latte",
-                "kcal": 95,
-                "items": [
-                  {
-                    "name": "咖啡",
-                    "nameEn": "Homemade Latte (milk + espresso)",
-                    "qty": "1 杯",
-                    "kcal": 95,
-                    "protein": 5,
-                    "fat": 5,
-                    "carb": 7,
-                    "ref": "coffee-latte"
+                    "kcal": 441,
+                    "protein": 19,
+                    "fat": 12,
+                    "carb": 65,
+                    "ref": "steel-cut-oats-bowl",
+                    "note": "配料更新:80g燕麦+230g牛奶+9g肌酸(2026-06-30)"
                   }
                 ]
               }
@@ -1838,13 +1822,82 @@
                 ]
               }
             ]
+          },
+          {
+            "slot": "晚餐",
+            "dishes": [
+              {
+                "name": "蒸土豆",
+                "kcal": 316,
+                "items": [
+                  {
+                    "name": "土豆",
+                    "nameEn": "Potato",
+                    "qty": "410g(蒸前生重)",
+                    "note": "通用值估算(生土豆每100g 77卡)",
+                    "kcal": 316,
+                    "protein": 8.4,
+                    "fat": 0.4,
+                    "carb": 71.8
+                  }
+                ]
+              },
+              {
+                "name": "鸡胸肉",
+                "kcal": 230,
+                "items": [
+                  {
+                    "name": "冷冻鸡胸肉",
+                    "nameEn": "Chicken Breast",
+                    "qty": "192g(生重)",
+                    "note": "通用值估算(生鸡胸每100g 120卡/22.5g蛋白)",
+                    "kcal": 230,
+                    "protein": 43.2,
+                    "fat": 5.0,
+                    "carb": 0.0
+                  }
+                ]
+              },
+              {
+                "name": "鸡蛋",
+                "kcal": 140,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Egg",
+                    "qty": "2 个",
+                    "note": "通用值估算",
+                    "kcal": 140,
+                    "protein": 12,
+                    "fat": 10,
+                    "carb": 1
+                  }
+                ]
+              },
+              {
+                "name": "金枪鱼罐头",
+                "kcal": 145,
+                "items": [
+                  {
+                    "name": "Ocean's 白金枪鱼(沥干)",
+                    "nameEn": "Ocean's Flaked White Tuna in Water",
+                    "qty": "整罐沥干 133g(净重184g)",
+                    "note": "每55g沥干=60卡/14g蛋白(fatsecret.ca+实物标签)×(133/55)",
+                    "kcal": 145,
+                    "protein": 33.9,
+                    "fat": 2.4,
+                    "carb": 0
+                  }
+                ]
+              }
+            ]
           }
         ],
         "totals": {
-          "kcal": 1324,
-          "protein": 50,
-          "carb": 127,
-          "fat": 70
+          "kcal": 2151,
+          "protein": 148,
+          "carb": 207,
+          "fat": 85
         },
         "note": "均用 foods 库标准值"
       }
