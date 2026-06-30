@@ -86,6 +86,13 @@ nav.tabs{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-to
 nav.tabs button{background:none;border:none;font-size:10.5px;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;flex:1}
 nav.tabs button .ico{font-size:20px;line-height:1}
 nav.tabs button.active{color:var(--accent)}
+.rep-metric{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.rep-metric:last-child{border:none}
+.rep-metric .v{text-align:right;flex:none}
+.rep-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px}
+.rep-tag{font-size:11px;padding:1px 7px;border-radius:8px;font-weight:600;flex:none}
+.tag-lack{background:#fee2e2;color:#b91c1c}.tag-exc{background:#ffedd5;color:#c2410c}
+@media(prefers-color-scheme:dark){.tag-lack{background:#3a1414;color:#f87171}.tag-exc{background:#3a2410;color:#fb923c}}
 section{display:none}section.active{display:block}
 </style>
 </head>
@@ -99,6 +106,7 @@ section{display:none}section.active{display:block}
   <section id="fitness"></section>
   <section id="calendar"></section>
   <section id="calories"></section>
+  <section id="report"></section>
   <section id="foods"></section>
 </main>
 <nav class="tabs">
@@ -106,6 +114,7 @@ section{display:none}section.active{display:block}
   <button data-tab="fitness"><span class="ico">🏋️</span>健身</button>
   <button data-tab="calendar"><span class="ico">📅</span>日历</button>
   <button data-tab="calories"><span class="ico">👤</span>我的</button>
+  <button data-tab="report"><span class="ico">📊</span>报告</button>
   <button data-tab="foods"><span class="ico">🥫</span>食物库</button>
 </nav>
 <script>
@@ -120,7 +129,7 @@ const CATEGORIES={
 };
 function cat(k){return CATEGORIES[k]||{label:k,emoji:'•',color:'var(--note)'}}
 
-let TL={entries:[]},PLAN={splits:[]},FOODS={foods:[]},PROFILE={},ADVICE={sections:[]};
+let TL={entries:[]},PLAN={splits:[]},FOODS={foods:[]},PROFILE={},ADVICE={sections:[]},REPORT=null;
 function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 let selDate=iso(new Date());
 
@@ -196,21 +205,22 @@ function gotoFood(ev,id){
 async function load(){
   try{
     const v='?t='+Date.now();
-    const [tl,plan,foods,profile,advice]=await Promise.all([
+    const [tl,plan,foods,profile,advice,report]=await Promise.all([
       fetch('./data/timeline.json'+v).then(r=>r.json()),
       fetch('./data/plan.json'+v).then(r=>r.json()),
       fetch('./data/foods.json'+v).then(r=>r.json()),
       fetch('./data/profile.json'+v).then(r=>r.ok?r.json():{}).catch(()=>({})),
       fetch('./data/advice.json'+v).then(r=>r.ok?r.json():{sections:[]}).catch(()=>({sections:[]})),
+      fetch('./data/report.json'+v).then(r=>r.ok?r.json():null).catch(()=>null),
     ]);
-    TL=tl;PLAN=plan;FOODS=foods;PROFILE=profile||{};ADVICE=advice||{sections:[]};
+    TL=tl;PLAN=plan;FOODS=foods;PROFILE=profile||{};ADVICE=advice||{sections:[]};REPORT=report;
   }catch(e){
     document.getElementById('subline').textContent='数据加载失败';
     document.getElementById('today').innerHTML='<div class="wrap"><div class="card empty">数据加载失败:'+e.message+'</div></div>';
     return;
   }
   document.getElementById('subline').textContent=TL.entries.length+' 条记录 · '+new Set(TL.entries.map(e=>e.date)).size+' 天';
-  renderDay();renderFitness();renderCalendar();renderCalories();renderFoods();
+  renderDay();renderFitness();renderCalendar();renderCalories();renderReport();renderFoods();
 }
 
 function exerciseHtml(x){
@@ -505,6 +515,26 @@ function renderFoods(){
     html+='</details>';
   });
   el.innerHTML=html+'</div>';
+}
+
+function renderReport(){
+  const el=document.getElementById('report');
+  if(!REPORT||!REPORT.metrics){el.innerHTML='<div class="wrap"><div class="card empty">还没有生成报告。说一声「生成最近 N 天报告」我就写。</div></div>';return}
+  const R=REPORT,sc={bad:'#dc2626',warn:'#f59e0b',low:'#3b82f6',good:'#16a34a'};
+  let h='<div class="wrap">';
+  h+='<div class="card"><div class="ctitle">📊 个人营养报告</div><div class="muted small">生成 '+R.generated+' · '+R.rangeLabel+' · 共 '+R.days+' 天</div>';
+  if(R.excluded)h+='<div class="muted small" style="margin-top:4px">'+R.excluded+'</div>';
+  if(R.basis)h+='<div class="note">'+R.basis+'</div>';
+  h+='</div>';
+  if(R.verdict)h+='<div class="card"><div class="comment" style="margin:0">'+R.verdict+'</div></div>';
+  h+='<div class="card"><div class="ctitle">关键指标 · 现状 vs 目标</div>';
+  (R.metrics||[]).forEach(m=>{h+='<div class="rep-metric"><span><span class="rep-dot" style="background:'+(sc[m.state]||'#999')+'"></span>'+m.name+'</span><span class="v"><b>'+m.avg+'</b> <span class="muted">/ '+m.target+'</span>'+(m.note?'<div class="muted small">'+m.note+'</div>':'')+'</span></div>';});
+  h+='</div>';
+  if(R.lacking&&R.lacking.length){h+='<div class="card"><div class="ctitle">缺什么</div>';R.lacking.forEach(x=>h+='<div style="margin:9px 0"><span class="rep-tag tag-lack">缺</span> <b>'+x.title+'</b><div class="small muted" style="margin-top:3px;line-height:1.6">'+x.detail+'</div></div>');h+='</div>';}
+  if(R.excess&&R.excess.length){h+='<div class="card"><div class="ctitle">多了什么</div>';R.excess.forEach(x=>h+='<div style="margin:9px 0"><span class="rep-tag tag-exc">多</span> <b>'+x.title+'</b><div class="small muted" style="margin-top:3px;line-height:1.6">'+x.detail+'</div></div>');h+='</div>';}
+  if(R.actions&&R.actions.length){h+='<div class="card"><div class="ctitle">怎么改</div>';R.actions.forEach((a,i)=>h+='<div class="sumline">'+(i+1)+'. '+a+'</div>');h+='</div>';}
+  if(R.perDay&&R.perDay.length){h+='<details class="card"><summary class="ctitle" style="cursor:pointer">每日明细 ›</summary><div style="margin-top:6px">';R.perDay.forEach(p=>{h+='<div style="padding:8px 0;border-bottom:1px dashed var(--line)"><b>'+p.date+'</b> <span class="muted small">'+p.kcal+'卡 · 蛋白'+p.protein+'g · 碳'+p.carbPct+'% · 脂'+p.fatPct+'% · 纤维'+p.fiber+'g</span><div class="small muted" style="margin-top:2px">水果:'+p.fruit+' · 蔬菜:'+p.veg+'</div></div>';});h+='</div></details>';}
+  el.innerHTML=h+'</div>';
 }
 
 document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
