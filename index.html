@@ -88,11 +88,23 @@ nav.tabs button .ico{font-size:20px;line-height:1}
 nav.tabs button.active{color:var(--accent)}
 .rep-metric{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
 .rep-metric:last-child{border:none}
-.rep-metric .v{text-align:right;flex:none}
+.rep-metric .v{text-align:right;flex:1;min-width:0}
+.rep-metric>span:first-child{white-space:nowrap;flex:none}
 .rep-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px}
 .rep-tag{font-size:11px;padding:1px 7px;border-radius:8px;font-weight:600;flex:none}
 .tag-lack{background:#fee2e2;color:#b91c1c}.tag-exc{background:#ffedd5;color:#c2410c}
 @media(prefers-color-scheme:dark){.tag-lack{background:#3a1414;color:#f87171}.tag-exc{background:#3a2410;color:#fb923c}}
+.mine{display:flex;gap:11px;align-items:flex-start}
+.mside{flex:none;width:74px;position:sticky;top:62px;display:flex;flex-direction:column;gap:7px}
+.mbtn{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:11px 3px;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;color:var(--sub);font-size:11px;font-weight:500;line-height:1.1;transition:background .15s,color .15s,border-color .15s}
+.mbtn .mico{font-size:19px;line-height:1}
+.mbtn.on{color:#fff;background:var(--accent);border-color:var(--accent)}
+.mbody{flex:1;min-width:0}
+.rcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin-bottom:10px;cursor:pointer;transition:transform .12s}
+.rcard:active{transform:scale(.985)}
+.rcard .rtitle{font-weight:650;font-size:15px}
+.rcard .rmeta{color:var(--sub);font-size:12.5px;margin-top:4px}
+.rback{color:var(--accent);font-size:13.5px;cursor:pointer;margin:2px 0 11px;display:inline-block;font-weight:500}
 section{display:none}section.active{display:block}
 </style>
 </head>
@@ -103,18 +115,14 @@ section{display:none}section.active{display:block}
 </header>
 <main>
   <section id="today" class="active"></section>
-  <section id="fitness"></section>
   <section id="calendar"></section>
   <section id="calories"></section>
-  <section id="report"></section>
   <section id="foods"></section>
 </main>
 <nav class="tabs">
   <button data-tab="today" class="active"><span class="ico">📆</span>今天</button>
-  <button data-tab="fitness"><span class="ico">🏋️</span>健身</button>
   <button data-tab="calendar"><span class="ico">📅</span>日历</button>
   <button data-tab="calories"><span class="ico">👤</span>我的</button>
-  <button data-tab="report"><span class="ico">📊</span>报告</button>
   <button data-tab="foods"><span class="ico">🥫</span>食物库</button>
 </nav>
 <script>
@@ -220,7 +228,7 @@ async function load(){
     return;
   }
   document.getElementById('subline').textContent=TL.entries.length+' 条记录 · '+new Set(TL.entries.map(e=>e.date)).size+' 天';
-  renderDay();renderFitness();renderCalendar();renderCalories();renderReport();renderFoods();
+  renderDay();renderCalendar();renderMine();renderFoods();
 }
 
 function exerciseHtml(x){
@@ -386,9 +394,9 @@ function drawTrend(name){
     ]},
     options:{responsive:true,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}}},scales:{y:{beginAtZero:false}}}});
 }
-function renderFitness(){
-  const el=document.getElementById('fitness'),names=allWorkoutNames();
-  let html='<div class="wrap"><div class="card"><div class="ctitle">进步趋势</div>';
+function fitnessHtml(){
+  const names=allWorkoutNames();
+  let html='<div class="card"><div class="ctitle">进步趋势</div>';
   if(names.length)html+='<select id="exsel">'+names.map(n=>'<option>'+n+'</option>').join('')+'</select><canvas id="trend" height="170"></canvas><div class="muted small" id="trendnote"></div>';
   else html+='<div class="empty">还没有健身记录,报一次训练就能看趋势。</div>';
   html+='</div>';
@@ -404,8 +412,11 @@ function renderFitness(){
     });
     html+='</div>';
   });
-  el.innerHTML=html+'</div>';
-  if(names.length){const sel=document.getElementById('exsel');sel.onchange=()=>drawTrend(sel.value);drawTrend(names[0]);}
+  return html;
+}
+function initFitnessChart(){
+  const names=allWorkoutNames();
+  if(names.length){const sel=document.getElementById('exsel');if(sel){sel.onchange=()=>drawTrend(sel.value);drawTrend(names[0]);}}
 }
 
 function renderCalendar(){
@@ -423,11 +434,59 @@ function renderCalendar(){
   el.innerHTML=html;
 }
 
+const MINE_TABS=[{k:'info',ico:'👤',label:'个人'},{k:'advice',ico:'🍴',label:'餐厅'},{k:'fitness',ico:'🏋️',label:'健身'},{k:'report',ico:'📊',label:'报告'}];
+let mineSub='info', reportOpenId=null;
+function renderMine(){
+  const el=document.getElementById('calories');
+  const nav='<div class="mside">'+MINE_TABS.map(t=>'<button class="mbtn'+(t.k===mineSub?' on':'')+'" onclick="setMineSub(\''+t.k+'\')"><span class="mico">'+t.ico+'</span>'+t.label+'</button>').join('')+'</div>';
+  el.innerHTML='<div class="wrap"><div class="mine">'+nav+'<div class="mbody" id="mbody"></div></div></div>';
+  renderMineBody();
+}
+function setMineSub(k){mineSub=k;reportOpenId=null;renderMine();}
+function renderMineBody(){
+  const b=document.getElementById('mbody');if(!b)return;
+  if(mineSub==='info'){b.innerHTML=mineInfoHtml();drawWeight();}
+  else if(mineSub==='advice'){b.innerHTML=renderAdvice()||'<div class="card empty">还没有餐厅建议。问我「某餐厅适合我吗」就会沉淀进来。</div>';}
+  else if(mineSub==='fitness'){b.innerHTML=fitnessHtml();initFitnessChart();}
+  else if(mineSub==='report'){b.innerHTML=reportBodyHtml();}
+}
+function reportBodyHtml(){
+  const reps=(REPORT&&REPORT.reports)||[];
+  if(!reps.length)return '<div class="card empty">还没有报告。说一声「生成最近 N 天报告」我就写。</div>';
+  if(reportOpenId){const r=reps.find(x=>x.id===reportOpenId);if(r)return reportDetailHtml(r);}
+  let h='<div class="card" style="padding:13px 15px;margin-bottom:10px"><div class="ctitle" style="margin:0">📊 营养报告</div><div class="muted small" style="margin-top:3px">点开任意一份查看。让我「生成报告」会新增到这里。</div></div>';
+  reps.forEach(r=>{h+='<div class="rcard" onclick="openReport(\''+r.id+'\')"><div class="rtitle">'+r.title+'<span style="float:right;color:var(--sub);font-weight:400">›</span></div><div class="rmeta">生成 '+r.generated+'</div><div class="rmeta">覆盖 '+r.daysCovered+'</div></div>';});
+  return h;
+}
+function openReport(id){reportOpenId=id;renderMineBody();}
+function closeReport(){reportOpenId=null;renderMineBody();}
+function reportDetailHtml(R){
+  const sc={bad:'#dc2626',warn:'#f59e0b',low:'#3b82f6',good:'#16a34a'};
+  let h='<div class="rback" onclick="closeReport()">‹ 返回列表</div>';
+  h+='<div class="card"><div class="ctitle">'+R.title+'</div><div class="muted small">生成 '+R.generated+' · '+R.rangeLabel+'</div><div class="muted small" style="margin-top:3px">覆盖:'+R.daysCovered+'</div>';
+  if(R.basis)h+='<div class="note">'+R.basis+'</div>';
+  h+='</div>';
+  if(R.verdict)h+='<div class="card"><div class="comment" style="margin:0">'+R.verdict+'</div></div>';
+  h+='<div class="card"><div class="ctitle">关键指标 · 现状 vs 目标</div>';
+  (R.metrics||[]).forEach(m=>{h+='<div class="rep-metric"><span><span class="rep-dot" style="background:'+(sc[m.state]||'#999')+'"></span>'+m.name+'</span><span class="v"><b>'+m.avg+'</b> <span class="muted">/ '+m.target+'</span>'+(m.note?'<div class="muted small">'+m.note+'</div>':'')+'</span></div>';});
+  h+='</div>';
+  if(R.lacking&&R.lacking.length){h+='<div class="card"><div class="ctitle">缺什么</div>';R.lacking.forEach(x=>h+='<div style="margin:9px 0"><span class="rep-tag tag-lack">缺</span> <b>'+x.title+'</b><div class="small muted" style="margin-top:3px;line-height:1.6">'+x.detail+'</div></div>');h+='</div>';}
+  if(R.excess&&R.excess.length){h+='<div class="card"><div class="ctitle">多了什么</div>';R.excess.forEach(x=>h+='<div style="margin:9px 0"><span class="rep-tag tag-exc">多</span> <b>'+x.title+'</b><div class="small muted" style="margin-top:3px;line-height:1.6">'+x.detail+'</div></div>');h+='</div>';}
+  if(R.actions&&R.actions.length){h+='<div class="card"><div class="ctitle">怎么改</div>';R.actions.forEach((a,i)=>h+='<div class="sumline">'+(i+1)+'. '+a+'</div>');h+='</div>';}
+  if(R.perDay&&R.perDay.length){h+='<details class="card"><summary class="ctitle" style="cursor:pointer">每日明细 ›</summary><div style="margin-top:6px">';R.perDay.forEach(p=>{const wb=p.where==='在家'?'background:rgba(59,130,246,.13);color:var(--accent)':'background:rgba(245,158,11,.15);color:#b45309';h+='<div style="padding:8px 0;border-bottom:1px dashed var(--line)"><b>'+p.date+'</b>'+(p.where?' <span class="rep-tag" style="'+wb+'">'+p.where+'</span>':'')+' <span class="muted small">'+p.kcal+'卡 · 蛋白'+p.protein+'g · 碳'+p.carbPct+'% · 脂'+p.fatPct+'% · 纤维'+p.fiber+'g</span><div class="small muted" style="margin-top:2px">水果:'+p.fruit+' · 蔬菜:'+p.veg+'</div></div>';});h+='</div></details>';}
+  return h;
+}
 let wchart;
-function renderCalories(){
-  const el=document.getElementById('calories'),t=tdee();
+function drawWeight(){
   const ws=TL.entries.filter(e=>e.category==='weight').sort((a,b)=>a.date<b.date?-1:1);
-  let html='<div class="wrap">';
+  if(wchart){wchart.destroy();wchart=null;}
+  const cv=document.getElementById('wchart');
+  if(cv&&ws.length>1)wchart=new Chart(cv,{type:'line',data:{labels:ws.map(e=>e.date.slice(5)),datasets:[{label:'体重(kg)',data:ws.map(e=>e.data.kg),borderColor:'#06b6d4',backgroundColor:'#06b6d4',tension:.3}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}}},scales:{y:{beginAtZero:false}}}});
+}
+function mineInfoHtml(){
+  const t=tdee();
+  const ws=TL.entries.filter(e=>e.category==='weight').sort((a,b)=>a.date<b.date?-1:1);
+  let html='';
   if(t){
     const pr=PROFILE.proteinPerKg||[1.8,2], carbPct=PROFILE.carbPct||55;
     const dt=dailyTarget(todayKey()), goal=dt?dt.target:t.bulk;
@@ -464,12 +523,7 @@ function renderCalories(){
     Object.keys(by).sort().reverse().forEach(d=>{const dg=dailyTarget(d),goal2=dg?dg.target:(t?t.bulk:null);const g=goal2!=null?(by[d].kcal-goal2):null;html+='<div class="ex"><span>'+d+' <span class="muted small">'+daysAgo(d)+'</span></span><span class="muted">'+by[d].kcal+' 卡'+(by[d].protein?' · '+by[d].protein+'g 蛋白':'')+(g!=null?' <span class="small">('+(g>=0?'+':'')+g+' vs 目标)</span>':'')+'</span></div>'});
     html+='</div>';
   }
-  html+=renderAdvice();
-  if(wchart){wchart.destroy();wchart=null;}
-  el.innerHTML=html+'</div>';
-  if(t&&ws.length>1){
-    wchart=new Chart(document.getElementById('wchart'),{type:'line',data:{labels:ws.map(e=>e.date.slice(5)),datasets:[{label:'体重(kg)',data:ws.map(e=>e.data.kg),borderColor:'#06b6d4',backgroundColor:'#06b6d4',tension:.3}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}}},scales:{y:{beginAtZero:false}}}});
-  }
+  return html;
 }
 // ③ 建议库:把问过的咨询沉淀成数据
 function renderAdvice(){
@@ -517,25 +571,7 @@ function renderFoods(){
   el.innerHTML=html+'</div>';
 }
 
-function renderReport(){
-  const el=document.getElementById('report');
-  if(!REPORT||!REPORT.metrics){el.innerHTML='<div class="wrap"><div class="card empty">还没有生成报告。说一声「生成最近 N 天报告」我就写。</div></div>';return}
-  const R=REPORT,sc={bad:'#dc2626',warn:'#f59e0b',low:'#3b82f6',good:'#16a34a'};
-  let h='<div class="wrap">';
-  h+='<div class="card"><div class="ctitle">📊 个人营养报告</div><div class="muted small">生成 '+R.generated+' · '+R.rangeLabel+' · 共 '+R.days+' 天</div>';
-  if(R.excluded)h+='<div class="muted small" style="margin-top:4px">'+R.excluded+'</div>';
-  if(R.basis)h+='<div class="note">'+R.basis+'</div>';
-  h+='</div>';
-  if(R.verdict)h+='<div class="card"><div class="comment" style="margin:0">'+R.verdict+'</div></div>';
-  h+='<div class="card"><div class="ctitle">关键指标 · 现状 vs 目标</div>';
-  (R.metrics||[]).forEach(m=>{h+='<div class="rep-metric"><span><span class="rep-dot" style="background:'+(sc[m.state]||'#999')+'"></span>'+m.name+'</span><span class="v"><b>'+m.avg+'</b> <span class="muted">/ '+m.target+'</span>'+(m.note?'<div class="muted small">'+m.note+'</div>':'')+'</span></div>';});
-  h+='</div>';
-  if(R.lacking&&R.lacking.length){h+='<div class="card"><div class="ctitle">缺什么</div>';R.lacking.forEach(x=>h+='<div style="margin:9px 0"><span class="rep-tag tag-lack">缺</span> <b>'+x.title+'</b><div class="small muted" style="margin-top:3px;line-height:1.6">'+x.detail+'</div></div>');h+='</div>';}
-  if(R.excess&&R.excess.length){h+='<div class="card"><div class="ctitle">多了什么</div>';R.excess.forEach(x=>h+='<div style="margin:9px 0"><span class="rep-tag tag-exc">多</span> <b>'+x.title+'</b><div class="small muted" style="margin-top:3px;line-height:1.6">'+x.detail+'</div></div>');h+='</div>';}
-  if(R.actions&&R.actions.length){h+='<div class="card"><div class="ctitle">怎么改</div>';R.actions.forEach((a,i)=>h+='<div class="sumline">'+(i+1)+'. '+a+'</div>');h+='</div>';}
-  if(R.perDay&&R.perDay.length){h+='<details class="card"><summary class="ctitle" style="cursor:pointer">每日明细 ›</summary><div style="margin-top:6px">';R.perDay.forEach(p=>{h+='<div style="padding:8px 0;border-bottom:1px dashed var(--line)"><b>'+p.date+'</b> <span class="muted small">'+p.kcal+'卡 · 蛋白'+p.protein+'g · 碳'+p.carbPct+'% · 脂'+p.fatPct+'% · 纤维'+p.fiber+'g</span><div class="small muted" style="margin-top:2px">水果:'+p.fruit+' · 蔬菜:'+p.veg+'</div></div>';});h+='</div></details>';}
-  el.innerHTML=h+'</div>';
-}
+// 报告渲染已并入「我的」侧导航:reportBodyHtml / reportDetailHtml
 
 document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
 load();
