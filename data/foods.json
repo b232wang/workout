@@ -5,9 +5,9 @@
       "name": "钢切麦片(一碗)",
       "nameEn": "Steel-cut Oats Bowl",
       "serving": "1 碗",
-      "components": ["60g 钢切燕麦(干)", "200g 3.25% 牛奶", "5g 肌酸"],
-      "kcal": 350, "protein": 14, "fat": 10, "carb": 50,
-      "note": "组合估算(肌酸不计热量)"
+      "components": ["80g 钢切燕麦(干)", "230g 3.25% 牛奶", "9g 肌酸"],
+      "kcal": 441, "protein": 19, "fat": 12, "carb": 65,
+      "note": "组合估算(肌酸不计热量);燕麦80g≈303卡、牛奶230g≈138卡(2026-06-30 更新配料)"
     },
     {
       "id": "hot-pepper-tuna",
