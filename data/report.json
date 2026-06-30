@@ -94,43 +94,39 @@
         {
           "date": "06-23",
           "where": "在家",
+          "fiber": 17.5,
+          "fruit": "香蕉+蓝莓 ~190g",
+          "veg": "无",
           "kcal": 1672,
           "protein": 128,
           "carbPct": 44,
-          "fatPct": 26,
-          "fiber": 17.5,
-          "fruit": "香蕉+蓝莓 ~190g",
-          "veg": "无"
+          "fatPct": 26
         },
         {
           "date": "06-25",
           "where": "在家",
+          "fiber": 18.0,
+          "fruit": "蓝莓桑葚 120g",
+          "veg": "无",
           "kcal": 1989,
           "protein": 120,
           "carbPct": 43,
-          "fatPct": 33,
-          "fiber": 18.0,
-          "fruit": "蓝莓桑葚 120g",
-          "veg": "无"
+          "fatPct": 33
         },
         {
           "date": "06-26",
           "where": "在家",
+          "fiber": 13.5,
+          "fruit": "香蕉 120g",
+          "veg": "洋葱(汉堡,微量)",
           "kcal": 2279,
           "protein": 139,
           "carbPct": 34,
-          "fatPct": 40,
-          "fiber": 13.5,
-          "fruit": "香蕉 120g",
-          "veg": "洋葱(汉堡,微量)"
+          "fatPct": 40
         },
         {
           "date": "06-27",
           "where": "外食",
-          "kcal": 2361,
-          "protein": 149,
-          "carbPct": 26,
-          "fatPct": 49,
           "fiber": 26.0,
           "fruit": "蓝莓 ~175g",
           "veg": "Chipotle蔬菜+青菜/豆角 ~400g"
@@ -138,10 +134,6 @@
         {
           "date": "06-28",
           "where": "外食",
-          "kcal": 2824,
-          "protein": 171,
-          "carbPct": 19,
-          "fatPct": 57,
           "fiber": 13.0,
           "fruit": "蓝莓 100g",
           "veg": "大拌菜+卤藕 ~200g"
@@ -149,13 +141,13 @@
         {
           "date": "06-29",
           "where": "在家",
+          "fiber": 23.4,
+          "fruit": "蓝莓 100g",
+          "veg": "无",
           "kcal": 2151,
           "protein": 148,
           "carbPct": 38,
-          "fatPct": 36,
-          "fiber": 23.4,
-          "fruit": "蓝莓 100g",
-          "veg": "无"
+          "fatPct": 36
         }
       ]
     }
