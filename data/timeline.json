@@ -1920,6 +1920,45 @@
       "data": {
         "meals": [
           {
+            "slot": "早餐",
+            "dishes": [
+              {
+                "name": "咖啡",
+                "ref": "coffee-latte",
+                "kcal": 95,
+                "items": [
+                  {
+                    "name": "咖啡(自制拿铁)",
+                    "nameEn": "Homemade Latte",
+                    "qty": "1 杯(150g牛奶+espresso)",
+                    "kcal": 95,
+                    "protein": 5,
+                    "fat": 5,
+                    "carb": 7,
+                    "ref": "coffee-latte"
+                  }
+                ]
+              },
+              {
+                "name": "一碗钢切麦片",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 441,
+                "items": [
+                  {
+                    "name": "一碗钢切麦片",
+                    "nameEn": "Steel-cut Oats Bowl",
+                    "qty": "1 碗(80g燕麦+230g牛奶+9g肌酸)",
+                    "kcal": 441,
+                    "protein": 19,
+                    "fat": 12,
+                    "carb": 65,
+                    "ref": "steel-cut-oats-bowl"
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "slot": "午餐",
             "dishes": [
               {
@@ -2006,10 +2045,10 @@
           }
         ],
         "totals": {
-          "kcal": 1425,
-          "protein": 132,
-          "carb": 103,
-          "fat": 53
+          "kcal": 1961,
+          "protein": 156,
+          "carb": 175,
+          "fat": 70
         },
         "note": "在家休息日;午餐3包饼干a;晚餐 Chipotle 高蛋白菜单(双份高蛋白碗+高蛋白杯鸡),卡路里/蛋白/纤维为官方(newsroom.chipotle.com),脂肪/碳水倒推估算;加餐2个鸡蛋"
       }
