@@ -5,97 +5,468 @@
       "name": "钢切麦片(一碗)",
       "nameEn": "Steel-cut Oats Bowl",
       "serving": "1 碗",
-      "components": ["80g 钢切燕麦(干)", "230g 3.25% 牛奶", "9g 肌酸"],
-      "kcal": 441, "protein": 19, "fat": 12, "carb": 65,
+      "components": [
+        "80g 钢切燕麦(干)",
+        "230g 3.25% 牛奶",
+        "9g 肌酸"
+      ],
+      "kcal": 441,
+      "protein": 19,
+      "fat": 12,
+      "carb": 65,
       "note": "组合估算(肌酸不计热量);燕麦80g≈303卡、牛奶230g≈138卡(2026-06-30 更新配料)"
     },
     {
       "id": "hot-pepper-tuna",
       "name": "Hot Pepper Tuna 金枪鱼罐头",
       "nameEn": "Hot Pepper Tuna (canned)",
-      "aliases": ["金枪鱼罐头", "hot pepper tuna"],
+      "aliases": [
+        "金枪鱼罐头",
+        "hot pepper tuna"
+      ],
       "serving": "1 罐 150g",
-      "kcal": 200, "protein": 21, "fat": 7, "saturatedFat": 2, "carb": 14,
-      "cholesterolMg": 40, "sodiumMg": 920, "potassiumMg": 500, "calciumMg": 20, "ironMg": 1.25,
+      "kcal": 200,
+      "protein": 21,
+      "fat": 7,
+      "saturatedFat": 2,
+      "carb": 14,
+      "cholesterolMg": 40,
+      "sodiumMg": 920,
+      "potassiumMg": 500,
+      "calciumMg": 20,
+      "ironMg": 1.25,
       "note": "用户提供营养表"
     },
     {
       "id": "greek-yogurt",
       "name": "希腊酸奶",
       "nameEn": "Greek Yogurt",
-      "aliases": ["希腊酸奶"],
+      "aliases": [
+        "希腊酸奶"
+      ],
       "serving": "1/2 cup 115g",
-      "kcal": 90, "protein": 4, "fat": 6, "saturatedFat": 4, "transFat": 0.2, "carb": 5, "sugar": 3,
-      "cholesterolMg": 20, "sodiumMg": 40, "potassiumMg": 175, "calciumMg": 125,
+      "kcal": 90,
+      "protein": 4,
+      "fat": 6,
+      "saturatedFat": 4,
+      "transFat": 0.2,
+      "carb": 5,
+      "sugar": 3,
+      "cholesterolMg": 20,
+      "sodiumMg": 40,
+      "potassiumMg": 175,
+      "calciumMg": 125,
       "note": "用户提供营养表(每 1/2 cup 115g);蛋白偏低,待用户核对"
     },
     {
       "id": "biscuit-a",
       "name": "饼干a(蓝色空中霸王 Skyflakes)",
       "nameEn": "Skyflakes Crackers (blue)",
-      "aliases": ["饼干a", "空中霸王", "skyflakes"],
+      "aliases": [
+        "饼干a",
+        "空中霸王",
+        "skyflakes"
+      ],
       "serving": "1 包 25g",
-      "kcal": 115, "protein": 2.4, "fat": 3, "carb": 19,
+      "kcal": 115,
+      "protein": 2.4,
+      "fat": 3,
+      "carb": 19,
       "note": "网络估算;口令「饼干a」=这个"
     },
     {
       "id": "coffee-latte",
       "name": "咖啡(自制:牛奶 + 浓缩)",
       "nameEn": "Homemade Latte (milk + espresso)",
-      "aliases": ["咖啡", "拿铁"],
+      "aliases": [
+        "咖啡",
+        "拿铁"
+      ],
       "serving": "1 杯(150g 3.25% 牛奶 + espresso)",
-      "components": ["150g 3.25% 牛奶", "Nespresso espresso 胶囊"],
-      "kcal": 95, "protein": 5, "fat": 5, "carb": 7,
+      "components": [
+        "150g 3.25% 牛奶",
+        "Nespresso espresso 胶囊"
+      ],
+      "kcal": 95,
+      "protein": 5,
+      "fat": 5,
+      "carb": 7,
       "note": "用户早上自制的标准杯(150g 牛奶 ~90卡 + espresso ~5卡)。仅当用户单说「咖啡」=自制这杯时套用;外面买的咖啡(带店名/品牌,如 %、星巴克)不套此条目,按实际单独估算"
     },
     {
       "id": "whey-leanfit-vanilla",
       "name": "Leanfit 乳清蛋白粉(香草)",
       "nameEn": "Leanfit Whey Protein (Vanilla Bean)",
-      "aliases": ["蛋白粉", "乳清蛋白", "乳清", "whey", "protein powder"],
+      "aliases": [
+        "蛋白粉",
+        "乳清蛋白",
+        "乳清",
+        "whey",
+        "protein powder"
+      ],
       "serving": "1 勺 33g",
-      "kcal": 140, "protein": 24, "fat": 3.5, "saturatedFat": 2, "carb": 3, "sugar": 2,
-      "sodiumMg": 125, "potassiumMg": 250, "calciumMg": 150,
+      "kcal": 140,
+      "protein": 24,
+      "fat": 3.5,
+      "saturatedFat": 2,
+      "carb": 3,
+      "sugar": 2,
+      "sodiumMg": 125,
+      "potassiumMg": 250,
+      "calciumMg": 150,
       "note": "Leanfit Whey 香草味,2kg/60 勺;每勺 33g,用户提供营养标签。常配 3.25% 牛奶冲(牛奶单独按量算)"
     },
     {
       "id": "chipotle-hp-hf-bowl",
       "name": "Chipotle 高蛋白高纤碗",
       "nameEn": "Chipotle High Protein-High Fiber Bowl",
-      "aliases": ["chipotle 碗", "高蛋白高纤碗", "high protein high fiber bowl"],
+      "aliases": [
+        "chipotle 碗",
+        "高蛋白高纤碗",
+        "high protein high fiber bowl"
+      ],
       "serving": "1 碗",
-      "components": ["Adobo 鸡", "糙米(light)", "黑豆", "fajita 蔬菜", "玉米莎莎", "番茄莎莎", "生菜"],
-      "kcal": 540, "protein": 46, "fat": 15, "carb": 55, "fiber": 14,
-      "note": "Chipotle 官方截图:540卡 / 46g 蛋白 / 14g 纤维,$12.70;脂肪/碳水按宏量倒推估算(截图未给)"
+      "components": [
+        "Adobo 鸡",
+        "糙米(light)",
+        "黑豆",
+        "fajita 蔬菜",
+        "玉米莎莎",
+        "番茄莎莎",
+        "生菜"
+      ],
+      "kcal": 540,
+      "protein": 46,
+      "fat": 13,
+      "carb": 66,
+      "fiber": 14,
+      "note": "Chipotle 官方截图:540卡 / 46g 蛋白 / 14g 纤维,$12.70;脂肪/碳水按宏量倒推估算(截图未给) | 脂肪/碳水订正(旧15/55→配料法13/66)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
     },
     {
       "id": "mixed-nuts",
       "name": "混合坚果",
       "nameEn": "Mixed Nuts",
-      "aliases": ["mix坚果", "混合坚果", "坚果", "mixed nuts"],
+      "aliases": [
+        "mix坚果",
+        "混合坚果",
+        "坚果",
+        "mixed nuts"
+      ],
       "serving": "1/3 cup 50g",
-      "kcal": 320, "protein": 9, "fat": 28, "saturatedFat": 4, "transFat": 0.1, "carb": 11, "fiber": 4, "sugar": 3,
-      "cholesterolMg": 0, "sodiumMg": 140, "potassiumMg": 300, "calciumMg": 75, "ironMg": 2,
+      "kcal": 320,
+      "protein": 9,
+      "fat": 28,
+      "saturatedFat": 4,
+      "transFat": 0.1,
+      "carb": 11,
+      "fiber": 4,
+      "sugar": 3,
+      "cholesterolMg": 0,
+      "sodiumMg": 140,
+      "potassiumMg": 300,
+      "calciumMg": 75,
+      "ironMg": 2,
       "note": "营养读自包装营养标签(每 1/3 cup 50g);混合坚果(腰果/杏仁/巴西果/榛子等),品牌未拍到"
     },
     {
       "id": "chipotle-double-hp-bowl",
       "name": "Chipotle 双份高蛋白碗",
       "nameEn": "Double High Protein Bowl",
-      "aliases": ["double high protein bowl", "双份高蛋白碗"],
+      "aliases": [
+        "double high protein bowl",
+        "双份高蛋白碗"
+      ],
       "serving": "1 碗",
-      "components": ["双份 Adobo 鸡", "白米(light)", "黑豆", "fajita 蔬菜", "番茄莎莎", "Monterey Jack 芝士", "加量生菜"],
-      "kcal": 760, "protein": 81, "fiber": 11, "fat": 28, "carb": 44,
-      "note": "Chipotle 官方 High Protein Menu:760卡/81g蛋白/11g纤维(来源 newsroom.chipotle.com 2025-12-18 新闻稿);脂肪/碳水官方未给、按宏量倒推估算。用户从 chipotle.ca 下单同名预设"
+      "components": [
+        "双份 Adobo 鸡",
+        "白米(light)",
+        "黑豆",
+        "fajita 蔬菜",
+        "番茄莎莎",
+        "Monterey Jack 芝士",
+        "加量生菜"
+      ],
+      "kcal": 760,
+      "protein": 81,
+      "fiber": 11,
+      "fat": 25.5,
+      "carb": 54,
+      "note": "Chipotle 官方 High Protein Menu:760卡/81g蛋白/11g纤维(来源 newsroom.chipotle.com 2025-12-18 新闻稿);脂肪/碳水官方未给、按宏量倒推估算。用户从 chipotle.ca 下单同名预设 | 脂肪/碳水订正(旧28/44瞎分有误→配料法25.5/54)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
     },
     {
       "id": "chipotle-hp-cup-chicken",
       "name": "Chipotle 高蛋白杯(鸡肉)",
       "nameEn": "High Protein Cup - Chicken",
-      "aliases": ["high protein cup", "高蛋白杯", "high protein cup chicken"],
+      "aliases": [
+        "high protein cup",
+        "高蛋白杯",
+        "high protein cup chicken"
+      ],
       "serving": "1 杯(4 oz≈113g Adobo 鸡)",
-      "kcal": 180, "protein": 32, "fat": 6, "carb": 1,
-      "note": "Chipotle 官方 High Protein Menu:180卡/32g蛋白(来源 newsroom.chipotle.com 2025-12-18);4oz 现烤手切 adobo 鸡;脂肪/碳水官方未给、按宏量倒推估算"
+      "kcal": 180,
+      "protein": 32,
+      "fat": 7,
+      "carb": 0,
+      "note": "Chipotle 官方 High Protein Menu:180卡/32g蛋白(来源 newsroom.chipotle.com 2025-12-18);4oz 现烤手切 adobo 鸡;脂肪/碳水官方未给、按宏量倒推估算 | 脂肪/碳水订正为官方 side-of-chicken(4oz):7/0。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-josh-burrito",
+      "name": "Chipotle 高蛋白卷 (Josh Hart)",
+      "nameEn": "Josh Hart's High Protein Burrito",
+      "aliases": [
+        "josh hart burrito",
+        "josh 高蛋白卷"
+      ],
+      "serving": "1 卷",
+      "components": [
+        "大卷饼",
+        "白米",
+        "双份Adobo鸡",
+        "黑豆",
+        "番茄莎莎",
+        "玉米莎莎",
+        "酸奶油",
+        "芝士"
+      ],
+      "kcal": 1345,
+      "protein": 95,
+      "fat": 47.0,
+      "carb": 135,
+      "fiber": 15,
+      "note": "卡+蛋白=官方(chipotle.ca 页面标称)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-mikal-bowl",
+      "name": "Chipotle 高蛋白碗 (Mikal Bridges)",
+      "nameEn": "Mikal Bridges High Protein Bowl",
+      "aliases": [
+        "mikal bridges bowl",
+        "高蛋白碗 mikal"
+      ],
+      "serving": "1 碗",
+      "components": [
+        "白米",
+        "双份Adobo鸡",
+        "绿莎莎",
+        "玉米莎莎",
+        "生菜"
+      ],
+      "kcal": 670,
+      "protein": 70,
+      "fat": 19.5,
+      "carb": 61,
+      "fiber": 5,
+      "note": "卡+蛋白=官方(chipotle.ca 页面标称)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-tara-bowl",
+      "name": "Chipotle 高蛋白碗 (Tara Davis-Woodhall)",
+      "nameEn": "Tara Davis-Woodhall High Protein Bowl",
+      "aliases": [
+        "tara davis-woodhall bowl",
+        "高蛋白碗 tara"
+      ],
+      "serving": "1 碗",
+      "components": [
+        "白米",
+        "双份Adobo鸡",
+        "斑豆",
+        "红莎莎",
+        "番茄莎莎(light)",
+        "玉米莎莎(light)",
+        "生菜",
+        "牛油果酱"
+      ],
+      "kcal": 1018,
+      "protein": 80,
+      "fat": 42.2,
+      "carb": 84,
+      "fiber": 19,
+      "note": "卡+蛋白=官方(chipotle.ca 页面标称)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-krissy-bowl",
+      "name": "Chipotle 高蛋白碗 (Krissy Cela)",
+      "nameEn": "Krissy Cela's High Protein Bowl",
+      "aliases": [
+        "krissy cela bowl",
+        "高蛋白碗 krissy"
+      ],
+      "serving": "1 碗",
+      "components": [
+        "白米",
+        "双份Adobo鸡",
+        "玉米莎莎(light)",
+        "fajita蔬菜",
+        "芝士(light)",
+        "生菜",
+        "牛油果酱"
+      ],
+      "kcal": 920,
+      "protein": 76,
+      "fat": 44.8,
+      "carb": 62,
+      "fiber": 10,
+      "note": "卡+蛋白=官方(chipotle.ca 页面标称)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-hunter-bowl",
+      "name": "Chipotle 高蛋白碗 (Hunter Woodhall)",
+      "nameEn": "Hunter Woodhall's High Protein Bowl",
+      "aliases": [
+        "hunter woodhall bowl",
+        "高蛋白碗 hunter"
+      ],
+      "serving": "1 碗",
+      "components": [
+        "白米",
+        "双份Adobo鸡",
+        "黑豆",
+        "红莎莎",
+        "番茄莎莎(light)",
+        "玉米莎莎(light)",
+        "生菜",
+        "牛油果酱"
+      ],
+      "kcal": 1018,
+      "protein": 80,
+      "fat": 42.2,
+      "carb": 85,
+      "fiber": 18,
+      "note": "卡+蛋白=官方(chipotle.ca 页面标称)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-sam-tacos",
+      "name": "Chipotle 高蛋白塔可 (Sam)",
+      "nameEn": "Sam's High Protein Tacos",
+      "aliases": [
+        "sam tacos",
+        "高蛋白塔可 sam"
+      ],
+      "serving": "3 个塔可",
+      "components": [
+        "蜂蜜鸡",
+        "脆玉米壳",
+        "玉米莎莎",
+        "fajita蔬菜",
+        "红莎莎",
+        "酸奶油"
+      ],
+      "kcal": 610,
+      "protein": 29,
+      "fat": 24.5,
+      "carb": 58,
+      "fiber": 8,
+      "note": "估算(单份配料量为近似,卡+蛋白仍与官方吻合):脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-taco",
+      "name": "Chipotle 高蛋白塔可(单个)",
+      "nameEn": "High Protein Taco",
+      "aliases": [
+        "high protein taco",
+        "高蛋白塔可单个"
+      ],
+      "serving": "1 个塔可",
+      "components": [
+        "软面粉塔可壳",
+        "Adobo鸡",
+        "fajita蔬菜",
+        "番茄莎莎",
+        "芝士",
+        "生菜"
+      ],
+      "kcal": 190,
+      "protein": 15,
+      "fat": 7.1,
+      "carb": 18,
+      "fiber": 2,
+      "note": "估算(单份配料量为近似,卡+蛋白仍与官方吻合):脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-lowcal-bowl",
+      "name": "Chipotle 高蛋白低卡碗",
+      "nameEn": "High Protein-Low Calorie Bowl",
+      "aliases": [
+        "high protein low calorie bowl",
+        "高蛋白低卡碗"
+      ],
+      "serving": "1 碗",
+      "components": [
+        "Adobo鸡",
+        "supergreens生菜mix",
+        "fajita蔬菜",
+        "番茄莎莎",
+        "牛油果酱"
+      ],
+      "kcal": 470,
+      "protein": 36,
+      "fat": 29.0,
+      "carb": 20,
+      "fiber": 10,
+      "note": "估算(单份配料量为近似,卡+蛋白仍与官方吻合):脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-double-hp-burrito",
+      "name": "Chipotle 双份高蛋白卷",
+      "nameEn": "Double High Protein Burrito",
+      "aliases": [
+        "double high protein burrito",
+        "双份高蛋白卷"
+      ],
+      "serving": "1 卷",
+      "components": [
+        "大卷饼",
+        "双份Adobo鸡",
+        "fajita蔬菜",
+        "番茄莎莎",
+        "芝士",
+        "生菜"
+      ],
+      "kcal": 840,
+      "protein": 79,
+      "fat": 31.0,
+      "carb": 61,
+      "fiber": 6,
+      "note": "卡+蛋白=官方(chipotle.ca 页面标称)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-cup-steak",
+      "name": "Chipotle 高蛋白杯(牛排)",
+      "nameEn": "High Protein Cup - Steak",
+      "aliases": [
+        "high protein cup steak",
+        "高蛋白杯 牛排"
+      ],
+      "serving": "1 杯(4oz 牛排)",
+      "components": [
+        "4oz 牛排"
+      ],
+      "kcal": 150,
+      "protein": 21,
+      "fat": 6,
+      "carb": 1,
+      "fiber": 1,
+      "note": "卡+蛋白=官方(chipotle.ca 页面标称)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "chipotle-hp-cup-honey",
+      "name": "Chipotle 高蛋白杯(蜂蜜鸡)",
+      "nameEn": "High Protein Cup - Chipotle Honey Chicken",
+      "aliases": [
+        "high protein cup honey chicken",
+        "高蛋白杯 蜂蜜鸡"
+      ],
+      "serving": "1 杯(5oz 蜂蜜鸡)",
+      "components": [
+        "5oz 蜂蜜鸡"
+      ],
+      "kcal": 260,
+      "protein": 26,
+      "fat": 10,
+      "carb": 16,
+      "fiber": 0,
+      "note": "卡+蛋白=官方(chipotle.ca 页面标称)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
     }
   ]
 }
