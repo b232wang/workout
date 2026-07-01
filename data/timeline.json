@@ -1901,6 +1901,118 @@
         },
         "note": "均用 foods 库标准值"
       }
+    },
+    {
+      "id": "2026-06-29-workout-1",
+      "date": "2026-06-29",
+      "category": "workout",
+      "data": {
+        "type": "腿",
+        "exercises": [],
+        "comment": "身体疲惫,做了拉伸 + 一些腿部训练(未记具体动作/重量)。疲惫时以恢复为主是对的,拉伸帮血流和放松;别硬顶大重量,等状态回来了下次腿日再把训练量补足。"
+      },
+      "note": "身体疲惫,恢复性拉伸 + 少量腿部训练;未记具体动作/重量;非正式循环腿日,故不标 round"
+    },
+    {
+      "id": "2026-06-30-diet-1",
+      "date": "2026-06-30",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "午餐",
+            "dishes": [
+              {
+                "name": "饼干a",
+                "ref": "biscuit-a",
+                "kcal": 345,
+                "items": [
+                  {
+                    "name": "饼干a",
+                    "nameEn": "Skyflakes Crackers (blue)",
+                    "qty": "3 包(75g)",
+                    "kcal": 345,
+                    "protein": 7.2,
+                    "fat": 9,
+                    "carb": 57,
+                    "ref": "biscuit-a"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "slot": "晚餐",
+            "dishes": [
+              {
+                "name": "Chipotle 双份高蛋白碗",
+                "ref": "chipotle-double-hp-bowl",
+                "kcal": 760,
+                "items": [
+                  {
+                    "name": "双份高蛋白碗",
+                    "nameEn": "Double High Protein Bowl",
+                    "qty": "1 碗",
+                    "kcal": 760,
+                    "protein": 81,
+                    "fiber": 11,
+                    "fat": 28,
+                    "carb": 44,
+                    "ref": "chipotle-double-hp-bowl",
+                    "note": "官方760卡/81g蛋白/11g纤维;脂肪碳水倒推估算"
+                  }
+                ]
+              },
+              {
+                "name": "Chipotle 高蛋白杯(鸡)",
+                "ref": "chipotle-hp-cup-chicken",
+                "kcal": 180,
+                "items": [
+                  {
+                    "name": "高蛋白杯(鸡)",
+                    "nameEn": "High Protein Cup - Chicken",
+                    "qty": "1 杯 4oz",
+                    "kcal": 180,
+                    "protein": 32,
+                    "fat": 6,
+                    "carb": 1,
+                    "ref": "chipotle-hp-cup-chicken",
+                    "note": "官方180卡/32g蛋白;脂肪碳水倒推估算"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "slot": "加餐",
+            "dishes": [
+              {
+                "name": "鸡蛋",
+                "kcal": 140,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Egg",
+                    "qty": "2 个",
+                    "kcal": 140,
+                    "protein": 12,
+                    "fat": 10,
+                    "carb": 1,
+                    "note": "通用值估算(2 个全蛋)"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": {
+          "kcal": 1425,
+          "protein": 132,
+          "carb": 103,
+          "fat": 53
+        },
+        "note": "在家休息日;午餐3包饼干a;晚餐 Chipotle 高蛋白菜单(双份高蛋白碗+高蛋白杯鸡),卡路里/蛋白/纤维为官方(newsroom.chipotle.com),脂肪/碳水倒推估算;加餐2个鸡蛋"
+      }
     }
   ]
 }
