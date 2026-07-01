@@ -381,9 +381,9 @@
                     "qty": "1 碗",
                     "kcal": 540,
                     "protein": 46,
-                    "fat": 15,
-                    "carb": 55,
-                    "note": "官方 540卡/46g蛋白/14g纤维(截图);脂肪/碳水估算"
+                    "fat": 13,
+                    "carb": 66,
+                    "note": "官方 540卡/46g蛋白/14g纤维(截图);脂肪/碳水按官方逐配料加总(7-01 订正,旧估15/55)"
                   }
                 ]
               }
@@ -544,8 +544,8 @@
         "totals": {
           "kcal": 2361,
           "protein": 149,
-          "carb": 152,
-          "fat": 129
+          "carb": 163,
+          "fat": 130
         },
         "note": "早餐+午餐+晚餐;晚餐在朋友家家常菜(青菜/尖椒豆皮/豆角 + 小块排骨 + 一块牛尾、无主食),份量粗估;凌晨加餐:蛋白粉 28g + 牛奶 300g;加餐酸奶碗(蓝莓100g+坚果50g+希腊酸奶70g)"
       }
@@ -1995,10 +1995,10 @@
                     "kcal": 760,
                     "protein": 81,
                     "fiber": 11,
-                    "fat": 28,
-                    "carb": 44,
+                    "fat": 25.5,
+                    "carb": 54,
                     "ref": "chipotle-double-hp-bowl",
-                    "note": "官方760卡/81g蛋白/11g纤维;脂肪碳水倒推估算"
+                    "note": "官方760卡/81g蛋白/11g纤维;脂肪/碳水按官方逐配料加总(7-01 订正,旧估28/44)"
                   }
                 ]
               },
@@ -2013,10 +2013,10 @@
                     "qty": "1 杯 4oz",
                     "kcal": 180,
                     "protein": 32,
-                    "fat": 6,
-                    "carb": 1,
+                    "fat": 7,
+                    "carb": 0,
                     "ref": "chipotle-hp-cup-chicken",
-                    "note": "官方180卡/32g蛋白;脂肪碳水倒推估算"
+                    "note": "官方180卡/32g蛋白;脂肪/碳水按官方逐配料加总(7-01 订正,旧估6/1)"
                   }
                 ]
               }
@@ -2047,10 +2047,84 @@
         "totals": {
           "kcal": 1961,
           "protein": 156,
-          "carb": 175,
-          "fat": 70
+          "carb": 184,
+          "fat": 69
         },
-        "note": "在家休息日;午餐3包饼干a;晚餐 Chipotle 高蛋白菜单(双份高蛋白碗+高蛋白杯鸡),卡路里/蛋白/纤维为官方(newsroom.chipotle.com),脂肪/碳水倒推估算;加餐2个鸡蛋"
+        "note": "在家休息日;午餐3包饼干a;晚餐 Chipotle 高蛋白菜单(双份高蛋白碗+高蛋白杯鸡),卡路里/蛋白/纤维为官方(newsroom.chipotle.com),脂肪/碳水按官方逐配料加总(7-01 订正);加餐2个鸡蛋"
+      }
+    },
+    {
+      "id": "2026-07-01-diet-1",
+      "date": "2026-07-01",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "其他",
+            "dishes": [
+              {
+                "name": "饼干a",
+                "ref": "biscuit-a",
+                "kcal": 460,
+                "items": [
+                  {
+                    "name": "饼干a",
+                    "nameEn": "Skyflakes Crackers (blue)",
+                    "qty": "4 包(100g)",
+                    "kcal": 460,
+                    "protein": 9.6,
+                    "fat": 12,
+                    "carb": 76,
+                    "ref": "biscuit-a"
+                  }
+                ]
+              },
+              {
+                "name": "一碗钢切麦片",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 441,
+                "items": [
+                  {
+                    "name": "一碗钢切麦片",
+                    "nameEn": "Steel-cut Oats Bowl",
+                    "qty": "1 碗(80g燕麦+230g牛奶+9g肌酸)",
+                    "kcal": 441,
+                    "protein": 19,
+                    "fat": 12,
+                    "carb": 65,
+                    "ref": "steel-cut-oats-bowl"
+                  }
+                ]
+              },
+              {
+                "name": "Chipotle 双份高蛋白碗",
+                "ref": "chipotle-double-hp-bowl",
+                "kcal": 760,
+                "items": [
+                  {
+                    "name": "双份高蛋白碗",
+                    "nameEn": "Double High Protein Bowl",
+                    "qty": "1 碗",
+                    "kcal": 760,
+                    "protein": 81,
+                    "fiber": 11,
+                    "fat": 25.5,
+                    "carb": 54,
+                    "ref": "chipotle-double-hp-bowl",
+                    "note": "官方760卡/81g蛋白/11g纤维;脂肪/碳水按官方逐配料加总"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": {
+          "kcal": 1661,
+          "protein": 110,
+          "carb": 195,
+          "fat": 50
+        },
+        "note": "4包饼干a + 一碗钢切麦片 + Chipotle双份高蛋白碗;未说时段,归「其他」"
       }
     }
   ]
