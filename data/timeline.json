@@ -2461,6 +2461,81 @@
         "comment": "断训约一周后回归推日,状态还在找。器械推肩换成独立臂款,60磅×8 连做 4 组很稳——靠背撑着、两边独立配重防强侧代偿,比哑铃能上更重;下次冲 65磅 或先把 60磅 做到每组 10 次。器械推胸(中胸那台)受停训影响,80磅 第三组掉到 8 次,没延续上次 90×10 的峰值,属正常回落;先把 80磅 三组做回 10 次再上 90。侧平举 8磅 最高 12 次(上次能 13),同样略降,稳住 8磅 冲回 13 再升 10磅。三头孤立没练,下次推日补。"
       },
       "note": "断训约一周后首次推日,只练 3 个动作(没练完);重量除标注外为磅、哑铃单只"
+    },
+    {
+      "id": "2026-07-07-diet-1",
+      "date": "2026-07-07",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "早餐",
+            "dishes": [
+              {
+                "name": "咖啡",
+                "ref": "coffee-latte",
+                "kcal": 95,
+                "items": [
+                  {
+                    "name": "自制拿铁",
+                    "nameEn": "Homemade Latte",
+                    "qty": "1杯(150g牛奶+espresso)",
+                    "kcal": 95,
+                    "protein": 5,
+                    "fat": 5,
+                    "carb": 7,
+                    "note": "库 coffee-latte"
+                  }
+                ]
+              },
+              {
+                "name": "卤蛋(辣)",
+                "ref": "braised-egg-spicy",
+                "kcal": 63.4,
+                "items": [
+                  {
+                    "name": "卤蛋(辣)",
+                    "nameEn": "Braised Egg (spicy)",
+                    "qty": "1个≈22g",
+                    "kcal": 63.4,
+                    "protein": 4.0,
+                    "fat": 5.0,
+                    "carb": 0.8,
+                    "sugar": 1.1,
+                    "sodiumMg": 143.2,
+                    "ref": "braised-egg-spicy",
+                    "note": "营养表每100g按22g折算(×0.22)"
+                  }
+                ]
+              },
+              {
+                "name": "钢切麦片(一碗)",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 441,
+                "items": [
+                  {
+                    "name": "钢切麦片",
+                    "nameEn": "Steel-cut Oats Bowl",
+                    "qty": "1碗(燕麦80g+牛奶230g+肌酸9g)",
+                    "kcal": 441,
+                    "protein": 19,
+                    "fat": 12,
+                    "carb": 65,
+                    "note": "库 steel-cut-oats-bowl"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": {
+          "kcal": 599.4,
+          "protein": 28.0,
+          "fat": 22.0,
+          "carb": 72.8
+        },
+        "note": "目前仅早餐(咖啡+1个辣蛋+一碗麦片);后续餐次再追加"
+      }
     }
   ]
 }
