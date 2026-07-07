@@ -2355,6 +2355,112 @@
         },
         "note": "卤蛋按用户每100g营养表、每个22g折算;辣椒炒肉与2个鸡蛋为估算(油量、鸡蛋做法未明确);酸奶碗按新标准(蓝莓100+坚果40+希腊酸奶70)"
       }
+    },
+    {
+      "id": "2026-07-06-workout-1",
+      "date": "2026-07-06",
+      "category": "workout",
+      "data": {
+        "type": "推",
+        "round": 1,
+        "exercises": [
+          {
+            "name": "器械推肩(独立臂)",
+            "nameEn": "Iso-Lateral Shoulder Press",
+            "equipment": "独立臂坐姿推肩器械(两边分别配重)",
+            "equipmentEn": "Iso-Lateral Plate-Loaded Shoulder Press Machine",
+            "target": "肩前束",
+            "targetEn": "Front Deltoids",
+            "sets": [
+              {
+                "weight": 50,
+                "reps": 8
+              },
+              {
+                "weight": 50,
+                "reps": 10
+              },
+              {
+                "weight": 60,
+                "reps": 8
+              },
+              {
+                "weight": 60,
+                "reps": 8
+              },
+              {
+                "weight": 60,
+                "reps": 8
+              },
+              {
+                "weight": 60,
+                "reps": 8
+              }
+            ],
+            "note": "重量为磅、每边各此配重(两边独立加重);靠背支撑发力更集中、可比哑铃肩推上更重;与 6-27 哑铃肩推非同一动作,不直接比重量"
+          },
+          {
+            "name": "侧平举",
+            "nameEn": "Lateral Raise",
+            "equipment": "哑铃",
+            "equipmentEn": "Dumbbells",
+            "target": "肩中束",
+            "targetEn": "Side Deltoids",
+            "sets": [
+              {
+                "weight": 3,
+                "reps": 10
+              },
+              {
+                "weight": 8,
+                "reps": 8
+              },
+              {
+                "weight": 8,
+                "reps": 10
+              },
+              {
+                "weight": 8,
+                "reps": 10
+              },
+              {
+                "weight": 8,
+                "reps": 12
+              }
+            ],
+            "note": "重量为磅、哑铃单只;首组 3磅热身,共5组"
+          },
+          {
+            "name": "器械推胸",
+            "nameEn": "Machine Chest Press",
+            "equipment": "坐姿推胸器械",
+            "equipmentEn": "Seated Chest Press Machine",
+            "target": "胸大肌(中部)",
+            "targetEn": "Pectorals (mid)",
+            "sets": [
+              {
+                "weight": 70,
+                "reps": 10
+              },
+              {
+                "weight": 80,
+                "reps": 10
+              },
+              {
+                "weight": 80,
+                "reps": 10
+              },
+              {
+                "weight": 80,
+                "reps": 8
+              }
+            ],
+            "note": "重量为磅(器械刻度);座椅稍后仰、前推方向略上斜但目标是中胸(非上胸),与 6-27 同一台平推"
+          }
+        ],
+        "comment": "断训约一周后回归推日,状态还在找。器械推肩换成独立臂款,60磅×8 连做 4 组很稳——靠背撑着、两边独立配重防强侧代偿,比哑铃能上更重;下次冲 65磅 或先把 60磅 做到每组 10 次。器械推胸(中胸那台)受停训影响,80磅 第三组掉到 8 次,没延续上次 90×10 的峰值,属正常回落;先把 80磅 三组做回 10 次再上 90。侧平举 8磅 最高 12 次(上次能 13),同样略降,稳住 8磅 冲回 13 再升 10磅。三头孤立没练,下次推日补。"
+      },
+      "note": "断训约一周后首次推日,只练 3 个动作(没练完);重量除标注外为磅、哑铃单只"
     }
   ]
 }
