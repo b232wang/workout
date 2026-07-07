@@ -467,6 +467,25 @@
       "carb": 16,
       "fiber": 0,
       "note": "卡+蛋白=官方(chipotle.ca 页面标称)。脂肪/碳水按官方逐配料营养(services.chipotle.com nutrition API,region=US)加总,并用官方总卡+蛋白校验份量吻合;算于2026-07-01"
+    },
+    {
+      "id": "yogurt-bowl",
+      "name": "酸奶碗(标准款)",
+      "nameEn": "Yogurt Bowl",
+      "aliases": [
+        "酸奶碗"
+      ],
+      "serving": "1碗",
+      "components": [
+        "蓝莓 100g",
+        "混合坚果 40g",
+        "希腊酸奶 70g"
+      ],
+      "kcal": 367.8,
+      "protein": 10.3,
+      "fat": 26.3,
+      "carb": 25.8,
+      "note": "标准配方(2026-07-06 用户定):蓝莓100g(57卡)+混合坚果40g(库mixed-nuts×0.8=256卡)+希腊酸奶70g(库greek-yogurt×70/115=55卡)。以后用户说「酸奶碗」无特别说明即按此"
     }
   ]
 }

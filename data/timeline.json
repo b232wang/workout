@@ -2126,6 +2126,235 @@
         },
         "note": "4包饼干a + 一碗钢切麦片 + Chipotle双份高蛋白碗;未说时段,归「其他」"
       }
+    },
+    {
+      "id": "2026-07-06-diet-1",
+      "date": "2026-07-06",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "早餐",
+            "dishes": [
+              {
+                "name": "钢切麦片(一碗)",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 441,
+                "items": [
+                  {
+                    "name": "钢切麦片",
+                    "nameEn": "Steel-cut Oats Bowl",
+                    "qty": "1碗(燕麦80g+牛奶230g+肌酸9g)",
+                    "kcal": 441,
+                    "protein": 19,
+                    "fat": 12,
+                    "carb": 65,
+                    "note": "库 steel-cut-oats-bowl"
+                  }
+                ]
+              },
+              {
+                "name": "咖啡",
+                "ref": "coffee-latte",
+                "kcal": 95,
+                "items": [
+                  {
+                    "name": "自制拿铁",
+                    "nameEn": "Homemade Latte",
+                    "qty": "1杯(150g牛奶+espresso)",
+                    "kcal": 95,
+                    "protein": 5,
+                    "fat": 5,
+                    "carb": 7,
+                    "note": "库 coffee-latte"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "slot": "中午",
+            "dishes": [
+              {
+                "name": "鸡蛋",
+                "kcal": 144,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Eggs",
+                    "qty": "2个",
+                    "kcal": 144,
+                    "protein": 13,
+                    "fat": 10,
+                    "carb": 1,
+                    "note": "通用值估算(2个全蛋),做法未说明按水煮"
+                  }
+                ]
+              },
+              {
+                "name": "卤蛋(买的·辣/黄)",
+                "kcal": 209.4,
+                "items": [
+                  {
+                    "name": "卤蛋(辣)",
+                    "nameEn": "Braised Egg (spicy)",
+                    "qty": "2个≈44g",
+                    "kcal": 126.72,
+                    "protein": 8.05,
+                    "fat": 9.94,
+                    "carb": 1.54,
+                    "sugar": 2.11,
+                    "sodiumMg": 286.44,
+                    "note": "用户营养表每100g(288卡/22.6脂/3.5碳/18.3蛋白/钠651),称重每个约18-25g、按22g×2折算(×0.44)"
+                  },
+                  {
+                    "name": "卤蛋(黄)",
+                    "nameEn": "Braised Egg (yolk)",
+                    "qty": "2个≈44g",
+                    "kcal": 82.72,
+                    "protein": 8.4,
+                    "fat": 4.14,
+                    "carb": 2.99,
+                    "sugar": 0.79,
+                    "sodiumMg": 187.44,
+                    "note": "用户营养表每100g(188卡/9.4脂/6.8碳/19.1蛋白/钠426),按22g×2折算(×0.44)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "slot": "晚餐",
+            "dishes": [
+              {
+                "name": "辣椒炒肉(自制·复刻费大厨)",
+                "kcal": 657,
+                "items": [
+                  {
+                    "name": "猪前腿肉",
+                    "nameEn": "Pork Front Leg",
+                    "qty": "250g(生)",
+                    "kcal": 438,
+                    "protein": 46.3,
+                    "fat": 27.5,
+                    "carb": 0,
+                    "note": "估算,按175kcal/100g(肥瘦相间)"
+                  },
+                  {
+                    "name": "螺丝椒",
+                    "nameEn": "Twisted Chili Pepper",
+                    "qty": "175g",
+                    "kcal": 47,
+                    "protein": 2.3,
+                    "fat": 0.5,
+                    "carb": 9.5,
+                    "note": "估算(辣椒~27kcal/100g)"
+                  },
+                  {
+                    "name": "蒜",
+                    "nameEn": "Garlic",
+                    "qty": "4瓣~12g",
+                    "kcal": 18,
+                    "protein": 0.8,
+                    "fat": 0.1,
+                    "carb": 4,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "木耳",
+                    "nameEn": "Wood Ear Fungus",
+                    "qty": "泡发一小碗~100g",
+                    "kcal": 21,
+                    "protein": 0.5,
+                    "fat": 0,
+                    "carb": 6,
+                    "note": "估算(泡发后)"
+                  },
+                  {
+                    "name": "炒制用油",
+                    "nameEn": "Cooking Oil",
+                    "qty": "~15g",
+                    "kcal": 133,
+                    "protein": 0,
+                    "fat": 15,
+                    "carb": 0,
+                    "note": "估算,1汤匙;油量用户未说明"
+                  }
+                ]
+              },
+              {
+                "name": "酸奶碗",
+                "ref": "yogurt-bowl",
+                "kcal": 367.8,
+                "items": [
+                  {
+                    "name": "蓝莓",
+                    "nameEn": "Blueberries",
+                    "qty": "100g",
+                    "kcal": 57,
+                    "protein": 0.7,
+                    "fat": 0.3,
+                    "carb": 14,
+                    "note": "通用值估算"
+                  },
+                  {
+                    "name": "混合坚果",
+                    "nameEn": "Mixed Nuts",
+                    "qty": "40g",
+                    "kcal": 256.0,
+                    "protein": 7.2,
+                    "fat": 22.4,
+                    "carb": 8.8,
+                    "ref": "mixed-nuts",
+                    "note": "库50g×0.8"
+                  },
+                  {
+                    "name": "希腊酸奶",
+                    "nameEn": "Greek Yogurt",
+                    "qty": "70g",
+                    "kcal": 54.8,
+                    "protein": 2.4,
+                    "fat": 3.65,
+                    "carb": 3.04,
+                    "ref": "greek-yogurt",
+                    "note": "库115g×70/115"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "slot": "其他",
+            "dishes": [
+              {
+                "name": "混合坚果(额外)",
+                "ref": "mixed-nuts",
+                "kcal": 256.0,
+                "items": [
+                  {
+                    "name": "混合坚果",
+                    "nameEn": "Mixed Nuts",
+                    "qty": "40g",
+                    "kcal": 256.0,
+                    "protein": 7.2,
+                    "fat": 22.4,
+                    "carb": 8.8,
+                    "ref": "mixed-nuts",
+                    "note": "库50g×0.8;酸奶碗之外额外吃的"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": {
+          "kcal": 2170.2,
+          "protein": 120.8,
+          "fat": 132.9,
+          "carb": 131.6
+        },
+        "note": "卤蛋按用户每100g营养表、每个22g折算;辣椒炒肉与2个鸡蛋为估算(油量、鸡蛋做法未明确);酸奶碗按新标准(蓝莓100+坚果40+希腊酸奶70)"
+      }
     }
   ]
 }
