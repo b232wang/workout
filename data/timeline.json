@@ -2526,15 +2526,78 @@
                 ]
               }
             ]
+          },
+          {
+            "slot": "中午",
+            "dishes": [
+              {
+                "name": "卤蛋(辣)",
+                "ref": "braised-egg-spicy",
+                "kcal": 126.8,
+                "items": [
+                  {
+                    "name": "卤蛋(辣)",
+                    "nameEn": "Braised Egg (spicy)",
+                    "qty": "2个≈44g",
+                    "kcal": 126.8,
+                    "protein": 8.0,
+                    "fat": 10.0,
+                    "carb": 1.6,
+                    "sugar": 2.2,
+                    "sodiumMg": 286.4,
+                    "ref": "braised-egg-spicy",
+                    "note": "库每个22g×2"
+                  }
+                ]
+              },
+              {
+                "name": "麦当劳 Double Quarter Pounder with Cheese",
+                "ref": "mcd-double-qpc",
+                "kcal": 750,
+                "items": [
+                  {
+                    "name": "Double Quarter Pounder with Cheese",
+                    "nameEn": "McDonald's Double Quarter Pounder with Cheese",
+                    "qty": "1个 278g",
+                    "kcal": 750,
+                    "protein": 47,
+                    "fat": 44,
+                    "carb": 42,
+                    "sodiumMg": 1210,
+                    "ref": "mcd-double-qpc",
+                    "note": "加拿大官方(dnaapp API)"
+                  }
+                ]
+              },
+              {
+                "name": "麦当劳 McDouble",
+                "ref": "mcd-mcdouble",
+                "kcal": 380,
+                "items": [
+                  {
+                    "name": "McDouble",
+                    "nameEn": "McDonald's McDouble",
+                    "qty": "1个 149g",
+                    "kcal": 380,
+                    "protein": 21,
+                    "fat": 18,
+                    "carb": 34,
+                    "sodiumMg": 840,
+                    "ref": "mcd-mcdouble",
+                    "note": "加拿大官方(dnaapp API)"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "totals": {
-          "kcal": 599.4,
-          "protein": 28.0,
-          "fat": 22.0,
-          "carb": 72.8
+          "kcal": 1856.2,
+          "protein": 104.0,
+          "fat": 94.0,
+          "carb": 150.4
         },
-        "note": "目前仅早餐(咖啡+1个辣蛋+一碗麦片);后续餐次再追加"
+        "note": "早餐+中午(截至目前);中午为2辣蛋+麦当劳Double QPC+McDouble,麦当劳用加拿大官方营养"
       }
     }
   ]

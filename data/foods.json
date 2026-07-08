@@ -502,6 +502,42 @@
       "sugar": 1.1,
       "sodiumMg": 143.2,
       "note": "买的卤蛋(辣);用户营养表每100g=288卡/22.6脂/3.5碳/4.8糖/18.3蛋白/钠651,称重每个18-25g、按22g折算(×0.22)"
+    },
+    {
+      "id": "mcd-double-qpc",
+      "name": "麦当劳 Double Quarter Pounder with Cheese",
+      "nameEn": "McDonald's Double Quarter Pounder with Cheese",
+      "aliases": [
+        "double quarter pounder with cheese",
+        "dqpc",
+        "双层四分之一磅芝士堡"
+      ],
+      "serving": "1个 278g",
+      "kcal": 750,
+      "protein": 47,
+      "fat": 44,
+      "carb": 42,
+      "saturatedFat": 21,
+      "sodiumMg": 1210,
+      "ref": "https://www.mcdonalds.com/ca/en-ca/product/double-quarter-pounder-with-cheese.html",
+      "note": "加拿大麦当劳官方营养(dnaapp itemDetails API,item=200149,region=CA):750卡/47蛋白/44脂/42碳/饱和脂21/钠1210,份量278g。查于2026-07-07"
+    },
+    {
+      "id": "mcd-mcdouble",
+      "name": "麦当劳 McDouble",
+      "nameEn": "McDonald's McDouble",
+      "aliases": [
+        "mcdouble"
+      ],
+      "serving": "1个 149g",
+      "kcal": 380,
+      "protein": 21,
+      "fat": 18,
+      "carb": 34,
+      "saturatedFat": 8,
+      "sodiumMg": 840,
+      "ref": "https://www.mcdonalds.com/ca/en-ca/product/mcdouble.html",
+      "note": "加拿大麦当劳官方营养(dnaapp itemDetails API,item=200155,region=CA):380卡/21蛋白/18脂/34碳/饱和脂8/钠840,份量149g。查于2026-07-07"
     }
   ]
 }
