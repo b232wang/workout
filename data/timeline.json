@@ -2599,6 +2599,199 @@
         },
         "note": "早餐+中午(截至目前);中午为2辣蛋+麦当劳Double QPC+McDouble,麦当劳用加拿大官方营养"
       }
+    },
+    {
+      "id": "2026-07-12-diet-1",
+      "date": "2026-07-12",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "早餐",
+            "dishes": [
+              {
+                "name": "钢切麦片(一碗)",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 441,
+                "items": [
+                  {
+                    "name": "钢切麦片",
+                    "nameEn": "Steel-cut Oats Bowl",
+                    "qty": "1碗(燕麦80g+牛奶230g+肌酸9g)",
+                    "kcal": 441,
+                    "protein": 19,
+                    "fat": 12,
+                    "carb": 65,
+                    "note": "库 steel-cut-oats-bowl"
+                  }
+                ]
+              },
+              {
+                "name": "酸奶碗",
+                "ref": "yogurt-bowl",
+                "kcal": 367.8,
+                "items": [
+                  {
+                    "name": "蓝莓",
+                    "nameEn": "Blueberries",
+                    "qty": "100g",
+                    "kcal": 57,
+                    "protein": 0.7,
+                    "fat": 0.3,
+                    "carb": 14,
+                    "note": "通用值估算"
+                  },
+                  {
+                    "name": "混合坚果",
+                    "nameEn": "Mixed Nuts",
+                    "qty": "40g",
+                    "kcal": 256,
+                    "protein": 7.2,
+                    "fat": 22.4,
+                    "carb": 8.8,
+                    "ref": "mixed-nuts",
+                    "note": "库50g×0.8"
+                  },
+                  {
+                    "name": "希腊酸奶",
+                    "nameEn": "Greek Yogurt",
+                    "qty": "70g",
+                    "kcal": 54.8,
+                    "protein": 2.4,
+                    "fat": 3.65,
+                    "carb": 3.04,
+                    "ref": "greek-yogurt",
+                    "note": "库115g×70/115"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "slot": "晚餐",
+            "dishes": [
+              {
+                "name": "土豆(蒸)",
+                "kcal": 231,
+                "items": [
+                  {
+                    "name": "土豆",
+                    "nameEn": "Potato",
+                    "qty": "300g",
+                    "kcal": 231,
+                    "protein": 6,
+                    "fat": 0.3,
+                    "carb": 52.5,
+                    "note": "蒸;估算,通用值77kcal/100g(无油)"
+                  }
+                ]
+              },
+              {
+                "name": "鸡蛋(水煮)",
+                "kcal": 144,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Boiled Eggs",
+                    "qty": "2个",
+                    "kcal": 144,
+                    "protein": 13,
+                    "fat": 10,
+                    "carb": 1,
+                    "note": "水煮;通用值估算(2个全蛋)"
+                  }
+                ]
+              },
+              {
+                "name": "虾(水煮)",
+                "kcal": 198,
+                "items": [
+                  {
+                    "name": "虾",
+                    "nameEn": "Boiled Shrimp",
+                    "qty": "200g",
+                    "kcal": 198,
+                    "protein": 48,
+                    "fat": 0.6,
+                    "carb": 0.4,
+                    "note": "水煮;估算,通用值99kcal/100g(去壳生重)"
+                  }
+                ]
+              },
+              {
+                "name": "西蓝花碎(水煮)",
+                "kcal": 51,
+                "items": [
+                  {
+                    "name": "西蓝花",
+                    "nameEn": "Boiled Broccoli",
+                    "qty": "150g",
+                    "kcal": 51,
+                    "protein": 4.2,
+                    "fat": 1.0,
+                    "carb": 9.9,
+                    "note": "水煮;估算,通用值34kcal/100g"
+                  }
+                ]
+              },
+              {
+                "name": "凉拌调料",
+                "kcal": 114,
+                "items": [
+                  {
+                    "name": "生抽",
+                    "nameEn": "Light Soy Sauce",
+                    "qty": "2勺(~30ml)",
+                    "kcal": 20,
+                    "protein": 2.6,
+                    "fat": 0,
+                    "carb": 2,
+                    "sodiumMg": 1800,
+                    "note": "估算,每汤匙~10卡/钠~900mg×2"
+                  },
+                  {
+                    "name": "醋",
+                    "nameEn": "Vinegar",
+                    "qty": "1勺(~15ml)",
+                    "kcal": 3,
+                    "protein": 0,
+                    "fat": 0,
+                    "carb": 0.1,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "香油",
+                    "nameEn": "Sesame Oil",
+                    "qty": "半勺(~7g)",
+                    "kcal": 62,
+                    "protein": 0,
+                    "fat": 7,
+                    "carb": 0,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "白芝麻",
+                    "nameEn": "White Sesame",
+                    "qty": "一点(~5g)",
+                    "kcal": 29,
+                    "protein": 1,
+                    "fat": 2.5,
+                    "carb": 1.2,
+                    "note": "估算;黑/白胡椒粉微量不计"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": {
+          "kcal": 1546.8,
+          "protein": 104.1,
+          "fat": 59.8,
+          "carb": 157.9
+        },
+        "note": "早餐(麦片+酸奶碗标准款)+晚餐(土豆蒸/2蛋水煮/虾水煮/西蓝花水煮 + 生抽2醋1香油半勺白芝麻凉拌);主食材与调料营养为通用值估算,调料按汤匙(~15ml)计"
+      }
     }
   ]
 }
