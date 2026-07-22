@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-27",
-  "note": "全部菜品来自各品牌官方营养来源,每家「来源 ↗」可点开自己核对(数字随门店配置/份量浮动,以官方源为准)。蛋白:官方直接公布的不标「估」;Five Guys(官方只列配料、蛋白为加总)、Pita Pit(自选餐、按官方配料估)标「估」。价格无官方数据、以 DoorDash 为准。Osmow's 因官方未公开营养已移除。麦当劳为通用官方值 + 你的订单价。每家(除麦当劳)1–10 评分综合健康/增肌减脂/抗炎。",
+  "updated": "2026-07-22",
+  "note": "菜品优先采用品牌官方营养数据;官方只给配料或热量区间时明确标「估」并写依据。蛋白:官方直接公布的不标「估」;Five Guys、Pita Pit、Poke Guys 等自选餐按官方配料估算。价格以官方菜单或外卖页为准,随门店和平台浮动。Osmow's 因官方未公开营养已移除。麦当劳为通用官方值 + 你的订单价。每家(除麦当劳)1–10 评分综合健康/增肌减脂/抗炎。",
   "sections": [
     {
       "id": "mcdonalds", "title": "麦当劳", "titleEn": "McDonald's",
@@ -26,6 +26,38 @@
         { "name": "双倍高蛋白碗", "nameEn": "Double High Protein Bowl", "kcal": 760, "protein": 81, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌"], "why": "双份 adobo 鸡 + 白米 + 黑豆 + 蔬菜 + 莎莎 + 芝士,81g 蛋白 / 760 卡,增肌拉满。" },
         { "name": "高蛋白低卡碗", "nameEn": "High Protein-Low Calorie Bowl", "kcal": 450, "kcalEst": true, "kcalNote": "官方未标卡路里;按 adobo 鸡 + supergreens + 蔬菜 + 莎莎 + 牛油果估 ~450 卡。蛋白 36g 为官方值。", "protein": 36, "proteinEst": false, "price": "见 DoorDash", "for": ["减脂"], "why": "官方 GLP-1 碗:adobo 鸡 + supergreens + 蔬菜 + 牛油果,36g 蛋白、无米饭,减脂优选。" },
         { "name": "高蛋白鸡肉杯", "nameEn": "High Protein Cup - Chicken", "kcal": 180, "protein": 32, "proteinEst": false, "price": "见 DoorDash", "for": ["增肌", "减脂"], "why": "纯烤 adobo 鸡,180 卡补 32g 蛋白,加餐神器。" }
+      ]
+    },
+    {
+      "id": "revitasize", "title": "Revitasize", "titleEn": "Revitasize",
+      "tip": "Markham 店在 8570 Woodbine Ave。高蛋白 smoothie 很适合练后或补当天蛋白,但它仍是液体热量;正餐优先吃固体蛋白和蔬菜,不要顺手再配 acai bowl/甜点。",
+      "rating": { "score": 8.5, "reason": "水果、羽衣甘蓝、奇亚籽和坚果等完整食材多,并有 34–42g 蛋白的官方配方;抗炎食材丰富。但部分 smoothie 含枫糖/蜂蜜且液体饱腹感较弱,更适合作为练后餐或加餐。" },
+      "ref": "https://www.revitasize.ca/pages/menu",
+      "recommend": [
+        { "name": "Green 42 高蛋白奶昔", "nameEn": "Green 42", "kcal": 580, "protein": 42, "proteinEst": false, "price": "$11.98", "for": ["增肌"], "why": "官方 580 卡 / 42g 蛋白;羽衣甘蓝、奇亚籽、坚果和植物蛋白,适合练后把蛋白和热量一起补足。" },
+        { "name": "PB+ 高蛋白奶昔", "nameEn": "PB+", "kcal": 470, "protein": 38, "proteinEst": false, "price": "$11.98", "for": ["增肌", "减脂"], "why": "官方 470 卡 / 38g 蛋白;莓果 + 奇亚籽 + 花生酱,同店蛋白/热量比更好。减脂时把它当一餐,别当饮料配正餐。" },
+        { "name": "Defender 高蛋白奶昔", "nameEn": "Defender", "kcal": 420, "protein": 34, "proteinEst": false, "price": "$14.98", "for": ["增肌", "减脂"], "why": "官方 420 卡 / 34g 蛋白;含橙、姜黄、椰子酸奶和植物蛋白,三款里热量最低。" }
+      ]
+    },
+    {
+      "id": "pokeguys", "title": "Poke Guys", "titleEn": "Poke Guys",
+      "tip": "Markham 店在 8110 Birchmount Rd。底选 leafy greens 最轻、brown rice 更适合增肌;酱选少量 shoyu/wasabi,避开 spicy aioli、creamy togarashi、crispy onions 和 tempura bits。官方未公布营养,以下均按菜单配料估算。",
+      "rating": { "score": 8.5, "reason": "三文鱼/金枪鱼提供优质蛋白和 omega-3,可选绿叶菜底且蔬菜配料多,整体非油炸、抗炎友好。主要扣分是酱汁钠高,以及 mayo/脆炸配料很容易把 poke 变成高脂餐。" },
+      "ref": "https://pokeguys.ca/assets/menu.pdf",
+      "recommend": [
+        { "name": "CALI 招牌碗", "nameEn": "CALI", "kcal": 480, "kcalEst": true, "kcalNote": "官方只列配料与价格;按 regular 份三文鱼+金枪鱼、牛油果、蟹肉沙拉、masago、leafy greens 底和少量 shoyu 估约 480 卡;换糙米底约再加 150–200 卡。", "protein": 32, "proteinEst": true, "price": "$17.48", "for": ["增肌", "减脂"], "why": "三文鱼 + 金枪鱼双海鲜蛋白;减脂用绿叶菜底,增肌换糙米底。" },
+        { "name": "PG 三文鱼碗", "nameEn": "PG", "kcal": 450, "kcalEst": true, "kcalNote": "按 regular 份 classic shoyu salmon、edamame、mango、seaweed salad、masago、leafy greens 底估约 450 卡。", "protein": 28, "proteinEst": true, "price": "$17.26", "for": ["增肌", "减脂"], "why": "三文鱼 + 毛豆,蛋白、omega-3 和纤维兼顾;少酱即可。" },
+        { "name": "FIRE FIN 金枪鱼碗", "nameEn": "FIRE FIN", "kcal": 400, "kcalEst": true, "kcalNote": "按 regular 份 spicy shoyu tuna、kimchi、mango、seaweed salad、masago、leafy greens 底估约 400 卡。", "protein": 30, "proteinEst": true, "price": "$17.48", "for": ["减脂", "增肌"], "why": "金枪鱼较瘦,绿叶菜底时蛋白/热量比最好;酱汁偏咸,当天其他餐清淡些。" }
+      ]
+    },
+    {
+      "id": "barburrito", "title": "barBURRITO", "titleEn": "barBURRITO",
+      "tip": "Markham 现有 Eastown(6605 Hwy 7)、Hwy 7 & Woodbine(3000 Hwy 7)、Wismer Commons(9670 Markham Rd)等门店。点 bowl 不点 burrito,选 mild chicken + beans + 蔬菜;酱用 salsa/hot sauce,避开 queso、sour cream、Bang Bang sauce 和 crushed chips。",
+      "rating": { "score": 7.5, "reason": "鸡肉、豆类、米饭和大量蔬菜可自由组合,官方也给出不超过 500 卡的鸡肉碗范例;但全店同时有炸鱼/炸虾、薯条、浓酱和 queso,健康程度高度依赖点单。" },
+      "ref": "https://www.barburrito.ca/5-new-years-resolutions-with-burritos/",
+      "recommend": [
+        { "name": "鸡肉豆类蔬菜牛油果碗", "nameEn": "Chicken Bowl with Beans, Rice, Veggies & Guac", "kcal": 500, "kcalEst": true, "kcalNote": "品牌官方只公布「不超过 500 卡」,这里按上限 500 卡记录;实际随米饭、豆类、蔬菜和酱汁份量变化。", "protein": 28.5, "proteinEst": false, "price": "见门店/App", "for": ["增肌", "减脂"], "why": "官方范例:鸡肉 + beans + rice + veggies + guac,28.5g 蛋白且不超过 500 卡;不要再加 creamy sauce。" },
+        { "name": "生菜底烤鸡碗", "nameEn": "Mild Chicken Bowl – Lettuce Base", "kcal": 380, "kcalEst": true, "kcalNote": "官方营养计算器可选 bowl、mild chicken、lettuce、beans 和蔬菜;按不加米饭/芝士/浓酱的组合估约 380 卡。", "protein": 30, "proteinEst": true, "price": "见门店/App", "for": ["减脂"], "why": "生菜底 + mild chicken + 黑豆 + 番茄/青椒/洋葱 + salsa,砍掉饼皮、米饭和浓酱。" }
       ]
     },
     {
