@@ -504,6 +504,70 @@
       "note": "买的卤蛋(辣);用户营养表每100g=288卡/22.6脂/3.5碳/4.8糖/18.3蛋白/钠651,称重每个18-25g、按22g折算(×0.22)"
     },
     {
+      "id": "potato-egg-dressing",
+      "name": "土豆鸡蛋固定凉拌调料",
+      "nameEn": "Standard Potato & Egg Dressing",
+      "aliases": [
+        "土豆鸡蛋调料",
+        "凉拌调料"
+      ],
+      "serving": "1份",
+      "components": [
+        "生抽 2勺(~30ml)",
+        "醋 1勺(~15ml)",
+        "香油 半勺(~7g)",
+        "白芝麻 少量(~5g)"
+      ],
+      "kcal": 114,
+      "protein": 3.6,
+      "fat": 9.5,
+      "carb": 3.3,
+      "sodiumMg": 1800,
+      "note": "用户于2026-07-22确认:以后土豆鸡蛋无特别说明均按此固定调料一份;营养为通用值估算,钠仅计生抽"
+    },
+    {
+      "id": "maruzzella-tuna-bean-salad",
+      "name": "Maruzzella 金枪鱼豆类沙拉",
+      "nameEn": "Maruzzella Salad with Beans, Tuna, Red Peppers and Corn",
+      "aliases": [
+        "maruzzella",
+        "Maruzzella 沙拉"
+      ],
+      "serving": "1包 220g",
+      "kcal": 250,
+      "protein": 20,
+      "fat": 6,
+      "carb": 29,
+      "fiber": 9,
+      "sugar": 7,
+      "saturatedFat": 0.5,
+      "transFat": 0,
+      "cholesterolMg": 25,
+      "sodiumMg": 700,
+      "potassiumMg": 610,
+      "calciumMg": 70,
+      "ironMg": 2.5,
+      "note": "按用户2026-07-22提供的包装营养标签记录;每包即一份"
+    },
+    {
+      "id": "canned-salmon-80g",
+      "name": "三文鱼罐头(图示)",
+      "nameEn": "Canned Salmon",
+      "aliases": [
+        "salmon罐头",
+        "三文鱼罐头"
+      ],
+      "serving": "1罐 80g",
+      "kcal": 110,
+      "protein": 14,
+      "fat": 6,
+      "carb": 1,
+      "saturatedFat": 0.5,
+      "transFat": 0,
+      "sodiumMg": 270,
+      "note": "按用户2026-07-22提供的包装营养标签记录;图片未显示完整品名与品牌,故用通用名称"
+    },
+    {
       "id": "mcd-double-qpc",
       "name": "麦当劳 Double Quarter Pounder with Cheese",
       "nameEn": "McDonald's Double Quarter Pounder with Cheese",

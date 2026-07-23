@@ -2792,6 +2792,260 @@
         },
         "note": "早餐(麦片+酸奶碗标准款)+晚餐(土豆蒸/2蛋水煮/虾水煮/西蓝花水煮 + 生抽2醋1香油半勺白芝麻凉拌);主食材与调料营养为通用值估算,调料按汤匙(~15ml)计"
       }
+    },
+    {
+      "id": "2026-07-22-diet-1",
+      "date": "2026-07-22",
+      "category": "diet",
+      "data": {
+        "meals": [
+          {
+            "slot": "早餐",
+            "dishes": [
+              {
+                "name": "酸奶碗",
+                "ref": "yogurt-bowl",
+                "kcal": 367.8,
+                "items": [
+                  {
+                    "name": "蓝莓",
+                    "nameEn": "Blueberries",
+                    "qty": "100g",
+                    "kcal": 57,
+                    "protein": 0.7,
+                    "fat": 0.3,
+                    "carb": 14,
+                    "note": "通用值估算"
+                  },
+                  {
+                    "name": "混合坚果",
+                    "nameEn": "Mixed Nuts",
+                    "qty": "40g",
+                    "kcal": 256,
+                    "protein": 7.2,
+                    "fat": 22.4,
+                    "carb": 8.8,
+                    "ref": "mixed-nuts",
+                    "note": "库50g×0.8"
+                  },
+                  {
+                    "name": "希腊酸奶",
+                    "nameEn": "Greek Yogurt",
+                    "qty": "70g",
+                    "kcal": 54.8,
+                    "protein": 2.4,
+                    "fat": 3.65,
+                    "carb": 3.04,
+                    "ref": "greek-yogurt",
+                    "note": "库115g×70/115"
+                  }
+                ]
+              },
+              {
+                "name": "咖啡",
+                "ref": "coffee-latte",
+                "kcal": 95,
+                "items": [
+                  {
+                    "name": "咖啡",
+                    "nameEn": "Coffee with 3.25% Milk",
+                    "qty": "1杯(牛奶150g+espresso)",
+                    "kcal": 95,
+                    "protein": 5,
+                    "fat": 5,
+                    "carb": 7,
+                    "note": "库 coffee-latte"
+                  }
+                ]
+              },
+              {
+                "name": "钢切麦片(一碗)",
+                "ref": "steel-cut-oats-bowl",
+                "kcal": 441,
+                "items": [
+                  {
+                    "name": "钢切麦片",
+                    "nameEn": "Steel-cut Oats Bowl",
+                    "qty": "1碗(燕麦80g+牛奶230g+肌酸9g)",
+                    "kcal": 441,
+                    "protein": 19,
+                    "fat": 12,
+                    "carb": 65,
+                    "note": "库 steel-cut-oats-bowl"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "slot": "午餐",
+            "dishes": [
+              {
+                "name": "香蕉(较大)",
+                "kcal": 121,
+                "items": [
+                  {
+                    "name": "香蕉",
+                    "nameEn": "Large Banana",
+                    "qty": "1根(较大)",
+                    "kcal": 121,
+                    "protein": 1.5,
+                    "fat": 0.4,
+                    "carb": 31,
+                    "note": "通用值估算"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "slot": "晚餐",
+            "dishes": [
+              {
+                "name": "土豆",
+                "kcal": 154,
+                "items": [
+                  {
+                    "name": "土豆",
+                    "nameEn": "Potato",
+                    "qty": "200g",
+                    "kcal": 154,
+                    "protein": 4,
+                    "fat": 0.2,
+                    "carb": 35,
+                    "note": "通用值77kcal/100g估算;与鸡蛋共用固定凉拌调料"
+                  }
+                ]
+              },
+              {
+                "name": "鸡蛋",
+                "kcal": 288,
+                "items": [
+                  {
+                    "name": "鸡蛋",
+                    "nameEn": "Whole Eggs",
+                    "qty": "4个",
+                    "kcal": 288,
+                    "protein": 26,
+                    "fat": 20,
+                    "carb": 2,
+                    "note": "全蛋通用值估算;与土豆共用固定凉拌调料"
+                  }
+                ]
+              },
+              {
+                "name": "土豆鸡蛋固定凉拌调料",
+                "ref": "potato-egg-dressing",
+                "kcal": 114,
+                "items": [
+                  {
+                    "name": "生抽",
+                    "nameEn": "Light Soy Sauce",
+                    "qty": "2勺(~30ml)",
+                    "kcal": 20,
+                    "protein": 2.6,
+                    "fat": 0,
+                    "carb": 2,
+                    "sodiumMg": 1800,
+                    "note": "估算,每汤匙~10卡/钠~900mg×2"
+                  },
+                  {
+                    "name": "醋",
+                    "nameEn": "Vinegar",
+                    "qty": "1勺(~15ml)",
+                    "kcal": 3,
+                    "protein": 0,
+                    "fat": 0,
+                    "carb": 0.1,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "香油",
+                    "nameEn": "Sesame Oil",
+                    "qty": "半勺(~7g)",
+                    "kcal": 62,
+                    "protein": 0,
+                    "fat": 7,
+                    "carb": 0,
+                    "note": "估算"
+                  },
+                  {
+                    "name": "白芝麻",
+                    "nameEn": "White Sesame",
+                    "qty": "少量(~5g)",
+                    "kcal": 29,
+                    "protein": 1,
+                    "fat": 2.5,
+                    "carb": 1.2,
+                    "note": "估算"
+                  }
+                ]
+              },
+              {
+                "name": "Maruzzella 金枪鱼豆类沙拉",
+                "ref": "maruzzella-tuna-bean-salad",
+                "kcal": 250,
+                "items": [
+                  {
+                    "name": "Maruzzella 金枪鱼豆类沙拉",
+                    "nameEn": "Maruzzella Salad with Beans, Tuna, Red Peppers and Corn",
+                    "qty": "1包(220g)",
+                    "kcal": 250,
+                    "protein": 20,
+                    "fat": 6,
+                    "carb": 29,
+                    "fiber": 9,
+                    "sugar": 7,
+                    "sodiumMg": 700,
+                    "note": "按用户图片包装营养标签"
+                  }
+                ]
+              },
+              {
+                "name": "三文鱼罐头",
+                "ref": "canned-salmon-80g",
+                "kcal": 110,
+                "items": [
+                  {
+                    "name": "三文鱼罐头",
+                    "nameEn": "Canned Salmon",
+                    "qty": "1罐(80g)",
+                    "kcal": 110,
+                    "protein": 14,
+                    "fat": 6,
+                    "carb": 1,
+                    "sodiumMg": 270,
+                    "note": "按用户图片包装营养标签"
+                  }
+                ]
+              },
+              {
+                "name": "鸡胸肉",
+                "kcal": 90.8,
+                "items": [
+                  {
+                    "name": "鸡胸肉",
+                    "nameEn": "Cooked Chicken Breast",
+                    "qty": "55g(熟重)",
+                    "kcal": 90.8,
+                    "protein": 17.1,
+                    "fat": 2,
+                    "carb": 0,
+                    "note": "用户确认熟重;按每100g熟鸡胸165卡/31g蛋白/3.6g脂肪估算"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": {
+          "kcal": 2031.6,
+          "protein": 120.5,
+          "fat": 87.4,
+          "carb": 199.1
+        },
+        "note": "早餐按食物库标准酸奶碗、咖啡和钢切麦片;午餐香蕉按较大一根通用值估算;晚餐Maruzzella和三文鱼罐头按用户图片包装标签,鸡胸按熟重55g通用值估算;土豆和鸡蛋共用固定凉拌调料一份(2勺生抽+1勺醋+半勺香油+少量白芝麻)"
+      }
     }
   ]
 }
